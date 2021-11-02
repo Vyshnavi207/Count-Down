@@ -1,0 +1,220 @@
+<html>
+  <head>
+    <title>Sensors '21</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link rel="shortcut icon" type="image/png" href="assets/sensorsLogo.jpg" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/articles.css" />
+    <link rel='stylesheet' type='text/css' media='all' href='css/style-inline.css'/>
+    <link rel='stylesheet' type='text/css' media='all' href='css/animate.css'/>
+    <link rel='stylesheet' type='text/css' media='all' href='css/style.css'/>
+    <link rel="stylesheet" href="index.css"/>
+    <script>
+      function openModal(ola, j) {
+        var i;
+        for (i = 1; i < 10; i++) {
+          if (i != j) {
+            olaa = ".ui.fullscreen.modal." + i;
+            $(olaa).modal("hide");
+          }
+        }
+        $(ola).modal("show");
+        $(ola).modal({
+          closable: true,
+        });
+        $(".cont").dimmer("show");
+      }
+      function closeModal(ola) {
+        $(ola).modal("hide");
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- <div id="content"> -->
+      <!--NavBar-->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <a class="navbar-brand" href="./index.html"><img src="assets/Logo.png" width="120" height="120"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              
+              <li class="nav-item">
+                  <a class="nav-link" href="./Webinars.html">Webinars</a>
+               </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="./articles.html">Articles</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./events.html">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./covid_tech.html">Covid-Tech</a>
+              </li>
+              
+              <li class="nav-item">
+                      <a class="nav-link" href="team.html">Team</a>
+              </li>
+              
+
+              
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!--NavBar-->
+    <h1 style="margin: 3%; text-align: center">
+      <a style="color: white; font-size: 50px">Webinars</a>
+    </h1>
+
+    <div class="ui cont" style="background: #000000; padding: 5px">
+      <div class="ui link cards row">
+        <div class="card col-sm-3">
+          <div class="image">
+            <img
+              src="./assets/Images/Webinars/Saiman Shetty.jpeg"
+              style="height: 350px"
+            />
+          </div>
+          <div class="content">
+            <div class="header">Interview with Saiman Shetty</div>
+            <div class="description">
+              Webinar on Career & Product development  with Saiman Shetty.<br> Saiman Shetty is an entrepreneur, engineer, and much more. Aside from founding several companies, he is currently a Powertrain Engineer at Tesla and Technical Manager at Lyft.
+            </div>
+          </div>
+          <!-- <a
+            class="header"
+            href="https://medium.com/sensors/interview-with-sai-sandeep-on-gate-7633ca4a3563"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card col-sm-3">
+          <div class="image">
+            <img
+              src="./assets/Images/Webinars/Sripad Krishnan.jpeg"
+              style="height: 350px"
+            />
+          </div>
+          <div class="content">
+            <div class="header">Interview with Sripad Krishna</div>
+            <div class="description">
+                Webinar on Artificial Intelligence and Entrepreneurship.<br> Dr. Sripad Krishna Devalla, an alumni, who is the co-founder of Origin Health, focusing on prenatal care through the power of Deep Learning.  He completed his Ph.D. from Biomedical Engineering, NUS. He will guide us through his life experiences and help us in developing a strong profile.
+            </div>
+          </div>
+          <!-- <a
+            class="header"
+            href="https://medium.com/sensors/ice-intern-talk-iusstf-viterbi-program-631aa6e99a1b"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card col-sm-3">
+          <div class="image">
+            <img
+              src="./assets/Images/Webinars/Karthikeyan.jpeg"
+              style="height: 350px"
+            />
+          </div>
+          <div class="content">
+            <div class="header">
+              Interview with Karthikeyan P
+            </div>
+            <div class="description">
+              Webinar on latest trend in Automation Industries. Karthikeyan P is an alumnus, social entrepreneur, control engineer, marketing specialist, and much more. He joined ABB as a Control & Automation Engineer, and now he is a Bids and Proposal Cluster Lead, using his expertise of Process Automation to pitch and negotiate sales with various industries in the Asia and Africa region.
+            </div>
+          </div>
+          <!-- <a
+            class="header"
+            href="https://medium.com/sensors/ice-intern-talk-reliance-industries-limited-7246d90f420f"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card col-sm-3">
+          <div class="image">
+            <img
+              src="./assets/Images/Webinars/Sai Sandeep.jpeg"
+              style="height: 350px"
+            />
+          </div>
+          <div class="content">
+            <div class="header">Interview with Sai Sandeep</div>
+            <div class="description">
+                Webinar on preparation strategy for succeeding at GATE and the career paths that are accessible after achieving a high rank in GATE. <br>Sai Sandeep secured AIR Rank 1 in Gate 2020 in Instrumentation. He belongs to ICE batch of 2016-2020.
+            </div>
+          </div>
+          <!-- <a
+            class="header"
+            href="https://medium.com/sensors/my-name-is-sanjay-chandrashekar-and-i-pursued-an-internship-at-rwth-aachen-university-this-summer-6da5a59d8036"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+
+        
+      </div>
+      
+    </div>
+
+
+<!-- </div> -->
+
+<footer class="mainfooter" role="contentinfo">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+
+              <p style="color: white; font-size:15px; text-align:center;">Made with <span
+                      style="color: red;    display: inline-flex;font-size: 1.8em;">&hearts;</span>
+                  by Sensors NIT Trichy</p>
+              <hr align="center" style="border-color: white; width:320px; ">
+
+              <ul class="social-network social-circle"
+                  style="display: flex !important; justify-content:center !important;">
+                  <li><a href="https://www.facebook.com/sensorsNITTrichy/" target="_blank" class="icoFacebook" title="Facebook"><i
+                          class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://in.linkedin.com/company/sensors-nitt" target="_blank" class="icoLinkedin" title="Linkedin"><i
+                          class="fa fa-linkedin"></i></a></li>
+                  <li><a href="https://www.instagram.com/sensorsnitt/" target="_blank" class="icoFacebook" title="Instagram"><i
+                          class="fa fa-instagram"></i></a></li>
+                  <li><a href="https://twitter.com/officialsensors" target="_blank" class="icoLinkedin" title="Twitter"><i
+                          class="fa fa-twitter"></i></a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+  </body>
+</html>

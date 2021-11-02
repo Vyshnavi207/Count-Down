@@ -1,0 +1,1 @@
+- Add Section tag to each section.
