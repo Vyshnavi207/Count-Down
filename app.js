@@ -1,39 +1,36 @@
-require('dotenv').config({ path: './env/.env' })
+require('dotenv').config({ path: './src/env/.env' });
 
-const express = require('express')
-const app = express()
-app.use(express.json())
+const cors = require('cors');
 
-const cors = require('cors')
-app.use(cors())
-module.exports = app
+const express = require('express');
+const app = express();
+const store = require('store2');
+const port = process.env.PORT;
+// const $ = require('jQuery');
 
-const mongoose = require('mongoose')
+require('./src/database/setup.js'); // change setup.js to samples.js to create dummy data in database.
 
-const PORT = process.env.PORT
-const dbURL = process.env.dbURL
-const dbName = process.env.dbName
+//require('./src/database/samples.js');
+const apiRouter = require('./src/api/api');
 
-mongoose.connect(dbURL + dbName, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/static'));
 
-const connection = mongoose.connection
-connection.once('open', () => {
-  console.log(dbURL + dbName)
-  console.log('DB connected.')
-})
+app.use(cors());
 
-function main () {
-  // Load all routes.
-  require('./app/routes')(app)
-  require('./app/controllers')(app)
+app.use(function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST');
+	res.header(
+		'Access-Control-Allow-Headers',
+		'Origin, X-Requested-With, Content-Type, Accept'
+	);
+	next();
+});
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-  // Listen on http port.
-  app.listen(PORT, () => {
-    console.log(`Successfully served on port: ${PORT}.`)
-  })
-}
+app.use('/api', apiRouter);
 
-main()
+app.listen(port, () => console.log('server started at port ' + port));
