@@ -1,10 +1,9 @@
-const api = require('express').Router();
+const api = require('express').Router()
 
-const { jwtVerify } = require('../middlewares/jwt');
+const { jwtVerify } = require('../middlewares/jwt') // eslint-disable-line no-unused-vars
 
-//require routers here 
+// require routers here
 // const exampleRouter = require('./routers/example');
 // api.use('/example', exampleRouter);
 
-
-module.exports = api;
+module.exports = api
