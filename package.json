@@ -1,0 +1,22 @@
+{
+  "name": "sensors_22",
+  "version": "1.0.0",
+  "description": "Sensors official website",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SENSORS-NIT-TRICHY/Sensors_19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SENSORS-NIT-TRICHY/Sensors_19/issues"
+  },
+  "homepage": "https://github.com/SENSORS-NIT-TRICHY/Sensors_19#readme",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
