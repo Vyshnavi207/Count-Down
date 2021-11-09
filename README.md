@@ -1,5 +1,3 @@
 # Sensors
 
 Sensors official website.
-
-#
