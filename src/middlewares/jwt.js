@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
-const createJWTtoken = async (user) => {
+const createJWTtoken = (user) => {
   return jwt.sign(
     {
-      username: user.email,
+      username: user.Email,
       id: user._id
     },
     process.env.TOKEN_SECRET,
@@ -12,7 +12,7 @@ const createJWTtoken = async (user) => {
 }
 
 const jwtVerify = async (req, res, next) => {
-  const token = req.header('token')
+  const token = req.header('auth-token')
   try {
     if (!token) return res.status(401).json({ message: 'No token' })
     // console.log(process.env.TOKEN_SECRET)
