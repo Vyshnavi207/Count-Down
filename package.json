@@ -1,5 +1,5 @@
 {
-  "name": "sensors_22",
+  "name": "sensors_19",
   "version": "1.0.0",
   "description": "Sensors official website",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/SENSORS-NIT-TRICHY/Sensors_19/issues"
   },
-  "homepage": "https://github.com/SENSORS-NIT-TRICHY/Sensors_19#readme",
+  "homepage": "https://SENSORS-NIT-TRICHY.github.io/sensors_19",
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }

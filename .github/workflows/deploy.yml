@@ -2,9 +2,9 @@ name: Deployment Script
 
 on:
   push:
-    branches: [ dev22 ]
+    branches: [ sensors22-dev ]
   pull_request:
-    branches: [ dev22 ]
+    branches: [ sensors22-dev ]
 
   workflow_dispatch:
 
