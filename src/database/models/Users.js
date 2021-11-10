@@ -9,11 +9,9 @@ const userSchema = new mongoose.Schema({
   Year: String,
   Events: [
     {
-      _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Events'
-      }
-    }
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Events'
+    },
   ],
   password: String
 })

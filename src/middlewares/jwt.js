@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
+const User = require('../database/models/Users');
 const createJWTtoken = (user) => {
   return jwt.sign(
     {
@@ -26,7 +27,8 @@ const jwtVerify = async (req, res, next) => {
           .json({ message: 'Invalid token or token expired' })
       }
       if (!mongoose.Types.ObjectId.isValid(decoded.id)) { return res.status(400).json({ message: 'Invalid userId' }) }
-      req.user = true
+      const user = await User.findById(mongoose.Types.ObjectId(decoded.id));
+      req.user = user
       return next()
     })
     return null
