@@ -6,6 +6,7 @@ const express = require('express')
 const app = express()
 const store = require('store2') // eslint-disable-line no-unused-vars
 const port = process.env.PORT
+const bodyParser = require('body-parser')
 // const $ = require('jQuery');
 
 require('./src/database/setup.js') // change setup.js to samples.js to create dummy data in database.
@@ -30,8 +31,13 @@ app.use(function (req, res, next) {
   )
   next()
 })
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+// app.use(express.urlencoded({ extended: false }))
+// app.use(express.json())
 
 app.use('/api', apiRouter)
 

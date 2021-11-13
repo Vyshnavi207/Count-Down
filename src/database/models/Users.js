@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
   Name: String,
@@ -9,13 +9,12 @@ const userSchema = new mongoose.Schema({
   Year: String,
   Events: [
     {
-      _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Events",
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Events'
     },
   ],
-});
+  password: String
+})
 
-const Users = mongoose.model("Users", userSchema);
-module.exports = Users;
+const Users = mongoose.model('Users', userSchema)
+module.exports = Users
