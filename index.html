@@ -23,7 +23,7 @@
         var clock;
         $(document).ready(function(){
             var currentDate = new Date();
-            var futureDate = new Date('Nov 14, 2021 11:16:00');
+            var futureDate = new Date('Nov 14, 2021 11:33:00');
             var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
             
             console.log(currentDate);
@@ -34,7 +34,12 @@
             //    document.getElementById("hours").innerText=0
             //    document.getElementById("minutes").innerText=0
             //    document.getElementById("seconds").innerText=0
-            document.getElementById('no-events-id').innerText="NO EVENTS FOR NOW"
+            let div = document.createElement('div')
+            div.innerText="NO EVENTS FOR NOW"
+            div.id='no-events-id'
+            let timerbox=document.querySelector('.timer')
+            timerbox.appendChild(div)
+            // document.getElementById('no-events-id').innerText="NO EVENTS FOR NOW"
             
             }
             else
