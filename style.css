@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.timer{
+    width: 800px;
+    height: 250px;
+    margin-top: 135px;
+    margin-left: 50px;
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 7em;
+    background-color: #222;
+}
+.flip-clock-label{
+    font-size: 15px;
+}
+.flip-clock-dot{
+    background-color: #ccc;
+}
+.flip-clock-meridium a{
+    color: #ccc;
+}
+p{
+  font-size: 4rem;
+  font-weight: bold;
+  padding-bottom: 2em;
+  color: #007bb7;
+}
+h{
+    font-size: 1.5rem;
+    margin-top: -120px;
+}
+ /* @media screen and (max-width: 500px){
+     .countdown{
+         margin-left: 2em;
+         margin-right: 2em;
+         padding: 3em 1em;
+     }
+ } 
+  */
