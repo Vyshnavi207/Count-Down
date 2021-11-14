@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">l
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,20 +16,35 @@
               <div class="clock"></div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="flipclock.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"  ></script>
+    <script src="flipclock.js"  ></script>
+    <div id="no-events-id"></div>
     <script type="text/javascript">
         var clock;
         $(document).ready(function(){
             var currentDate = new Date();
-            var futureDate = new Date('Nov 21, 2021 00:00:00');
+            var futureDate = new Date('Nov 14, 2021 11:16:00');
             var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
+            
             console.log(currentDate);
             console.log(futureDate);
-            clock = $('.clock').FlipClock(difference,{
+            if(futureDate.getTime()<currentDate.getTime())
+            {
+            //    document.getElementById("days").innerText=0
+            //    document.getElementById("hours").innerText=0
+            //    document.getElementById("minutes").innerText=0
+            //    document.getElementById("seconds").innerText=0
+            document.getElementById('no-events-id').innerText="NO EVENTS FOR NOW"
+            
+            }
+            else
+            {
+                clock = $('.clock').FlipClock(difference,{
                 clockFace: 'DailyCounter',
                 countdown: true
             });
+            }
+           
         });
     </script>
 </body>

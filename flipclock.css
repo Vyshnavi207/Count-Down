@@ -168,6 +168,14 @@
 .flip-clock-wrapper ul.play li.flip-clock-before {
   z-index: 3; }
 
+#no-events-id {
+  color:#fff;
+  position:absolute;
+  top:55%;
+  font-size: larger;
+  left: 23.6%;
+
+}
 .flip-clock-wrapper .flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
 
 .flip-clock-wrapper ul.play li.flip-clock-active {
