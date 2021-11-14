@@ -23,23 +23,19 @@
         var clock;
         $(document).ready(function(){
             var currentDate = new Date();
-            var futureDate = new Date('Nov 14, 2021 11:33:00');
+            var futureDate = new Date('Nov 14, 2021 11:48:00');
             var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
             
             console.log(currentDate);
             console.log(futureDate);
             if(futureDate.getTime()<currentDate.getTime())
             {
-            //    document.getElementById("days").innerText=0
-            //    document.getElementById("hours").innerText=0
-            //    document.getElementById("minutes").innerText=0
-            //    document.getElementById("seconds").innerText=0
+           
             let div = document.createElement('div')
             div.innerText="NO EVENTS FOR NOW"
             div.id='no-events-id'
             let timerbox=document.querySelector('.timer')
             timerbox.appendChild(div)
-            // document.getElementById('no-events-id').innerText="NO EVENTS FOR NOW"
             
             }
             else
