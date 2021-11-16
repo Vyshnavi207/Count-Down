@@ -20,9 +20,9 @@ html {
 	background: #00adf1;
 }
 
-.card {
+.card { 
+	width: 500px;
 	height: 540px;
-	min-width: 32%;
 }
 
 @media screen and (max-width: 992px) {
