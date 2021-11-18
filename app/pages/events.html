@@ -1,134 +1,134 @@
 <html>
-	<head>
-		<title>Sensors '21</title>
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
-		<meta content="width=device-width, initial-scale=1" name="viewport" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-		/>
-		<link
-			rel="shortcut icon"
-			type="image/png"
-			href="../assets/sensorsLogo.jpg"
-		/>
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-			crossorigin="anonymous"
-		/>
-		<script
-			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-			crossorigin="anonymous"
-		></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <head>
+    <title>Sensors '21</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/sensorsLogo.jpg"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-		<link rel="stylesheet" href="../css/articles.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-			href="../css/style-inline.css"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-			href="../css/animate.css"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-			href="../css/style.css"
-		/>
-		<link rel="stylesheet" href="../css/index.css" />
-		<script>
-			function openModal(ola, j) {
-				var i
-				for (i = 1; i < 10; i++) {
-					if (i != j) {
-						olaa = ".ui.fullscreen.modal." + i
-						$(olaa).modal("hide")
-					}
-				}
-				$(ola).modal("show")
-				$(ola).modal({
-					closable: true,
-				})
-				$(".cont").dimmer("show")
-			}
-			function closeModal(ola) {
-				$(ola).modal("hide")
-			}
-		</script>
-	</head>
+    <link rel="stylesheet" href="../css/articles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="../css/style-inline.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="../css/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="../css/style.css"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script>
+      function openModal(ola, j) {
+        var i
+        for (i = 1; i < 10; i++) {
+          if (i != j) {
+            olaa = '.ui.fullscreen.modal.' + i
+            $(olaa).modal('hide')
+          }
+        }
+        $(ola).modal('show')
+        $(ola).modal({
+          closable: true,
+        })
+        $('.cont').dimmer('show')
+      }
+      function closeModal(ola) {
+        $(ola).modal('hide')
+      }
+    </script>
+  </head>
 
-	<body>
-		<nav class="navbar navbar-expand-lg">
-			<div class="container">
-				<a class="navbar-brand" href="../index.html"
-					><img src="../assets/logos/Logo.png" width="120" height="120"
-				/></a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/webinars.html">Webinars</a>
-						</li>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"
+          ><img src="../assets/logos/Logo.png" width="120" height="120"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/webinars.html">Webinars</a>
+            </li>
 
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/articles.html">Articles</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/events.html">Events</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/covid_tech.html">Covid-Tech</a>
-						</li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/articles.html">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/covid_tech.html">Covid-Tech</a>
+            </li>
 
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/team.html">Team</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/team.html">Team</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-		<!-- <div class="ui cont" style="background: #000000; padding: 5px">
+    <!-- <div class="ui cont" style="background: #000000; padding: 5px">
 
       <div class="ui link cards row">
         <div class="card col-sm-4">
@@ -442,112 +442,112 @@
         </div>
       </div>
     </div> -->
-		<h1 style="margin: 3%; text-align: center">
-			<a style="color: white; font-size: 40px">Riddle Month</a>
-		</h1>
-		<div class="d-flex justify-content-center">
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/Intro.jpeg"
-			/>
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/Rulebook.jpeg"
-			/>
-		</div>
-		<h3 style="margin: 1%; text-align: center">
-			<a style="color: white; font-size: 30px">Themes</a>
-		</h3>
-		<div class="d-flex justify-content-center">
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/Theme_Space.jpeg"
-			/>
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/THEME2.jpg"
-			/>
-		</div>
-		<div class="d-flex justify-content-center">
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/Sensors_Gadgets.png"
-			/>
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/THEME.jpg"
-			/>
-		</div>
-		<h3 style="margin: 1%; text-align: center">
-			<a style="color: white; font-size: 30px">Winners</a>
-		</h3>
-		<div class="d-flex justify-content-center">
-			<img
-				class="riddle-month"
-				src="../assets/Images/Events/Riddle Month/Leaderboard_final.jpg"
-			/>
-		</div>
+    <h1 style="margin: 3%; text-align: center">
+      <a style="color: white; font-size: 40px">Riddle Month</a>
+    </h1>
+    <div class="d-flex justify-content-center">
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/Intro.jpeg"
+      />
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/Rulebook.jpeg"
+      />
+    </div>
+    <h3 style="margin: 1%; text-align: center">
+      <a style="color: white; font-size: 30px">Themes</a>
+    </h3>
+    <div class="d-flex justify-content-center">
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/Theme_Space.jpeg"
+      />
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/THEME2.jpg"
+      />
+    </div>
+    <div class="d-flex justify-content-center">
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/Sensors_Gadgets.png"
+      />
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/THEME.jpg"
+      />
+    </div>
+    <h3 style="margin: 1%; text-align: center">
+      <a style="color: white; font-size: 30px">Winners</a>
+    </h3>
+    <div class="d-flex justify-content-center">
+      <img
+        class="riddle-month"
+        src="../assets/Images/Events/Riddle Month/Leaderboard_final.jpg"
+      />
+    </div>
 
-		<footer class="mainfooter" role="contentinfo">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-sm-12">
-						<p style="color: white; font-size: 15px; text-align: center">
-							Made with
-							<span style="color: red; display: inline-flex; font-size: 1.8em"
-								>&hearts;</span
-							>
-							by Sensors NIT Trichy
-						</p>
-						<hr align="center" style="border-color: white; width: 320px" />
+    <footer class="mainfooter" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <p style="color: white; font-size: 15px; text-align: center">
+              Made with
+              <span style="color: red; display: inline-flex; font-size: 1.8em"
+                >&hearts;</span
+              >
+              by Sensors NIT Trichy
+            </p>
+            <hr align="center" style="border-color: white; width: 320px" />
 
-						<ul
-							class="social-network social-circle"
-							style="
-								display: flex !important;
-								justify-content: center !important;
-							"
-						>
-							<li>
-								<a
-									href="https://www.facebook.com/sensorsNITTrichy/"
-									target="_blank"
-									class="icoFacebook"
-									title="Facebook"
-									><i class="fa fa-facebook"></i
-								></a>
-							</li>
-							<li>
-								<a
-									href="https://in.linkedin.com/company/sensors-nitt"
-									target="_blank"
-									class="icoLinkedin"
-									title="Linkedin"
-									><i class="fa fa-linkedin"></i
-								></a>
-							</li>
-							<li>
-								<a
-									href="https://www.instagram.com/sensorsnitt/"
-									target="_blank"
-									class="icoFacebook"
-									title="Instagram"
-									><i class="fa fa-instagram"></i
-								></a>
-							</li>
-							<li>
-								<a
-									href="https://twitter.com/officialsensors"
-									target="_blank"
-									class="icoLinkedin"
-									title="Twitter"
-									><i class="fa fa-twitter"></i
-								></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</body>
+            <ul
+              class="social-network social-circle"
+              style="
+                display: flex !important;
+                justify-content: center !important;
+              "
+            >
+              <li>
+                <a
+                  href="https://www.facebook.com/sensorsNITTrichy/"
+                  target="_blank"
+                  class="icoFacebook"
+                  title="Facebook"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://in.linkedin.com/company/sensors-nitt"
+                  target="_blank"
+                  class="icoLinkedin"
+                  title="Linkedin"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/sensorsnitt/"
+                  target="_blank"
+                  class="icoFacebook"
+                  title="Instagram"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/officialsensors"
+                  target="_blank"
+                  class="icoLinkedin"
+                  title="Twitter"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

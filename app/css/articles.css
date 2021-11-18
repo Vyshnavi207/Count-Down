@@ -1,85 +1,85 @@
 body {
-	margin: 0;
-	padding: 0;
-	height: auto;
-	height: 100vh;
-	width: 100%;
-	font-family: "Barlow", sans-serif;
-	background: #000000;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  background: #000000;
 }
 html {
-	overflow: auto;
+  overflow: auto;
 }
 .ui.link.cards {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .pad {
-	padding-top: 20px;
+  padding-top: 20px;
 }
 .ui.positive.right.labeled.icon.button {
-	background: #00adf1;
+  background: #00adf1;
 }
 
 .card {
-	height: 540px;
-	min-width: 32%;
+  height: 540px;
+  min-width: 32%;
 }
 
 @media screen and (max-width: 992px) {
-	.card {
-		min-width: 96%;
-	}
+  .card {
+    min-width: 96%;
+  }
 }
 .ui.fullscreen.modal {
-	top: 1%;
-	position: fixed;
-	margin-left: 2%;
+  top: 1%;
+  position: fixed;
+  margin-left: 2%;
 }
 
 @media screen and (max-width: 992px) {
-	.ui.fullscreen.modal {
-		position: fixed;
-		top: 20%;
-		width: 400px;
-		margin-left: 1.5%;
-	}
+  .ui.fullscreen.modal {
+    position: fixed;
+    top: 20%;
+    width: 400px;
+    margin-left: 1.5%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.ui.fullscreen.modal {
-		position: fixed;
-		top: 20%;
-		width: 400px;
-		margin-left: 1.5%;
-	}
+  .ui.fullscreen.modal {
+    position: fixed;
+    top: 20%;
+    width: 400px;
+    margin-left: 1.5%;
+  }
 }
 
 @media screen and (max-width: 767px) {
-	.ui.ui.fullscreen.modal {
-		position: fixed;
-		top: 5%;
-		width: 400px;
-		margin-left: 1.5%;
-	}
+  .ui.ui.fullscreen.modal {
+    position: fixed;
+    top: 5%;
+    width: 400px;
+    margin-left: 1.5%;
+  }
 }
 
 .ui.medium.image {
-	position: relative;
-	margin: 1%;
+  position: relative;
+  margin: 1%;
 }
 
 .riddle-month {
-	height: 300px;
-	width: 300px;
-	padding: 20px;
+  height: 300px;
+  width: 300px;
+  padding: 20px;
 }
 
 .covid-tech {
-	height: 400px;
-	width: 400px;
+  height: 400px;
+  width: 400px;
 }
 
 .covid {
-	height: auto;
-	background-color: rgb(26, 23, 23);
+  height: auto;
+  background-color: rgb(26, 23, 23);
 }
