@@ -151,6 +151,7 @@ footer {
   
   
 footer p {
+    overflow-y: hidden;	
     padding-top: 20px;
     font-size:1500px;
 }
