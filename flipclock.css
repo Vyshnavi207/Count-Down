@@ -10,6 +10,31 @@
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+#righttimer {
+
+
+color: #fff;
+
+height: 50px;
+margin-left: 80%;
+
+}
+#arrowflex{
+  display: flex;
+  flex-direction: row;
+ 
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  
+}
+#lefttimer {
+  
+
+color: #fff;
+
+height:50px;
+}
 
 .flip-clock-wrapper a {
   cursor: pointer;

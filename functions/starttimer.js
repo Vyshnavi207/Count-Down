@@ -1,8 +1,8 @@
 function startthetimer (datenumber){
   var currentDate = new Date();
- let array= arraydates(reqarray)
-  var futureDate = new Date(array[datenumber]);
-console.log('date number ' , array[datenumber])
+ //let array= arraydates(reqarray)
+  var futureDate = new Date(datearray[datenumber]);
+console.log('date number ' , datearray[datenumber])
   var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
   
   console.log(currentDate);
