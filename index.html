@@ -17,36 +17,107 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"  ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="flipclock.js"  ></script>
+    <script src='./functions/starttimer.js'></script>
+    <script src='./functions/arraydatefunction.js' ></script>
     <div id="no-events-id"></div>
+    <button id="lefttimer" >left</button>
+    <button id="righttimer">right</button>
+
     <script type="text/javascript">
         var clock;
-        $(document).ready(function(){
-            var currentDate = new Date();
-            var futureDate = new Date('Nov 14, 2021 11:48:00');
-            var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
-            
-            console.log(currentDate);
-            console.log(futureDate);
-            if(futureDate.getTime()<currentDate.getTime())
+        let datenumber=0;
+        let reqarray=[]
+        //'2022-01-01T14:00:00.000Z','2022-02-01T07:00:00.000Z','2022-03-01T02:00:00.000Z'
+        axios.get('http://localhost:3000/api/events').then(result=>
+        {
+            console.log('comeon ',result)
+             if(result.data.length>0)
+             {
+                 console.log('startdate')
+                  reqarray=result.data.map((event)=>
+                  {
+                      return event['StartDate']
+                  })
+
+                  $(document).ready(
+            startthetimer(datenumber)
+        )
+             }
+             else
+             {
+                     
+             }
+        })
+        
+        let lefttimer=()=>
+        {
+            clock.stop()
+            if(datenumber==0)
             {
-           
-            let div = document.createElement('div')
-            div.innerText="NO EVENTS FOR NOW"
-            div.id='no-events-id'
-            let timerbox=document.querySelector('.timer')
-            timerbox.appendChild(div)
-            
+                datenumber=reqarray.length-1
             }
             else
             {
-                clock = $('.clock').FlipClock(difference,{
-                clockFace: 'DailyCounter',
-                countdown: true
-            });
+                datenumber=datenumber-1
             }
+            startthetimer(datenumber)
+        }
+        let righttimer=()=>
+        {
+            clock.stop()
+            if(datenumber==reqarray.length-1)
+            {
+datenumber=0
+            }
+            else
+            {
+              datenumber=datenumber+1
+            }
+            startthetimer(datenumber)
+        }
+        let leftbutton = document.querySelector('#lefttimer')
+        let rightbutton = document.querySelector('#righttimer')
+
+        leftbutton.addEventListener('click',lefttimer)
+        rightbutton.addEventListener('click',righttimer)
+       
+        // $(document).ready(function(){
+        //     var currentDate = new Date();
+        //    array= arraydates(array)
+        //     var futureDate = new Date(array[datenumber]);
+
+        //     var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
+            
+        //     console.log(currentDate);
+        //     console.log(futureDate);
+        //     if(futureDate.getTime()<currentDate.getTime())
+        //     {
            
-        });
+        //     let div = document.createElement('div')
+        //     div.innerText="NO EVENTS FOR NOW"
+        //     div.id='no-events-id'
+        //     let timerbox=document.querySelector('.timer')
+        //     timerbox.appendChild(div)
+            
+        //     }
+        //     else
+        //     {
+        //         clock = $('.clock').FlipClock(difference,{
+        //         clockFace: 'DailyCounter',
+        //         countdown: true
+        //     });
+            
+        //     }
+           
+        // });
+      
+
+
     </script>
+
+    
 </body>
 </html>
