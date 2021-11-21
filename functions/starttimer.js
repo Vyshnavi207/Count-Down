@@ -1,4 +1,5 @@
 function startthetimer (datenumber){
+  
   var currentDate = new Date();
  //let array= arraydates(reqarray)
   var futureDate = new Date(datearray[datenumber]);
@@ -19,6 +20,9 @@ console.log('date number ' , datearray[datenumber])
   }
   else
   {
+  
+    titlediv.innerHTML=eventinfoarray[datenumber]['title']
+    descriptiondiv.innerHTML=eventinfoarray[datenumber]['description']
       clock = $('.clock').FlipClock(difference,{
       clockFace: 'DailyCounter',
       countdown: true

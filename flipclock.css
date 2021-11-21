@@ -35,6 +35,10 @@ color: #fff;
 
 height:50px;
 }
+#eventDescription {
+  color: #fff
+}
+
 
 .flip-clock-wrapper a {
   cursor: pointer;
