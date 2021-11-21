@@ -719,6 +719,10 @@ footer {
     padding-bottom: 7em;
     background-color: #222;
    }
+   .flip-clock-wrapper ul{
+    width: 60px;
+    height: 90px;
+   }
    .flip-clock-label{
     font-size: 15px;
    }
@@ -732,6 +736,12 @@ footer {
        margin-top: 60px;
        margin-left: 100px;
    }
+   .flip-clock-divider.minutes .flip-clock-label {
+        right: -88px;
+   }
+   .flip-clock-wrapper ul li a div div.inn{
+       font-size: 70px;
+   }
   p1{
    font-size: 4rem;
    font-weight: bold;
@@ -742,18 +752,33 @@ footer {
     font-size: 1.5rem;
     margin-top: -120px;
    } 
-   @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px){
+     .timer-container{
+        margin-left: -10px;
+     }
      .timer{
+         width: 50%;
          margin-left: 2em;
          margin-right: 2em;
          padding: 3em 1em;
      }
+     .flip-clock-wrapper ul{
+         height: 80px;
+     }
+     .flip-clock-divider.minutes .flip-clock-label {
+        top: 78px;
+        right: 225px;
+     }
+     .flip-clock-wrapper ul li a div div.inn{
+         font-size: 45px;
+     }
+     p1{
+         font-size: 3rem;
+     }
+     h{
+         margin-top: -100px;
+     }
  } 
- 
-
-
-
-
 
 
 
