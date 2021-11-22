@@ -51,7 +51,12 @@
                 
                   reqarray=result.data.map((event)=>
                   {
-                      return event['StartDate']
+                    if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+                    {
+                        console.log(event['StartDate'])
+                        return event['StartDate']
+              
+                    }
                   })
                   eventinfoarray=result.data.map((event)=>
                   {
@@ -73,7 +78,8 @@
         }).catch(e=>
         {
            
-            reqarray=['2022-01-01T14:00:00.000Z','2022-02-01T07:00:00.000Z','2022-03-01T02:00:00.000Z']
+            reqarray=['2022-01-01T14:00:00.000Z','2022-02-01T07:00:00.000Z','2024-03-01T02:00:00.000Z']
+          
             datearray=arraydates(reqarray)
             eventinfoarray=reqarray.map((x,index)=>
             {
@@ -86,13 +92,13 @@
             startthetimer(datenumber)
         )
         })
-        
+       
         let lefttimer=()=>
         {
             clock.stop()
             if(datenumber==0)
             {
-                datenumber=reqarray.length-1
+                datenumber=datearray.length-1
             }
             else
             {
@@ -103,7 +109,7 @@
         let righttimer=()=>
         {
             clock.stop()
-            if(datenumber==reqarray.length-1)
+            if(datenumber==datearray.length-1)
             {
 datenumber=0
             }
