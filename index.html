@@ -78,7 +78,7 @@
         }).catch(e=>
         {
            
-            reqarray=['2022-01-01T14:00:00.000Z','2022-02-01T07:00:00.000Z','2024-03-01T02:00:00.000Z']
+            reqarray=['2022-01-01T14:00:00.000Z','2022-02-01T07:00:00.000Z','2022-03-01T02:00:00.000Z']
           
             datearray=arraydates(reqarray)
             eventinfoarray=reqarray.map((x,index)=>
@@ -95,37 +95,46 @@
        
         let lefttimer=()=>
         {
-            clock.stop()
-            if(datenumber==0 && datearray.length>0)
+            if(datearray.length>0)
+            {
+                clock.stop()
+         
+            
+            if(datenumber==0 )
             {
                 datenumber=datearray.length-1
             }
             else
             {
-                if(datearray.length>0)
-                {
-
+               
+                 console.log("not empty ")
                 
                 datenumber=datenumber-1
-            }
+           
             }
             startthetimer(datenumber)
         }
+        }
         let righttimer=()=>
         {
-            clock.stop()
-            if(datenumber==datearray.length-1 && datearray.length>0)
+            if(datearray.length>0)
+            {
+                clock.stop()
+         
+            
+            if(datenumber==datearray.length-1)
             {
 datenumber=0
             }
             else
             {
-                if(datearray.length>0)
-                {
+                
+                    
               datenumber=datenumber+1
-                }
+               
             }
             startthetimer(datenumber)
+        }
         }
         let leftbutton = document.querySelector('#lefttimer')
         let rightbutton = document.querySelector('#righttimer')
