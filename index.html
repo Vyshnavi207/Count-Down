@@ -96,26 +96,34 @@
         let lefttimer=()=>
         {
             clock.stop()
-            if(datenumber==0)
+            if(datenumber==0 && datearray.length>0)
             {
                 datenumber=datearray.length-1
             }
             else
             {
+                if(datearray.length>0)
+                {
+
+                
                 datenumber=datenumber-1
+            }
             }
             startthetimer(datenumber)
         }
         let righttimer=()=>
         {
             clock.stop()
-            if(datenumber==datearray.length-1)
+            if(datenumber==datearray.length-1 && datearray.length>0)
             {
 datenumber=0
             }
             else
             {
+                if(datearray.length>0)
+                {
               datenumber=datenumber+1
+                }
             }
             startthetimer(datenumber)
         }
