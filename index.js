@@ -1,5 +1,6 @@
 const countdown = () =>{
-        const countdownDate = new Date('Nov 30, 2021 00:00:00').getTime();
+        const countdownDate = new Date('Nov 14, 2021 11:02:00').getTime();
+        console.log("count down date ",countdownDate)
         const now = new Date().getTime();
         const distance = countdownDate - now;
 
@@ -18,6 +19,20 @@ const countdown = () =>{
         document.getElementById("hours").innerText = countHours;
         document.getElementById("minutes").innerText = countMinutes;
         document.getElementById("seconds").innerText = countSeconds;
+        if(countDays==0 && countHours==0 && countMinutes==0 && countSeconds==0)
+        {
+            stopTimer()
+        }
         }
 }
-setInterval(countdown,1000);
+let stophandler=setInterval(countdown,1000);
+
+let stopTimer=()=>
+{
+    clearInterval(stophandler)
+    document.getElementById("days").innerText = 0;
+    document.getElementById("hours").innerText = 0;
+    document.getElementById("minutes").innerText = 0;
+    document.getElementById("seconds").innerText = 0;
+
+}

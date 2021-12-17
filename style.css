@@ -3,8 +3,10 @@
     padding: 0;
 }
 .timer{
-    width: 800px;
-    height: 250px;
+    width: 50%;
+    min-width: fit-content;
+    /* height: 250px; */
+    height:fit-content;
     margin-top: 135px;
     margin-left: 50px;
     display :flex;
@@ -14,6 +16,9 @@
     padding-top: 2em;
     padding-bottom: 7em;
     background-color: #222;
+}
+.flip {
+    margin-top: 1%;
 }
 .flip-clock-label{
     font-size: 15px;

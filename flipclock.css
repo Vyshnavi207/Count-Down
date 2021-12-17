@@ -10,6 +10,35 @@
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+#righttimer {
+
+
+color: #fff;
+
+height: 50px;
+margin-left: 80%;
+
+}
+#arrowflex{
+  display: flex;
+  flex-direction: row;
+ 
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  
+}
+#lefttimer {
+  
+
+color: #fff;
+
+height:50px;
+}
+#eventDescription {
+  color: #fff
+}
+
 
 .flip-clock-wrapper a {
   cursor: pointer;
@@ -168,6 +197,13 @@
 .flip-clock-wrapper ul.play li.flip-clock-before {
   z-index: 3; }
 
+#no-events-id {
+  color:#fff;
+ margin-top: 30px;
+ font-size: larger;
+ padding-left: 10px;
+
+}
 .flip-clock-wrapper .flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
 
 .flip-clock-wrapper ul.play li.flip-clock-active {
@@ -201,7 +237,13 @@
   top: -1.5em;
   right: -86px;
   color: white;
-  text-shadow: none; }
+  text-shadow: none;
+margin-top: 5px;
+margin-bottom: 5px;
+padding-top: 5px;
+
+z-index: 5;
+}
 
 .flip-clock-divider.minutes .flip-clock-label {
   right: -88px; }
