@@ -74,24 +74,23 @@
     </nav>
 
     <!--NavBar-->
-    <h1 style="margin: 3%; text-align: center">
-        <a style="color: white; font-size: 50px">Webinars</a>
+    <h1 style="margin: 3%; text-align: center;">
+        <a style="color: white; font-size: 50px;">Webinars</a>
     </h1>
 
-
-    <div class="ui cont" style="background: #000000; padding: 5px" id="webinar">
-        <div class="loadinCoantiner" id="articleLoader">
-            <div class="bouncer">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+    <div class="loadinCoantiner" id="webinarLoader">
+        <div class="bouncer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+    </div>
+    <div class="ui cont" style="background: #000000; padding: 5px;" id="webinar">
         <div class="ui link cards row">
             <div class="card col-sm-3">
                 <div class="image">
-                    <img src="../assets/Images/Webinars/Saiman Shetty.jpeg" style="height: 350px" />
+                    <img src="../assets/Images/Webinars/Saiman Shetty.jpeg" style="height: 350px;" />
                 </div>
                 <div class="content">
                     <div class="header">Interview with Saiman Shetty</div>
@@ -111,7 +110,7 @@
 
             <div class="card col-sm-3">
                 <div class="image">
-                    <img src="../assets/Images/Webinars/Sripad Krishnan.jpeg" style="height: 350px" />
+                    <img src="../assets/Images/Webinars/Sripad Krishnan.jpeg" style="height: 350px;" />
                 </div>
                 <div class="content">
                     <div class="header">Interview with Sripad Krishna</div>
@@ -131,7 +130,7 @@
 
             <div class="card col-sm-3">
                 <div class="image">
-                    <img src="../assets/Images/Webinars/Karthikeyan.jpeg" style="height: 350px" />
+                    <img src="../assets/Images/Webinars/Karthikeyan.jpeg" style="height: 350px;" />
                 </div>
                 <div class="content">
                     <div class="header">Interview with Karthikeyan P</div>
@@ -151,7 +150,7 @@
 
             <div class="card col-sm-3">
                 <div class="image">
-                    <img src="../assets/Images/Webinars/Sai Sandeep.jpeg" style="height: 350px" />
+                    <img src="../assets/Images/Webinars/Sai Sandeep.jpeg" style="height: 350px;" />
                 </div>
                 <div class="content">
                     <div class="header">Interview with Sai Sandeep</div>
@@ -177,13 +176,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <p style="color: white; font-size: 15px; text-align: center">
+                    <p style="color: white; font-size: 15px; text-align: center;">
                         Made with
-                        <span style="color: red; display: inline-flex; font-size: 1.8em">&hearts;</span
+                        <span style="color: red; display: inline-flex; font-size: 1.8em;">&hearts;</span
               >
               by Sensors NIT Trichy
             </p>
-            <hr align="center" style="border-color: white; width: 320px" />
+            <hr align="center" style="border-color: white; width: 320px;" />
 
             <ul
               class="social-network social-circle"
@@ -237,9 +236,9 @@
   </body>
   <script>
     $('#webinar').hide()
-    $(window).on('load', function() {
-        $('#articleLoader').hide()
-        $('#webinar').show()
+    $(window).on('load', function () {
+      $('#webinarLoader').hide()
+      $('#webinar').show()
     })
-</script>
+  </script>
 </html>
