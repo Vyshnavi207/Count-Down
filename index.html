@@ -79,7 +79,7 @@
         }).catch(e=>
         {
            
-            reqarray=['2024-03-01T14:00:00.000Z','2024-04-01T07:00:00.000Z','2023-04-01T02:00:00.000Z']
+            reqarray=[]
             eventinfoarray=reqarray.map((x,index)=>
             {
                
@@ -93,7 +93,7 @@
             datearray=arraydates(reqarray)
             
             $(document).ready(
-            startthetimer(datenumber)
+            startthetimer(datenumber,'backenddown')
         )
         })
        

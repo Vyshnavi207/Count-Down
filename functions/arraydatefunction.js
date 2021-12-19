@@ -2,8 +2,7 @@ let arraydates=(dates)=>
 {
     let array=[]
     let sortedarray=[];
-    
-  
+   
     dates= dates.filter((item)=>
     {
         if(new Date(moment(item,`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
@@ -34,8 +33,7 @@ let arraydates=(dates)=>
     })
 
     sortedarray=bblSort(array)
-
-  
+   
     eventinfoarray=sortedarray.map((item)=>
     {
       return {

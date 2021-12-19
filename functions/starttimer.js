@@ -1,8 +1,8 @@
-function startthetimer (datenumber){
+function startthetimer (datenumber,status){
  
   
  
-  if(datearray.length==0)
+  if(datearray.length==0 && status!='backenddown')
   {
  
   let div = document.createElement('div')
@@ -11,6 +11,14 @@ function startthetimer (datenumber){
   let timerbox=document.querySelector('.timer')
   timerbox.appendChild(div)
   
+  }
+  if(datearray.length==0 && status=='backenddown')
+  {
+    let div = document.createElement('div')
+  div.innerText="BACKEND DOWN SERVER ERROR"
+  div.id='no-events-id'
+  let timerbox=document.querySelector('.timer')
+  timerbox.appendChild(div)
   }
   else
   {
