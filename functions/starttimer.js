@@ -1,10 +1,10 @@
 function startthetimer (datenumber,status){
  
   
- 
+ console.log(datearray)
  if(datearray.length==0)
  {
-  if( status!='backenddown')
+  if(status!='backenddown')
   {
  
   let div = document.createElement('div')
@@ -14,7 +14,7 @@ function startthetimer (datenumber,status){
   timerbox.appendChild(div)
   
   }
-  if( status=='backenddown')
+  if(status=='backenddown')
   {
     let div = document.createElement('div')
   div.innerText="BACKEND DOWN SERVER ERROR"
@@ -23,9 +23,9 @@ function startthetimer (datenumber,status){
   timerbox.appendChild(div)
   }
  }
-  
-  else
+else
   {
+    console.log(eventinfoarray)
     var currentDate = new Date();
 
     var futureDate = new Date(datearray[datenumber]);

@@ -49,27 +49,31 @@
              if(result.data.length>0)
              {
                 
-                  reqarray=result.data.map((event)=>
+                result.data.forEach((event)=>
                   {
                     if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
                     {
                        
-                        return event['StartDate']
+                        
+                        reqarray.push(event['StartDate'])
               
                     }
                   })
-                  eventinfoarray=result.data.map((event)=>
+                  result.data.forEach((event)=>
                   {
                     if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
                     {
                        
-                        return {
+                        
+                      eventinfoarray.push({
                           title: event['EventName'],
                           description: event['Description']
-                      }
+                      })
                     }
                      
                   })
+                  console.log("array man ",eventinfoarray)
+                  console.log("req array",reqarray)
                     datearray= arraydates(reqarray)
 
                   $(document).ready(
@@ -83,6 +87,7 @@
              }
         }).catch(e=>
         {
+            console.log(e,'error')
           
             reqarray=[]
             eventinfoarray=reqarray.map((x,index)=>
