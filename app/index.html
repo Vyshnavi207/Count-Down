@@ -120,9 +120,12 @@
 			<section>
 				<div class="timer-container">
 					   <div class="timer">
-						  <p1>Events Countdown</p1>
-						  <h>Description</h>
+						  <p1 id='eventTitle'>Events Countdown</p1>
+						  <h id='eventDescription'>Description</h>
 						  <div class="clock"></div>
+						  <div id="arrowflex">  <img src='./icons/left-icon.png'  id="lefttimer"/>
+							<img src='./icons/right-icon.png' id="righttimer"/>
+						  </div>
 					   </div>
 				</div>
 			</section>
@@ -923,39 +926,105 @@
 		</script>
 
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="./js/flipclock.js"></script>
+        <script src='./functions/starttimer.js'></script>
+        <script src='./functions/arraydatefunction.js' ></script>
 		<div id="no-events-id"></div>
         <script type="text/javascript">
+		let titlediv = document.querySelector('#eventTitle')
+        let descriptiondiv = document.querySelector('#eventDescription')
         var clock;
-        $(document).ready(function(){
-            var currentDate = new Date();
-            var futureDate = new Date('Nov 21, 2021 11:48:00');
-            var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
-            
-            console.log(currentDate);
-            console.log(futureDate);
-            if(futureDate.getTime()<currentDate.getTime())
+        let datenumber=0;
+        let reqarray=[]
+        let datearray=[]
+        let eventinfoarray=[]
+     
+        axios.get('http://localhost:3000/api/events').then(result=>
+        {
+             if(result.data.length>0)
+             {
+                  result.data.forEach((event)=>
+                  {
+                    if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+                    {
+                        reqarray.push(event['StartDate'])
+                    }
+                  })
+                  result.data.forEach((event)=>
+                  {
+					if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+                    {
+					eventinfoarray.push({
+                          title: event['EventName'],
+                          description: event['Description']
+					  })
+					}
+                  })
+                  datearray= arraydates(reqarray)
+                  $(document).ready(
+                  startthetimer(datenumber)
+				  )}
+             else
+             {
+              startthetimer(datenumber)   
+             }
+        }).catch(e=>
+        {
+            reqarray=['2021-12-30T14:00:00.000Z','2024-04-01T07:00:00.000Z','2023-04-01T02:00:00.000Z']
+			// reqarray=[]
+            eventinfoarray=reqarray.map((x,index)=>
             {
-           
-            let div = document.createElement('div')
-            div.innerText="NO EVENTS FOR NOW"
-            div.id='no-events-id'
-            let timerbox=document.querySelector('.timer')
-            timerbox.appendChild(div)
-            
+              return {
+                    title:'default title ',
+                    description: 'default description '
+                    }
+            })
+            datearray=arraydates(reqarray)
+            $(document).ready(
+            startthetimer(datenumber,'backenddown')
+        )
+        })
+        let lefttimer=()=>
+        {
+            if(datearray.length>0)
+            {
+                clock.stop()
+            if(datenumber==0 )
+            {
+                datenumber=datearray.length-1
             }
             else
-            {
-                clock = $('.clock').FlipClock(difference,{
-                clockFace: 'DailyCounter',
-                countdown: true
-            });
+            {  
+                console.log("not empty ")
+                datenumber=datenumber-1
             }
-           
-        });
+            startthetimer(datenumber)
+        }}
+        let righttimer=()=>
+        {
+            if(datearray.length>0)
+            {
+                clock.stop()
+            if(datenumber==datearray.length-1)
+            {
+        datenumber=0
+            }
+            else
+            {    
+              datenumber=datenumber+1
+               
+            }
+            startthetimer(datenumber)
+        }
+        }
+        let leftbutton = document.querySelector('#lefttimer')
+        let rightbutton = document.querySelector('#righttimer')
+
+        leftbutton.addEventListener('click',lefttimer)
+        rightbutton.addEventListener('click',righttimer)
         </script>
-
-
 		<script src="./js/index.js"></script>
 		<!--Scripts-->
 	</body>

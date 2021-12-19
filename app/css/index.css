@@ -719,6 +719,29 @@ footer {
     padding-bottom: 7em;
     background-color: #222;
    }
+   #righttimer {
+    color: #fff;
+    height: 30px;
+    margin-left: 85%;
+    }
+   #arrowflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: -80px;
+    }
+    #lefttimer {   
+    color: #fff;
+    height:30px;
+    }
+    #righttimer:hover,
+    #lefttimer:hover{
+        color: #222;
+    }
+    #eventDescription {
+      color: #fff
+    }
    .flip-clock-wrapper ul{
     width: 60px;
     height: 90px;
@@ -751,34 +774,17 @@ footer {
   h{
     font-size: 1.5rem;
     margin-top: -120px;
-   } 
-  @media screen and (max-width: 500px){
-     .timer-container{
-        margin-left: -10px;
-     }
-     .timer{
-         width: 50%;
-         margin-left: 2em;
-         margin-right: 2em;
-         padding: 3em 1em;
-     }
-     .flip-clock-wrapper ul{
-         height: 80px;
-     }
-     .flip-clock-divider.minutes .flip-clock-label {
-        top: 78px;
-        right: 225px;
-     }
-     .flip-clock-wrapper ul li a div div.inn{
-         font-size: 45px;
-     }
-     p1{
-         font-size: 3rem;
-     }
-     h{
-         margin-top: -100px;
-     }
- } 
+   }
+   /* @media screen and (max-width: 722px) {
+	.flip-clock-wrapper ul{
+		width: 35px;
+        height: 55px;
+	}
+    .flip-clock-wrapper ul li a div div.inn{
+        font-size: 45px;
+        margin-top: -20px;
+    }
+   } */
 
 
 
