@@ -2,7 +2,9 @@ function startthetimer (datenumber,status){
  
   
  
-  if(datearray.length==0 && status!='backenddown')
+ if(datearray.length==0)
+ {
+  if( status!='backenddown')
   {
  
   let div = document.createElement('div')
@@ -12,7 +14,7 @@ function startthetimer (datenumber,status){
   timerbox.appendChild(div)
   
   }
-  if(datearray.length==0 && status=='backenddown')
+  if( status=='backenddown')
   {
     let div = document.createElement('div')
   div.innerText="BACKEND DOWN SERVER ERROR"
@@ -20,6 +22,8 @@ function startthetimer (datenumber,status){
   let timerbox=document.querySelector('.timer')
   timerbox.appendChild(div)
   }
+ }
+  
   else
   {
     var currentDate = new Date();
@@ -27,6 +31,7 @@ function startthetimer (datenumber,status){
     var futureDate = new Date(datearray[datenumber]);
   
     var difference = futureDate.getTime() /1000 - currentDate.getTime() /1000;
+  
     titlediv.innerHTML=eventinfoarray[datenumber]['title']
     descriptiondiv.innerHTML=eventinfoarray[datenumber]['description']
       clock = $('.clock').FlipClock(difference,{

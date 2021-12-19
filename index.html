@@ -60,10 +60,15 @@
                   })
                   eventinfoarray=result.data.map((event)=>
                   {
-                      return {
+                    if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+                    {
+                       
+                        return {
                           title: event['EventName'],
                           description: event['Description']
                       }
+                    }
+                     
                   })
                     datearray= arraydates(reqarray)
 
@@ -78,7 +83,7 @@
              }
         }).catch(e=>
         {
-           
+          
             reqarray=[]
             eventinfoarray=reqarray.map((x,index)=>
             {
@@ -111,7 +116,6 @@
             else
             {
                
-                 console.log("not empty ")
                 
                 datenumber=datenumber-1
            
