@@ -27,7 +27,7 @@ html {
 
 @media screen and (max-width: 992px) {
 	.card {
-		min-width: 96%;
+		min-width: 49%;
 	}
 }
 .ui.fullscreen.modal {
