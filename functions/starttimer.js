@@ -1,7 +1,7 @@
 function startthetimer (datenumber,status){
  
   
- console.log(datearray)
+
  if(datearray.length==0)
  {
   if(status!='backenddown')
@@ -25,7 +25,7 @@ function startthetimer (datenumber,status){
  }
 else
   {
-    console.log(eventinfoarray)
+   
     var currentDate = new Date();
 
     var futureDate = new Date(datearray[datenumber]);
