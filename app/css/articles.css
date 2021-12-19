@@ -20,16 +20,11 @@ html {
 	background: #00adf1;
 }
 
-.card { 
-	width: 500px;
+.card {
 	height: 540px;
+	min-width: 350px;
 }
 
-@media screen and (max-width: 992px) {
-	.card {
-		min-width: 49%;
-	}
-}
 .ui.fullscreen.modal {
 	top: 1%;
 	position: fixed;
