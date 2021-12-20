@@ -108,12 +108,19 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="sec-title light text-center">
-        <br />
-        <h2>Team</h2>
+    <div class="sec-title light text-center">
+      <br />
+      <h2>Team</h2>
+    </div>
+    <div class="loadinCoantiner" id="teamLoader">
+      <div class="bouncer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-
+    </div>
+    <div class="container" id="teams">
       <div class="row">
         <div class="column">
           <div class="team-6">
@@ -441,4 +448,11 @@
       </div>
     </footer>
   </body>
+  <script>
+    $('#teams').hide()
+    $(window).on('load', function () {
+      $('#teamLoader').hide()
+      $('#teams').show()
+    })
+  </script>
 </html>

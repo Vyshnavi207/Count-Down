@@ -87,6 +87,7 @@
         })
         $('.cont').dimmer('show')
       }
+
       function closeModal(ola) {
         $(ola).modal('hide')
       }
@@ -95,7 +96,6 @@
 
   <body>
     <!--NavBar-->
-
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="../index.html"
@@ -149,8 +149,17 @@
     </h1>
 
     <div class="ui cont" style="background: #000000; padding: 5px">
+      <div class="loadinCoantiner" id="articleLoader">
+        <div class="bouncer">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div
         class="ui link cards row"
+        id="articles"
         style="display: flex; justify-content: center; align-items: center"
       >
         <div class="card">
@@ -722,4 +731,11 @@
       </div>
     </footer>
   </body>
+  <script>
+    $('#articles').hide()
+    $(window).on('load', function () {
+      $('#articleLoader').hide()
+      $('#articles').show()
+    })
+  </script>
 </html>
