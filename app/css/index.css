@@ -738,6 +738,10 @@ footer {
     #lefttimer:hover{
         color: #222;
     }
+    .flip-clock-dot{
+        width: 10px;
+        height: 10px;
+    }
     #eventDescription {
       color: #fff
     }
@@ -780,35 +784,42 @@ footer {
    }
    @media screen and (max-width: 722px) {
     .timer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+       width: 100px;
+       margin-left: 10px;
+       padding-bottom: 6em;
     }
     h{
-        width: 390px;
+        font-size: 15px;
+        width: 290px;
+    }
+    #arrowflex{
+        margin-top: -90px;
     }
     #lefttimer{
-        margin-right: 40px;
-        height: 15px;
+        bottom: 10px;
+        margin-right: 25px;
+        height: 13px;
     }
     #righttimer{
-        height: 15px;
+        height: 13px;
     }
     .flip-clock-divider .flip-clock-label{
-        left: 18px;
+        left: -3px;
     }
     .flip-clock-dot{
-        margin-bottom: 47px;
+        width: 8px;
+        height: 8px;
+        margin-bottom: 49px;
     }
     .flip-clock-dot.top{
-        margin-top: 14px;
+        margin-top: 3px;
     }
 	.flip-clock-wrapper ul{
-		width: 35px;
-        height: 55px;
+		width: 22px;
+        height: 40px;
 	}
     .flip-clock-wrapper ul li a div div.inn{
-        font-size: 45px;
+        font-size: 27px;
         text-align: center;
         display: flex;
         align-items: center;
