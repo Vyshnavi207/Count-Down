@@ -74,24 +74,11 @@ html {
 }
 
 .covid-tech {
-    height: 400px;
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .covid {
     height: auto;
     background-color: rgb(26, 23, 23);
-}
-
-@media only screen and (max-width: 900px) {
-    .d-flex {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .covid-tech {
-        height: 300px;
-        width: 300px;
-        margin: 10px;
-    }
 }
