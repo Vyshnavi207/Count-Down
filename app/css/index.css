@@ -126,6 +126,7 @@ section {
 .speaker-block .inner-box {
   position: relative;
 }
+
 .contact-us .inner-box {
   position: relative;
   height: 400px;
@@ -140,9 +141,9 @@ section {
   background-color: rgba(255, 255, 255, 0.15);
   overflow: auto;
 }
+
 .speaker-block .image-box {
   position: relative;
-
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.15);
   overflow: auto;
@@ -234,9 +235,11 @@ section {
 .speaker-block .social-links li a:hover {
   color: #fac201;
 }
+
 .contact-us .speaker-block-mobile {
   display: none;
 }
+
 .speaker-block-mobile {
   display: none;
 }
@@ -459,7 +462,6 @@ nav .nav-link:hover {
   .about .para2 {
     font-size: 15px;
   }
-
   .about .para1 {
     font-size: 15px;
   }
@@ -620,12 +622,14 @@ ul.social-network li {
     50% { opacity: 0.5; }
     100% { opacity: 1.0; }
 } */
+
 .lsls {
   -webkit-animation: glowing 1500ms infinite;
   -moz-animation: glowing 1500ms infinite;
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
 }
+
 @-webkit-keyframes glowing {
   0% {
     background-color: #00ffff;
@@ -721,4 +725,54 @@ ul.social-network li {
 
 #sponsors img {
   transition: all 0.4s ease-in-out;
+}
+
+.bouncer {
+  display: flex;
+  justify-content: space-around;
+  left: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+.bouncer div {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  animation: bouncer 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+}
+
+.bouncer div:nth-child(2) {
+  animation-delay: 0.1s;
+  opacity: 0.8;
+}
+
+.bouncer div:nth-child(3) {
+  animation-delay: 0.2s;
+  opacity: 0.6;
+}
+
+.bouncer div:nth-child(4) {
+  animation-delay: 0.3s;
+  opacity: 0.4;
+}
+
+@keyframes bouncer {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+.loadinCoantiner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 345px;
+  top: 50%;
+  margin-top: 150px;
 }

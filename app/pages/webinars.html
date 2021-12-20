@@ -66,6 +66,7 @@
         })
         $('.cont').dimmer('show')
       }
+
       function closeModal(ola) {
         $(ola).modal('hide')
       }
@@ -120,7 +121,15 @@
       <a style="color: white; font-size: 50px">Webinars</a>
     </h1>
 
-    <div class="ui cont" style="background: #000000; padding: 5px">
+    <div class="loadinCoantiner" id="webinarLoader">
+      <div class="bouncer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="ui cont" style="background: #000000; padding: 5px" id="webinar">
       <div
         class="ui link cards row"
         style="display: flex; justify-content: center; align-items: center"
@@ -296,4 +305,11 @@
       </div>
     </footer>
   </body>
+  <script>
+    $('#webinar').hide()
+    $(window).on('load', function () {
+      $('#webinarLoader').hide()
+      $('#webinar').show()
+    })
+  </script>
 </html>
