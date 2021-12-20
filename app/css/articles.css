@@ -22,14 +22,9 @@ html {
 
 .card {
   height: 540px;
-  min-width: 32%;
+  min-width: 350px;
 }
 
-@media screen and (max-width: 992px) {
-  .card {
-    min-width: 96%;
-  }
-}
 .ui.fullscreen.modal {
   top: 1%;
   position: fixed;
