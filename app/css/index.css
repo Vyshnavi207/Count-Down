@@ -779,13 +779,40 @@ footer {
     margin-top: -120px;
    }
    @media screen and (max-width: 722px) {
+    .timer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h{
+        width: 390px;
+    }
+    #lefttimer{
+        margin-right: 40px;
+        height: 15px;
+    }
+    #righttimer{
+        height: 15px;
+    }
+    .flip-clock-divider .flip-clock-label{
+        left: 18px;
+    }
+    .flip-clock-dot{
+        margin-bottom: 47px;
+    }
+    .flip-clock-dot.top{
+        margin-top: 14px;
+    }
 	.flip-clock-wrapper ul{
 		width: 35px;
         height: 55px;
 	}
     .flip-clock-wrapper ul li a div div.inn{
         font-size: 45px;
-        /* margin-top: -20px; */
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
    }
 
