@@ -21,8 +21,8 @@ html {
 }
 
 .card {
-	height: 540px;
-	min-width: 350px;
+  height: 540px;
+  min-width: 350px;
 }
 
 .ui.fullscreen.modal {
