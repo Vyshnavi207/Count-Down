@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const async = require('async')
+const nodemailer = require('nodemailer')
 const Events = require("../../database/models/Events");
 const Users = require("../../database/models/Users");
 const { jwtVerify } = require("../../middlewares/jwt");
@@ -53,19 +55,56 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
   try {
     const event = await Events.findById(req.params.eventID);
     const user = await Users.findOne({
-      id: req.params.id,
-      Events: { $nin: event },
+      _id: req.params.id,
+      Events: {$nin:req.params.eventID}
     });
     if (user) {
       event.Count = event.Count + 1;
       const updatedEvent = await event.save();
       user.Events.push(event);
       const updatedUser = await user.save();
+
+      async.waterfall(
+        [
+          function (done) {
+            let smtpTransport = nodemailer.createTransport({
+              service: process.env.EMAIL_SERVICE,
+              auth: {
+                user: process.env.VERI_EMAIL,
+                pass: process.env.VERI_PASSWORD,
+              },
+            });
+            let mailOptions = {
+              to: user.Email,
+              from: process.env.VERI_EMAIL,
+              subject: `Sensors 2022 ${updatedEvent.EventName} Registration`,
+              text:
+                "You have successfully registered for the following event\n\n"+
+                `${updatedEvent.EventName} to be conducted on ${updatedEvent.StartDate}`
+            };
+            smtpTransport.sendMail(mailOptions, function (err) {
+              console.log("mail sent", user.Email);
+              // req.flash(
+              //   "success",
+              //   "An e-mail has been sent to " +
+              //   user.email +
+              //   " with further instructions."
+              // );
+              done(err, "done");
+            });
+          },
+        ],
+        function (err) {
+          if (err) return next(err);
+          res.send("Error in sending mail")
+        }
+      );
+
       res.json({
         updatedUser,
         updatedEvent,
       });
-    } else res.status(400).json("user aldready registered");
+    } else res.status(400).json("user already registered");
   } catch (e) {
     res.status(400).send(e);
   }
