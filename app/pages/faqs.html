@@ -1,237 +1,369 @@
-
-  <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
   <head>
-    <title>Sensors'19</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <title>Sensors'21</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../css/materialize.min.css"
+      media="screen,projection"
+    />
     <style type="text/css">
-     @font-face{
-       font-family:'Lato-Italic';
-       src: url('fonts/Lato-Italic.ttf');
-     }
-     @font-face{
-       font-family:'Lato-Regular';
-       src: url('fonts/Lato-Regular.ttf');
-     }
-     @font-face{
-       font-family:'Lato-Light';
-       src: url('fonts/Lato-Light.ttf');
-     }
-     @font-face{
-       font-family:'Lato-LightItalic';
-       src: url('fonts/Lato-LightItalic.ttf');
-     }
-     @font-face{
-       font-family:'Lato-Hairline';
-       src: url('fonts/Lato-Hairline.ttf');
-     }
-     body{
-      background-color: black;
-    }
-    .header{
-      margin-top: 0px;
-      width: 100%;
-      background-color: black !important;
-      color:white !important;
-      height:100px;
-      font-size: 30px;
-      padding-top: 10px;
-    }
-    #footer {
-      position: relative;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      padding: 1rem;
-      font-size: 20px;
-      text-align: center;
-    }
-    #menu {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      color: white;
-    }
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      background-color: #444341;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      font-family: sans-serif;
-    }
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #f1f1f1;
-      display: block;
-      transition: 0.3s;
-      font-family: sans-serif;
-    }
-    .sidenav a:hover {
-      color: black;
-      font-family: sans-serif;
-    }
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    #image {
-      width:150px;
-      height:48px;
-    }
-    @media screen and (max-height: 450px) {
+      @font-face {
+        font-family: 'Lato-Italic';
+        src: url('fonts/Lato-Italic.ttf');
+      }
+
+      @font-face {
+        font-family: 'Lato-Regular';
+        src: url('fonts/Lato-Regular.ttf');
+      }
+
+      @font-face {
+        font-family: 'Lato-Light';
+        src: url('fonts/Lato-Light.ttf');
+      }
+
+      @font-face {
+        font-family: 'Lato-LightItalic';
+        src: url('fonts/Lato-LightItalic.ttf');
+      }
+
+      @font-face {
+        font-family: 'Lato-Hairline';
+        src: url('fonts/Lato-Hairline.ttf');
+      }
+
+      body {
+        background-color: black;
+      }
+
+      .header {
+        margin-top: 0px;
+        width: 100%;
+        background-color: black !important;
+        color: white !important;
+        height: 100px;
+        font-size: 30px;
+        padding-top: 10px;
+      }
+
+      #footer {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      #menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+      }
+
       .sidenav {
-        padding-top: 15px;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #444341;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        font-family: sans-serif;
       }
+
       .sidenav a {
-        font-size: 18px;}
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #f1f1f1;
+        display: block;
+        transition: 0.3s;
+        font-family: sans-serif;
       }
-      .title{
+
+      .sidenav a:hover {
+        color: black;
+        font-family: sans-serif;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      #image {
+        width: 150px;
+        height: 48px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+
+      .title {
         text-align: center;
         font-family: Lato-Light;
-        color:white !important;
+        color: white !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
       }
-      .container{
+
+      .container {
         margin-top: -30px;
         font-family: Lato-Regular;
       }
+
       @media screen and (max-width: 480px) {
-        .header{
+        .header {
           font-size: 20px;
           padding-top: 20px;
         }
-        .ham{
+
+        .ham {
           padding-left: 5px;
         }
+
         #image {
-          width:100px;
-          height:32px;
+          width: 100px;
+          height: 32px;
         }
+
         #footer {
           font-size: 13px;
         }
       }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
     <div class="header">
       <div class="title">
-        <a href="../css/index.html"><img src="../assets/logos/Logo.png" width="120" height="50"></a> | F A Q S
+        <a href="../index.html"
+          ><img src="../assets/logos/Logo.png" width="auto" height="50"
+        /></a>
+        &nbsp;| F A Q S
       </div>
     </div>
-   
+    <div class="ui cont" style="background: #000000; padding: 5px">
+      <div class="loadinCoantiner" id="articleLoader">
+        <div class="bouncer">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="container" id="faqcontainer">
+        <div class="row">
+          <div class="col s12 m12 l12" style="min-height: 90%">
+            <div class="card-panel grey lighten-3" style="min-height: 90%">
+              <ul
+                class="collapsible"
+                data-collapsible="accordion"
+                style="min-height: 90%"
+              >
+                <li>
+                  <div class="collapsible-header">How to reach NIT Trichy?</div>
+                  <div class="collapsible-body">
+                    <span>
+                      (i) NIT-Trichy is located about 22 km from Tiruchirappalli
+                      Junction / Central Bus stand on the Trichy-Thanjavur
+                      Highway.<br />
+                      (ii) The simplest and most economical way to reach
+                      NIT-Trichy is by bus. Any city bus at Tiruchirappalli
+                      Junction will take you to the central bus stand.<br />
+                      (iii) Upon reaching the central bus stand board
+                      "Thanjavur" bound mofussil or route bus. The journey time
+                      from Trichy will be around 40 minutes.<br />
+                      (iv) The executive way of reaching NIT-Trichy will be
+                      hiring a taxi. Taxis may charge around Rs.400/-<br />
+                      (v) Trichy is connected by road to Chennai (320 km) and to
+                      all major towns in South India by regular bus services.
+                      Tiruchirapalli is an important junction on the Southern
+                      Railway. It connects Chennai, Thanjavur, Madurai,
+                      Tuticorin, Tirupati, Rameswaram, Bangalore, Coimbatore,
+                      Cochin and Mangalore.<br />
+                      (vi) Chennai to Trichy 322 kms by road .Approx travel time
+                      by bus 6-7 hrs and 5hrs by car.<br />
+                      (vii) Bangalore to Trichy 343 Kms By road. Approx Travel
+                      time by road 7-8 hrs by bus<br />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    Are on-spot registrations available for workshops?
+                  </div>
+                  <div class="collapsible-body">
+                    <span
+                      >On-spot registrations are available but we strongly
+                      encourage you to register online as the seats for
+                      workshops are filled based on first-come first-serve
+                      basis.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    Will certificates be awarded for the workshops?
+                  </div>
+                  <div class="collapsible-body">
+                    <span
+                      >Yes, participation certificates will be awarded for every
+                      workshop you attend.</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    Will accomodation be provided?
+                  </div>
+                  <div class="collapsible-body">
+                    <span
+                      >Yes, accomodation will be provided within campus for the
+                      participating students.</span
+                    >
+                  </div>
+                </li>
 
-    <div class="container">
-     <div class="row">
-      <div class="col s12 m12 l12" style="min-height: 90%">
-        <div class="card-panel grey lighten-3" style="min-height: 90%">
+                <li>
+                  <div class="collapsible-header">Accommodation Queries</div>
+                  <div class="collapsible-body">
+                    <span>
+                      (i) Accommodation fee per person per day is Rs 150.This
+                      does not include food expenses but you can make use of the
+                      canteen/food stalls/mess available in our campus premise
+                      during SENSORS at your own expense.
+                      <br />
+                      (ii) Accommodation can be availed from 17th October 6 PM
+                      to 19th October 6 PM.
+                      <br />
+                      (iii) Smoking is strictly prohibited inside the campus
+                      premises. Possession and consumption of alcohol and
+                      narcotics and other illegal activities in any form is
+                      strictly prohibited. Any violation of the mentioned rules
+                      will be reported to your college and the case will be
+                      severely dealt with.
+                      <br />
+                      (iv) No matter how short the duration of stay is, he/she
+                      will be charged the equivalent of a day's stay.
+                      <br />
+                      (v) Female participants are strictly requested to reach
+                      the campus before 8:30 pm on the day of arrival. Girls
+                      have to follow the curfew system that prevails in the
+                      college strictly (9pm).
+                      <br />
+                      (vi) It is not advisable to keep valuable items along with
+                      the luggage in the room. SENSORS 2019 will not be
+                      responsible for any loss or damage to your property.The
+                      Organization will not take responsibility for any form of
+                      damage to person or property during the course of
+                      Sensors'19.
+                      <br />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    What is the fee for registration?
+                  </div>
+                  <div class="collapsible-body">
+                    <span
+                      >It is mandatory for all participating students to
+                      register at the PR desk for a fee of Rs.150</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    What are the documents that I am supposed to bring?
+                  </div>
+                  <div class="collapsible-body">
+                    <span
+                      >Participating students are expected to bring valid
+                      identification i.e. college identification.</span
+                    >
+                  </div>
+                </li>
 
-         <ul class="collapsible" data-collapsible="accordion" style="min-height: 90%">
-          <li>
-            <div class="collapsible-header">How to reach NIT Trichy?</div>
-            <div class="collapsible-body"><span>
-              (i) NIT-Trichy is located about 22 km from Tiruchirappalli Junction / Central Bus stand on the Trichy-Thanjavur Highway.<br>
-              (ii) The simplest and most economical way to reach NIT-Trichy is by bus. Any city bus at Tiruchirappalli Junction will take you to the central bus stand.<br>
-              (iii) Upon reaching the central bus stand board "Thanjavur" bound mofussil or route bus. The journey time from Trichy will be around 40 minutes.<br>
-              (iv) The executive way of reaching NIT-Trichy will be hiring a taxi. Taxis may charge around Rs.400/-<br>
-              (v) Trichy is connected by road to Chennai (320 km) and to all major towns in South India by regular bus services. Tiruchirapalli is an important junction on the Southern Railway. It connects Chennai, Thanjavur, Madurai, Tuticorin, Tirupati, Rameswaram, Bangalore, Coimbatore, Cochin and Mangalore.<br>
-              (vi) Chennai to Trichy 322 kms by road .Approx travel time by bus 6-7 hrs and 5hrs by car.<br>
-              (vii) Bangalore to Trichy 343 Kms By road. Approx Travel time by road 7-8 hrs by bus<br>
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Are on-spot registrations available for workshops?</div>
-            <div class="collapsible-body"><span>On-spot registrations are available but we strongly encourage you to register online as the seats for workshops are filled based on first-come first-serve basis.</span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Will certificates be awarded for the workshops?</div>
-            <div class="collapsible-body"><span>Yes, participation certificates will be awarded for every workshop you attend.</span></div>
-          </li>
-          <li>
-                <div class="collapsible-header">Will accomodation be provided?</div>
-                <div class="collapsible-body"><span>Yes, accomodation will be provided within campus for the participating students.</span></div>
-              </li>
-
-          <li>
-            <div class="collapsible-header">Accommodation Queries</div>
-            <div class="collapsible-body"><span>
-                (i)  Accommodation fee per person per day is Rs 150.This does not include food expenses but you can make use of the canteen/food stalls/mess available in our campus premise during SENSORS at your own expense.
-                <br>
-                (ii) Accommodation can be availed from 17th October 6 PM  to 19th October 6 PM.
-                <br>
-                (iii) Smoking is strictly prohibited inside the campus premises. Possession and consumption of alcohol and narcotics and other illegal activities in any form is strictly prohibited. Any violation of the mentioned rules will be reported to your college and the case will be severely dealt with.
-                <br>
-                (iv) No matter how short the duration of stay is, he/she will be charged the equivalent of a day's stay.
-                <br>
-                (v) Female participants are strictly requested to reach the campus before 8:30 pm on the day of arrival. Girls have to follow the curfew system that prevails in the college strictly (9pm).
-                <br>
-                (vi) It is not advisable to keep valuable items along with the luggage in the room. SENSORS 2019 will not be responsible for any loss or damage to your property.The Organization will not take responsibility for any form of damage to person or property during the course of Sensors'19.
-                <br>
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">What is the fee for registration?</div>
-            <div class="collapsible-body"><span>It is mandatory for all participating students to register at the PR desk for a fee of Rs.150<span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">What are the documents that I am supposed to bring?</div>
-            <div class="collapsible-body"><span>Participating students are expected to bring valid identification i.e. college identification.</span></div>
-          </li>
-
-          <li>
-                <div class="collapsible-header">Workshop Details</div>
-                <div class="collapsible-body"><span>
-                      (i) Sensors'19 workshops will happen on 18th and 19th of October ,2019. <br>
-                      (ii) Sensors'19 conducts 6 workshops , one person can attend a maximum of  4 workshops (i.e 2 workshops per day).  <br>
-                      (iii)  All departments students are eligible to attend workshops. <br>
-                      (iv) There are no prerequisites required for attending workshop as we will be covering everything from very basic stuff.   <br>
-                      (v) Each workshop session will be around 3 hours. <br>
-                      (vi) New allowances based on request of participants  <br>
-                                     * If you register for a single workshop --> Rs.300 per workshop <br>
-                                     * If you register for two workshops --> Rs.250 per workshop <br>
-                                     * If you register for three or more workshops --> Rs.200 per workshop <br>
-                        
-                    </span></div>
-              </li>
-
-
-
-
-
-
-  
-
-
-        </ul>
-       <b>If you have other queries  feel free to contact us.</b>
+                <li>
+                  <div class="collapsible-header">Workshop Details</div>
+                  <div class="collapsible-body">
+                    <span>
+                      (i) Sensors'19 workshops will happen on 18th and 19th of
+                      October ,2019. <br />
+                      (ii) Sensors'19 conducts 6 workshops , one person can
+                      attend a maximum of 4 workshops (i.e 2 workshops per day).
+                      <br />
+                      (iii) All departments students are eligible to attend
+                      workshops. <br />
+                      (iv) There are no prerequisites required for attending
+                      workshop as we will be covering everything from very basic
+                      stuff. <br />
+                      (v) Each workshop session will be around 3 hours. <br />
+                      (vi) New allowances based on request of participants
+                      <br />
+                      * If you register for a single workshop --> Rs.300 per
+                      workshop <br />
+                      * If you register for two workshops --> Rs.250 per
+                      workshop
+                      <br />
+                      * If you register for three or more workshops --> Rs.200
+                      per workshop <br />
+                    </span>
+                  </div>
+                </li>
+              </ul>
+              <b
+                >If you have other queries feel free to
+                <a href="../index.html#contacts">contact</a> us.</b
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+  ></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById('mySidenav').style.width = '250px'
+    }
 
-</div><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../js/materialize.min.js"></script>
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-</script>
-</body>
+    function closeNav() {
+      document.getElementById('mySidenav').style.width = '0'
+    }
+  </script>
 </html>
