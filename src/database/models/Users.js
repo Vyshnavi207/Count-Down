@@ -7,6 +7,12 @@ const userSchema = new mongoose.Schema({
   College: String,
   MobileNo: Number,
   Year: String,
+  verifyToken: String,
+  verifyTokenExpires: Date,
+  verified: {
+    type:Boolean,
+    default:false
+  },
   Events: [
     {
       type: mongoose.Schema.Types.ObjectId,
