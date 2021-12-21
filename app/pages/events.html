@@ -66,6 +66,7 @@
       href="../css/style.css"
     />
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/events.css" />
     <script>
       function openModal(ola, j) {
         var i
@@ -455,7 +456,7 @@
       </div>
     </div>
     <div id="events">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center flex-wrap">
         <img
           class="riddle-month"
           src="../assets/Images/Events/Riddle Month/Intro.jpeg"
@@ -468,27 +469,39 @@
       <h3 style="margin: 1%; text-align: center">
         <a style="color: white; font-size: 30px">Themes</a>
       </h3>
-      <div class="d-flex justify-content-center">
-        <img
-          class="riddle-month"
-          src="../assets/Images/Events/Riddle Month/Theme_Space.jpeg"
-        />
-        <img
-          class="riddle-month"
-          src="../assets/Images/Events/Riddle Month/THEME2.jpg"
-        />
+      <div class="image-slider">
+        <ul id="slider">
+          <li>
+            <img
+              src="../assets/Images/Events/Riddle Month/Theme_Space.jpeg"
+              height="600px"
+              width="600px"
+            />
+          </li>
+          <li>
+            <img
+              src="../assets/Images/Events/Riddle Month/THEME2.jpg"
+              height="600px"
+              width="600px"
+            />
+          </li>
+          <li>
+            <img
+              src="../assets/Images/Events/Riddle Month/Sensors_Gadgets.png"
+              height="600px"
+              width="600px"
+            />
+          </li>
+          <li>
+            <img
+              src="../assets/Images/Events/Riddle Month/THEME.jpg"
+              height="600px"
+              width="600px"
+            />
+          </li>
+        </ul>
       </div>
-      <div class="d-flex justify-content-center">
-        <img
-          class="riddle-month"
-          src="../assets/Images/Events/Riddle Month/Sensors_Gadgets.png"
-        />
-        <img
-          class="riddle-month"
-          src="../assets/Images/Events/Riddle Month/THEME.jpg"
-        />
-      </div>
-      <h3 style="margin: 1%; text-align: center">
+      <!-- <h3 style="margin: 1%; text-align: center">
         <a style="color: white; font-size: 30px">Winners</a>
       </h3>
       <div class="d-flex justify-content-center">
@@ -496,7 +509,7 @@
           class="riddle-month"
           src="../assets/Images/Events/Riddle Month/Leaderboard_final.jpg"
         />
-      </div>
+      </div> -->
     </div>
     <footer class="mainfooter" role="contentinfo">
       <div class="container">
@@ -566,5 +579,24 @@
       $('#articleLoader').hide()
       $('#events').show()
     })
+
+    // Slide every slideDelay seconds
+    const slideDelay = 3000
+
+    const dynamicSlider = document.getElementById('slider')
+
+    var curSlide = 0
+    window.setInterval(() => {
+      curSlide++
+      if (curSlide === dynamicSlider.childElementCount) {
+        curSlide = 0
+      }
+
+      // Actual slide
+      dynamicSlider.firstElementChild.style.setProperty(
+        'margin-left',
+        '-' + curSlide + '01%',
+      )
+    }, slideDelay)
   </script>
 </html>
