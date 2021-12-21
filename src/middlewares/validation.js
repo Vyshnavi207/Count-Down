@@ -8,7 +8,7 @@ const registerValidation = (data) => {
     MobileNo: joi.number().min(9).required(),
     Department: joi.string().required(),
     College: joi.string().required(),
-    Year: joi.number().min(3).max(5).required()
+    Year: joi.number().min(2018).max(2026).required()
   })
   return schema.validate(data)
 }
