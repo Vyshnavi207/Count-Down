@@ -129,6 +129,10 @@
         text-align: center;
         font-family: Lato-Light;
         color: white !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
       }
 
       .container {
@@ -163,9 +167,9 @@
     <div class="header">
       <div class="title">
         <a href="../index.html"
-          ><img src="../assets/logos/Logo.png" width="120" height="50"
+          ><img src="../assets/logos/Logo.png" width="auto" height="50"
         /></a>
-        | F A Q S
+        &nbsp;| F A Q S
       </div>
     </div>
     <div class="ui cont" style="background: #000000; padding: 5px">
@@ -338,7 +342,10 @@
                   </div>
                 </li>
               </ul>
-              <b>If you have other queries feel free to contact us.</b>
+              <b
+                >If you have other queries feel free to
+                <a href="../index.html#contacts">contact</a> us.</b
+              >
             </div>
           </div>
         </div>
