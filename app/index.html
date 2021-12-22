@@ -955,8 +955,8 @@
 					if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
                     {
 					eventinfoarray.push({
-                          title: event['EventName'],
-                          description: event['Description']
+                          title: event['EventName'].slice(0,45)+" ...",
+                          description: event['Description'].slice(0,450)+" ..."
 					  })
 					}
                   })
