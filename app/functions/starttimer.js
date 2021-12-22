@@ -1,6 +1,6 @@
 function startthetimer(datenumber, status) {
-  if (datearray.length == 0) {
-    if (status != "backenddown") {
+  
+    if (status == "noevents") {
       let div = document.createElement("div");
       div.innerText = "NO EVENTS FOR NOW";
       div.id = "no-events-id";
@@ -14,7 +14,8 @@ function startthetimer(datenumber, status) {
       let timerbox = document.querySelector(".timer");
       timerbox.appendChild(div);
     }
-  } else {
+    
+   if(datearray.length!=0 && !status) {
     var currentDate = new Date();
     var futureDate = new Date(datearray[datenumber]);
     var difference = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
