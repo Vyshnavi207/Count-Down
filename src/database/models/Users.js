@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   Email: String,
   Department: String,
   College: String,
-  MobileNo: Number,
+  MobileNo: String,
   Year: String,
   verifyToken: String,
   verifyTokenExpires: Date,

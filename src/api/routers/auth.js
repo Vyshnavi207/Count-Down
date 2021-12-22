@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
     })
     try {
       const savedUser = await user.save()
-      res.send({ id: savedUser._id, name: savedUser.Name, email: savedUser.Email })
+      res.redirect(`${process.env.CLIENT_URL}/app/pages/login.html`);
     } catch (err) {
       res.status(400).send(err)
     }
@@ -72,18 +72,19 @@ router.post('/login', async (req, res) => {
     }
 
     if(!user.verified){
-      return res.status(400).send("Please verify your email account");
+      return res.redirect("verify_email");
     }
 
     // // JWT Verification
     const token = createJWTtoken(user)
-
-    res.header('auth-token', token).send(token)
+    console.log("Logged in Successfully");
+    // localStorage.setItem("token",token);
+    res.header('auth-token', token).send(token).redirect(`${process.env.CLIENT_URL}/app/index.html`);
   }
 })
 
 router.get("/verify_email",(req,res)=>{
-  res.send("Verify Email");
+  res.redirect(`${process.env.CLIENT_URL}/app/pages/email_verification.html`)
 });
 
 router.post("/verify_email", (req, res) => {
@@ -162,7 +163,7 @@ router.get("/verify_email/:token", async function (req, res) {
   user.verifyTokenExpires = null;
   user.verified = true;
   const savedUser = await user.save();
-  return res.json(savedUser);
+  return res.redirect(`${process.env.CLIENT_URL}/app/pages/login.html`);
 });
 
 
