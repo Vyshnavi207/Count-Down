@@ -128,6 +128,7 @@
 				</div>
 			</div>
 
+		<div class="aboutpage">
 			<a name="about"></a>
 			<div class="about" data-aos="fade">
 				<div class="container">
@@ -164,6 +165,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 
 			<a name="workshops"></a>
 			<div class="container">
@@ -953,10 +955,10 @@
                   result.data.forEach((event)=>
                   {
 					if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
-                    {
+                    {//450
 					eventinfoarray.push({
-                          title: event['EventName'],
-                          description: event['Description']
+                          title: event['EventName'].slice(0,40)+" ...",
+                          description: event['Description'].slice(0,350)+" ..."
 					  })
 					}
                   })
@@ -966,7 +968,7 @@
 				  )}
              else
              {
-              startthetimer(datenumber)   
+              startthetimer(datenumber,'noevents')   
              }
         }).catch(e=>
         {
@@ -975,7 +977,7 @@
             eventinfoarray=reqarray.map((x,index)=>
             {
               return {
-                    title:'default title loremmmmmmmmmmmmmmmm ',
+                    title:'default title loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm ',
                     description: 'default description loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'
                     }
             })
