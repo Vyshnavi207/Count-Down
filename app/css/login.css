@@ -41,7 +41,7 @@ input[type=password],select {
     	font-size: 25px;
 }
 
-input[type=submit] {
+input[type=submit],button.submit {
     	background-color: white;
     	color: black;
     	text-align: center;
