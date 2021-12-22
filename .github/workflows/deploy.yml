@@ -2,9 +2,9 @@ name: Deployment Script
 
 on:
   push:
-    branches: [ sensors22-dev ]
+    branches: [sensors22-dev]
   pull_request:
-    branches: [ sensors22-dev ]
+    branches: [sensors22-dev]
 
   workflow_dispatch:
 
@@ -12,13 +12,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
