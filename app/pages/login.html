@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css"/>
+    <a class="navbar-brand" href="#">
+    <img src="../assets/logos/Logo.png" width="100" height="35" style="margin:10px 165px" >
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </a>
+</head>
+<body>
+	<div class="container">
+        	<div class="title">Sensors-Login</div>
+		<br><br><br>
+		<form>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="Email" class="username" placeholder="Email ID" required>
+			<br><br>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" class="password" placeholder="Password" required>
+			<br><br>
+			<button class="submit" id="submit-btn">Submit</button>
+			<!-- <input type="submit" value="Sign In" class="submit" id="submit-btn"> -->
+			<p>Don't have an account? Register <a href="./register.html">here</a></p>
+		</form>
+	</div>
+
+	<script>
+		const sendData = async()=>{
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+			let axiosConfig = {
+				headers: {
+					'Content-Type': 'application/json;charset=UTF-8',
+					"Access-Control-Allow-Origin": "*",
+				}
+			};
+			const res = await axios.post("http://localhost:3000/api/user/login",{
+				Email:email,
+				password:password
+			})
+			localStorage.setItem("token",res.data);
+			window.location.replace("/app/index.html")
+		}
+	    let submitBtn = document.getElementById("submit-btn");
+		submitBtn.addEventListener("click",(e)=>{
+			e.preventDefault();
+			sendData();
+		});
+	</script>
+</body>
+</html>
