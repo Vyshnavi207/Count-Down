@@ -1,773 +1,536 @@
 <html>
-  <head>
-    <title>Sensors '21</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="../assets/logos/sensorsLogo.jpg"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/articles.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-      href="../css/style-inline.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-      href="../css/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-      href="../css/style.css"
-    />
-    <link rel="stylesheet" href="../css/index.css" />
-    <script>
-      function openModal(ola, j) {
-        var i
-        for (i = 1; i < 10; i++) {
-          if (i != j) {
-            olaa = '.ui.fullscreen.modal.' + i
-            $(olaa).modal('hide')
-          }
+<head>
+  <title>Sensors '21</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="shortcut icon" type="image/png" href="../assets/logos/sensorsLogo.jpg" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/articles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../css/style-inline.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../css/animate.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <script>
+    function openModal(ola, j) {
+      var i
+      for (i = 1; i < 10; i++) {
+        if (i != j) {
+          olaa = '.ui.fullscreen.modal.' + i
+          $(olaa).modal('hide')
         }
-        $(ola).modal('show')
-        $(ola).modal({
-          closable: true,
-        })
-        $('.cont').dimmer('show')
       }
+      $(ola).modal('show')
+      $(ola).modal({
+        closable: true,
+      })
+      $('.cont').dimmer('show')
+    }
 
-      function closeModal(ola) {
-        $(ola).modal('hide')
-      }
-    </script>
-  </head>
+    function closeModal(ola) {
+      $(ola).modal('hide')
+    }
+  </script>
+</head>
 
-  <body>
-    <!--NavBar-->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="../index.html"
-          ><img src="../assets/logos/Logo.png" width="120" height="120"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/webinars.html">Webinars</a>
-            </li>
+<body>
+  <!--NavBar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html"><img src="../assets/logos/Logo.png" width="120" height="120" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/webinars.html">Webinars</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/articles.html">Articles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/events.html">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/covid_tech.html">Covid-Tech</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/team.html">Team</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/articles.html">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/covid_tech.html">Covid-Tech</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/team.html">Team</a>
+          </li>
 
-	<body>
-		<!--NavBar-->
-
-		<nav class="navbar navbar-expand-lg">
-			<div class="container">
-				<a class="navbar-brand" href="../index.html"
-					><img src="../assets/logos/Logo.png" width="120" height="120"
-				/></a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/webinars.html">Webinars</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/articles.html">Articles</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/events.html">Events</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/winners.html">Winners</a>
-						</li>	
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/covid_tech.html">Covid-Tech</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../pages/team.html">Team</a>
-						</li>
-
-						<!-- <li class="nav-item">
+          <!-- <li class="nav-item">
         <button class="btn btn-primary lsls"  onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSchrsoiCrbTgEHONPzNBHcOrl5NK0mGYmFOw7J-n3gexPPERw/viewform');" >
                           <a class="regBtn" >
                               Register
                           </a>
               </button>
               </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--NavBar-->
+
+  <h1 class="main-title">Articles</h1>
+
+  <div class="ui cont" style="background: #000000; padding: 5px">
+    <div class="loadinCoantiner" id="articleLoader">
+      <div class="bouncer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="ui link cards row" id="articles" style="display: flex; justify-content: center; align-items: center">
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/Gate_Transcript.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">Interview with Sai Sandeep on GATE</div>
+          <div class="description">
+            Sai Sandeep secured AIR Rank 1 in Gate 2020 in Instrumentation.
+            Click on the link below to read more on his preparation strategy
+            for succeeding at GATE and the career paths available after
+            writing it.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/interview-with-sai-sandeep-on-gate-7633ca4a3563"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/interntalk_insta_post_5.jpg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — IUSSTF-Viterbi Program</div>
+          <div class="description">
+            In this article, Shashvat talks about his internship at USC
+            Viterbi School of Engineering, LA, California. He explains how he
+            secured this internship and his experience.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/ice-intern-talk-iusstf-viterbi-program-631aa6e99a1b"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/interntalk_insta_post_4.jpg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            ICE Intern Talk — Reliance Industries Limited
+          </div>
+          <div class="description">
+            Avinash talks about his experience working as an intern in
+            Reliance Industries Ltd(RIL) and how to get the internship.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/ice-intern-talk-reliance-industries-limited-7246d90f420f"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/interntalk_insta_post_3.jpg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — RWTH-Aachen</div>
+          <div class="description">
+            This article is about the journey of Sanjay C in his pursuit of
+            obtaining the DAAD-WISE scholarship, for his internship in the
+            field of Biomedical Signal Processing.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/my-name-is-sanjay-chandrashekar-and-i-pursued-an-internship-at-rwth-aachen-university-this-summer-6da5a59d8036"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/interntalk_insta_post_2.jpg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — Oracle</div>
+          <div class="description">
+            This article is on Oracle, a reputed company in the domain of
+            software and a regular employer for students of the ICE
+            Department.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/ice-intern-talk-oracle-cc7ef5e8aeaa" target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/interntalk_insta_post_1.jpg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — Texas Instruments</div>
+          <div class="description">
+            This article is on Texas Instruments, a famous company in the
+            domain of digital electronics and a regular employer for students
+            of the ICE department.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/sivasangaran-texas-instruments-8ec276a99b6d" target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/sensors-planetary.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">Miles Away from this Earth</div>
+          <div class="description">
+            Dreaming to build your house in some other planet? Click the link
+            below and join us as we journey through the Solar System analysing
+            the pros and cons of living on Mars, Venus and the Moon.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/miles-away-from-this-earth-9b257aa3e86c" target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/hyperloop.png" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            Avishkar Hyperloop — An inspiring tale of grit and tenacity
+          </div>
+          <div class="description">
+            Knowing the peaks and valleys of the journey to build a Hyperloop
+            pod with the IITM team.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/avishkar-hyperloop-an-inspiring-story-of-grit-and-tenacity-204c0ec1b84d"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/ironman.png" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">THE GUIDE TO IRON MAN’S PERSONAL SECRETS</div>
+          <div class="description">“Tastes like coconut… and metal”</div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/the-guide-to-iron-mans-personal-secrets-b6a8f5257c1e"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/NUS.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            ICE Intern Talk — National University of Singapore
+          </div>
+          <div class="description">
+            Jeya Maria Jose pursued his internship at the National University
+            of Singapore this summer in the booming field of Artificial
+            Intelligence. He is a tech geek who spends his free time exploring
+            the latest technology preferments in the world.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/the-intern-featurette-4-jeya-maria-jose-national-university-of-singapore-1820893ea145"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/NTU.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            ICE Intern Talk — Nanyang Technological University
+          </div>
+          <div class="description">
+            Amrutha Sampath, a final year undergraduate student belonging to
+            the ICE Department is a multi-faceted personality who has been
+            very much focused on working towards the holistic personality
+            development.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/the-intern-featurette-3-amrutha-sampath-nanyang-technological-university-946e9477dd4e"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/Western_digital.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — Western Digital</div>
+          <div class="description">
+            Venkatesh is a very amicable, jovial and a fun-loving person. His
+            witty nature and his intellect in sports is something which his
+            peers rave about. He is an avid DOTA enthusiast who spends most of
+            his free-time playing the same.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/the-intern-featurette-2-v-g-venkatesh-western-digital-a8e973d0cdc8"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/Nvidia.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">ICE Intern Talk — NVIDIA</div>
+          <div class="description">
+            M Anand is an ardent Electronics enthusiast from the Department of
+            Instrumentation and Control Engineering batch of 2015–2019, who
+            has innate passion for research in various domains such as
+            Robotics, Deep Learning and Computer Vision.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/the-intern-featurette-1-m-anand-nvidia-172a0a2837c4"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/placements_Vs_highers.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">Placements vs. Higher studies</div>
+          <div class="description">
+            I, Venkatesh, would like to share my journey over the past 3.5
+            years regarding acquiring technical skills, some of the wrong
+            decisions that I took and the steps that I undertook to take up
+            the next big thing in life.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.datadriveninvestor.com/placements-vs-higher-studies-a-personal-take-on-career-choices-f5aa3282bb47"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/Code_quest.png" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">The Code Quest</div>
+          <div class="description">
+            A comprehensive guide for getting placed in your dream software
+            company.
+          </div>
+        </div>
+        <a class="header"
+          href="https://becominghuman.ai/the-code-quest-a-comprehensive-guide-for-getting-placed-in-your-dream-software-company-r-3d631afc48a2"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/brain_waves.png" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            How were brainwaves visualized by researchers?
+          </div>
+          <div class="description">
+            The brain is considered as the CPU of the human body. It makes
+            sense out of our interactions with the outside world.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/brainwaves-a-deeper-insight-3623d646cd8" target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/look_behind_the_curtain.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">When you look behind the curtains….</div>
+          <div class="description">
+            We are taught to devour knowledge, appreciate reason and worship
+            science. We are encouraged to follow the path to higher
+            understanding from the beginning and till end of time (literally).
+            To not to leave one stone unturned.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/when-you-look-behind-the-curtains-db00f3412afc"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/wearable_technology.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            The wane of Wearable technology — a sneak peek
+          </div>
+          <div class="description">
+            We’ve always fantasized about wearable tech. We only need to look
+            at the entertainment industry to recognize our love affair with
+            them.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/the-wane-of-wearable-technology-a-sneak-peek-9b196578e2fe"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/time_crystals.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">Time Crystals — A space-time odyssey</div>
+          <div class="description">
+            This article will present to you, a crystal-clear introduction to
+            Time Crystals. It won’t take you much time to read this, so give
+            this a shot!
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/time-crystals-a-space-time-odyssey-4ed57eaa87cd"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/thanos.png" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">
+            WAS THANOS RIGHT ABOUT HIS TAKE ON POPULATION AND TITAN’S
+            DOWNFALL?
+          </div>
+          <div class="description">
+            Well, we have an answer for the questions in this article where we
+            tend to bridge technology with human nature.
+          </div>
+        </div>
+        <a class="header"
+          href="https://medium.com/sensors/was-thanos-right-about-his-take-on-population-and-titans-downfall-a-scientific-analysis-880b9d5a232d"
+          target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="../assets/Images/Medium images/fitting_into_the_industry.jpeg" style="height: 350px" />
+        </div>
+        <div class="content">
+          <div class="header">Fitting into the Industry</div>
+          <div class="description">
+            The scope of Instrumentation and Control Engineering is widespread
+            around various industries. India has become a hub for
+            manufacturing industries to set up plants for their global
+            businesses.
+          </div>
+        </div>
+        <a class="header" href="https://medium.com/sensors/fitting-into-the-industry-40bc13efbe70" target="_blank">
+          <div class="ui bottom attached button">Read More</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mainfooter" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <p style="color: white; font-size: 15px; text-align: center">
+            Made with
+            <span style="color: red; display: inline-flex; font-size: 1.8em">&hearts;</span>
+            by Sensors NIT Trichy
+          </p>
+          <hr align="center" style="border-color: white; width: 320px" />
+
+          <ul class="social-network social-circle" style="
+                display: flex !important;
+                justify-content: center !important;
+              ">
+            <li>
+              <a href="https://www.facebook.com/sensorsNITTrichy/" target="_blank" class="icoFacebook"
+                title="Facebook"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://in.linkedin.com/company/sensors-nitt" target="_blank" class="icoLinkedin"
+                title="Linkedin"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sensorsnitt/" target="_blank" class="icoFacebook" title="Instagram"><i
+                  class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/officialsensors" target="_blank" class="icoLinkedin" title="Twitter"><i
+                  class="fa fa-twitter"></i></a>
+            </li>
           </ul>
         </div>
       </div>
-    </nav>
-    <!--NavBar-->
-
-    <h1 class="main-title">Articles</h1>
-
-    <div class="ui cont" style="background: #000000; padding: 5px">
-      <div class="loadinCoantiner" id="articleLoader">
-        <div class="bouncer">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div
-        class="ui link cards row"
-        id="articles"
-        style="display: flex; justify-content: center; align-items: center"
-      >
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/Gate_Transcript.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">Interview with Sai Sandeep on GATE</div>
-            <div class="description">
-              Sai Sandeep secured AIR Rank 1 in Gate 2020 in Instrumentation.
-              Click on the link below to read more on his preparation strategy
-              for succeeding at GATE and the career paths available after
-              writing it.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/interview-with-sai-sandeep-on-gate-7633ca4a3563"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/interntalk_insta_post_5.jpg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — IUSSTF-Viterbi Program</div>
-            <div class="description">
-              In this article, Shashvat talks about his internship at USC
-              Viterbi School of Engineering, LA, California. He explains how he
-              secured this internship and his experience.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/ice-intern-talk-iusstf-viterbi-program-631aa6e99a1b"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/interntalk_insta_post_4.jpg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              ICE Intern Talk — Reliance Industries Limited
-            </div>
-            <div class="description">
-              Avinash talks about his experience working as an intern in
-              Reliance Industries Ltd(RIL) and how to get the internship.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/ice-intern-talk-reliance-industries-limited-7246d90f420f"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/interntalk_insta_post_3.jpg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — RWTH-Aachen</div>
-            <div class="description">
-              This article is about the journey of Sanjay C in his pursuit of
-              obtaining the DAAD-WISE scholarship, for his internship in the
-              field of Biomedical Signal Processing.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/my-name-is-sanjay-chandrashekar-and-i-pursued-an-internship-at-rwth-aachen-university-this-summer-6da5a59d8036"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/interntalk_insta_post_2.jpg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — Oracle</div>
-            <div class="description">
-              This article is on Oracle, a reputed company in the domain of
-              software and a regular employer for students of the ICE
-              Department.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/ice-intern-talk-oracle-cc7ef5e8aeaa"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/interntalk_insta_post_1.jpg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — Texas Instruments</div>
-            <div class="description">
-              This article is on Texas Instruments, a famous company in the
-              domain of digital electronics and a regular employer for students
-              of the ICE department.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/sivasangaran-texas-instruments-8ec276a99b6d"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/sensors-planetary.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">Miles Away from this Earth</div>
-            <div class="description">
-              Dreaming to build your house in some other planet? Click the link
-              below and join us as we journey through the Solar System analysing
-              the pros and cons of living on Mars, Venus and the Moon.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/miles-away-from-this-earth-9b257aa3e86c"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/hyperloop.png"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              Avishkar Hyperloop — An inspiring tale of grit and tenacity
-            </div>
-            <div class="description">
-              Knowing the peaks and valleys of the journey to build a Hyperloop
-              pod with the IITM team.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/avishkar-hyperloop-an-inspiring-story-of-grit-and-tenacity-204c0ec1b84d"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/ironman.png"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">THE GUIDE TO IRON MAN’S PERSONAL SECRETS</div>
-            <div class="description">“Tastes like coconut… and metal”</div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-guide-to-iron-mans-personal-secrets-b6a8f5257c1e"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/NUS.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              ICE Intern Talk — National University of Singapore
-            </div>
-            <div class="description">
-              Jeya Maria Jose pursued his internship at the National University
-              of Singapore this summer in the booming field of Artificial
-              Intelligence. He is a tech geek who spends his free time exploring
-              the latest technology preferments in the world.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-intern-featurette-4-jeya-maria-jose-national-university-of-singapore-1820893ea145"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/NTU.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              ICE Intern Talk — Nanyang Technological University
-            </div>
-            <div class="description">
-              Amrutha Sampath, a final year undergraduate student belonging to
-              the ICE Department is a multi-faceted personality who has been
-              very much focused on working towards the holistic personality
-              development.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-intern-featurette-3-amrutha-sampath-nanyang-technological-university-946e9477dd4e"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/Western_digital.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — Western Digital</div>
-            <div class="description">
-              Venkatesh is a very amicable, jovial and a fun-loving person. His
-              witty nature and his intellect in sports is something which his
-              peers rave about. He is an avid DOTA enthusiast who spends most of
-              his free-time playing the same.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-intern-featurette-2-v-g-venkatesh-western-digital-a8e973d0cdc8"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/Nvidia.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">ICE Intern Talk — NVIDIA</div>
-            <div class="description">
-              M Anand is an ardent Electronics enthusiast from the Department of
-              Instrumentation and Control Engineering batch of 2015–2019, who
-              has innate passion for research in various domains such as
-              Robotics, Deep Learning and Computer Vision.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-intern-featurette-1-m-anand-nvidia-172a0a2837c4"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/placements_Vs_highers.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">Placements vs. Higher studies</div>
-            <div class="description">
-              I, Venkatesh, would like to share my journey over the past 3.5
-              years regarding acquiring technical skills, some of the wrong
-              decisions that I took and the steps that I undertook to take up
-              the next big thing in life.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.datadriveninvestor.com/placements-vs-higher-studies-a-personal-take-on-career-choices-f5aa3282bb47"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/Code_quest.png"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">The Code Quest</div>
-            <div class="description">
-              A comprehensive guide for getting placed in your dream software
-              company.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://becominghuman.ai/the-code-quest-a-comprehensive-guide-for-getting-placed-in-your-dream-software-company-r-3d631afc48a2"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/brain_waves.png"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              How were brainwaves visualized by researchers?
-            </div>
-            <div class="description">
-              The brain is considered as the CPU of the human body. It makes
-              sense out of our interactions with the outside world.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/brainwaves-a-deeper-insight-3623d646cd8"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/look_behind_the_curtain.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">When you look behind the curtains….</div>
-            <div class="description">
-              We are taught to devour knowledge, appreciate reason and worship
-              science. We are encouraged to follow the path to higher
-              understanding from the beginning and till end of time (literally).
-              To not to leave one stone unturned.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/when-you-look-behind-the-curtains-db00f3412afc"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/wearable_technology.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              The wane of Wearable technology — a sneak peek
-            </div>
-            <div class="description">
-              We’ve always fantasized about wearable tech. We only need to look
-              at the entertainment industry to recognize our love affair with
-              them.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/the-wane-of-wearable-technology-a-sneak-peek-9b196578e2fe"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/time_crystals.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">Time Crystals — A space-time odyssey</div>
-            <div class="description">
-              This article will present to you, a crystal-clear introduction to
-              Time Crystals. It won’t take you much time to read this, so give
-              this a shot!
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/time-crystals-a-space-time-odyssey-4ed57eaa87cd"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/thanos.png"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">
-              WAS THANOS RIGHT ABOUT HIS TAKE ON POPULATION AND TITAN’S
-              DOWNFALL?
-            </div>
-            <div class="description">
-              Well, we have an answer for the questions in this article where we
-              tend to bridge technology with human nature.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/was-thanos-right-about-his-take-on-population-and-titans-downfall-a-scientific-analysis-880b9d5a232d"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              src="../assets/Images/Medium images/fitting_into_the_industry.jpeg"
-              style="height: 350px"
-            />
-          </div>
-          <div class="content">
-            <div class="header">Fitting into the Industry</div>
-            <div class="description">
-              The scope of Instrumentation and Control Engineering is widespread
-              around various industries. India has become a hub for
-              manufacturing industries to set up plants for their global
-              businesses.
-            </div>
-          </div>
-          <a
-            class="header"
-            href="https://medium.com/sensors/fitting-into-the-industry-40bc13efbe70"
-            target="_blank"
-          >
-            <div class="ui bottom attached button">Read More</div>
-          </a>
-        </div>
-      </div>
     </div>
+  </footer>
+</body>
+<script>
+  $('#articles').hide()
+  $(window).on('load', function () {
+    $('#articleLoader').hide()
+    $('#articles').show()
+  })
+</script>
 
-    <footer class="mainfooter" role="contentinfo">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <p style="color: white; font-size: 15px; text-align: center">
-              Made with
-              <span style="color: red; display: inline-flex; font-size: 1.8em"
-                >&hearts;</span
-              >
-              by Sensors NIT Trichy
-            </p>
-            <hr align="center" style="border-color: white; width: 320px" />
-
-            <ul
-              class="social-network social-circle"
-              style="
-                display: flex !important;
-                justify-content: center !important;
-              "
-            >
-              <li>
-                <a
-                  href="https://www.facebook.com/sensorsNITTrichy/"
-                  target="_blank"
-                  class="icoFacebook"
-                  title="Facebook"
-                  ><i class="fa fa-facebook"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://in.linkedin.com/company/sensors-nitt"
-                  target="_blank"
-                  class="icoLinkedin"
-                  title="Linkedin"
-                  ><i class="fa fa-linkedin"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/sensorsnitt/"
-                  target="_blank"
-                  class="icoFacebook"
-                  title="Instagram"
-                  ><i class="fa fa-instagram"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/officialsensors"
-                  target="_blank"
-                  class="icoLinkedin"
-                  title="Twitter"
-                  ><i class="fa fa-twitter"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <script>
-    $('#articles').hide()
-    $(window).on('load', function () {
-      $('#articleLoader').hide()
-      $('#articles').show()
-    })
-  </script>
 </html>
