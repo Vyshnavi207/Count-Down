@@ -953,10 +953,10 @@
                   result.data.forEach((event)=>
                   {
 					if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
-                    {
+                    {//450
 					eventinfoarray.push({
-                          title: event['EventName'].slice(0,45)+" ...",
-                          description: event['Description'].slice(0,450)+" ..."
+                          title: event['EventName'].slice(0,40)+" ...",
+                          description: event['Description'].slice(0,350)+" ..."
 					  })
 					}
                   })
