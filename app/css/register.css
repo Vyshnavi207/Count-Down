@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b42);
+}
+.title {   
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+label {
+    font-size: 15px;
+}
+.container {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    float: right;
+}
+.formContainer {
+    width: 70%;
+    height: max-content;
+    margin: auto;
+    
+}
+.container .formContainer .form-groupleft {
+    float: left;
+}
+.container .formContainer .form-groupright {
+    float: right;
+}
+input[type=text],select {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 10px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;    
+}
+input[type=password],select {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;   
+    font-size: 15px;
+}
+
+input[type=submit] {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px 30px 20px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 400px 575px;
+}
+
+.submit {
+    display: block;
+    font-size: 30px;
+    text-decoration: none; 
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.submit:hover {
+    color: #111;
+    background: #00FFFF;
+    /* box-shadow: 0 0 50px #39ff14; */
+}
+
