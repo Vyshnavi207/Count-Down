@@ -28,6 +28,9 @@ const jwtVerify = async (req, res, next) => {
       }
       if (!mongoose.Types.ObjectId.isValid(decoded.id)) { return res.status(400).json({ message: 'Invalid userId' }) }
       const user = await User.findById(mongoose.Types.ObjectId(decoded.id));
+      if(!user.verified){
+        return res.redirect("/verify_email");
+      }
       req.user = user
       return next()
     })
