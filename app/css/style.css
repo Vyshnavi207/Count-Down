@@ -151,8 +151,9 @@ footer {
 }
 
 footer p {
-  padding-top: 20px;
-  font-size: 1500px;
+    overflow-y: hidden;	
+    padding-top: 20px;
+    font-size:1500px;
 }
 .social-icon {
   padding: 0;

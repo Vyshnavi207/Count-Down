@@ -35,6 +35,7 @@ body {
   }
 }
 
+
 section {
   width: 100vw;
   height: 100vh;
@@ -694,6 +695,8 @@ ul.social-network li {
   padding: 60px 0;
 }
 
+<<<<<<< HEAD
+=======
 #sponsors .sponsors-wrap {
   border-top: 1px solid black;
   border-left: 1px solid black;
@@ -782,3 +785,4 @@ ul.social-network li {
   text-align: center;
   font-size: 45px;
 }
+>>>>>>> 1560ba0402b5181ab56b5219548f6d8107f4ef3e
