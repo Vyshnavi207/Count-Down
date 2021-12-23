@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const async = require('async')
-const nodemailer = require('nodemailer')
+const async = require("async");
+const nodemailer = require("nodemailer");
 const Events = require("../../database/models/Events");
 const Users = require("../../database/models/Users");
 const { jwtVerify } = require("../../middlewares/jwt");
+require("dotenv").config({ path: "./src/env/.env" });
 
 // Get All Events
 router.get("/", async (req, res) => {
@@ -13,11 +14,11 @@ router.get("/", async (req, res) => {
 });
 
 // Adding an Event
-router.post("/add", jwtVerify, async (req, res) => {
+router.post("/add", async (req, res) => {
   try {
-    const { Type, EventName, Count, Description, Picture, StartDate, EndDate } =
-      req.body;
-    const event = new Events({
+    const Admin_Password = process.env.ADMIN_PASS;
+    const Admin_User = process.env.ADMIN_USER;
+    const {
       Type,
       EventName,
       Count,
@@ -25,9 +26,23 @@ router.post("/add", jwtVerify, async (req, res) => {
       Picture,
       StartDate,
       EndDate,
-    });
-    const savedEvent = await event.save();
-    res.send(savedEvent);
+      Password,
+      User,
+    } = req.body;
+    //console.log(User, Password);
+    if (Admin_Password === Password && Admin_User === User) {
+      const event = new Events({
+        Type,
+        EventName,
+        Count,
+        Description,
+        Picture,
+        StartDate,
+        EndDate,
+      });
+      const savedEvent = await event.save();
+      res.send(savedEvent);
+    } else res.status(400).send({ Error: "Cannot be authorized" });
   } catch (e) {
     res.status(400).send(e);
   }
@@ -56,7 +71,7 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
     const event = await Events.findById(req.params.eventID);
     const user = await Users.findOne({
       _id: req.params.id,
-      Events: {$nin:req.params.eventID}
+      Events: { $nin: req.params.eventID },
     });
     if (user) {
       event.Count = event.Count + 1;
@@ -79,8 +94,8 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
               from: process.env.VERI_EMAIL,
               subject: `Sensors 2022 ${updatedEvent.EventName} Registration`,
               text:
-                "You have successfully registered for the following event\n\n"+
-                `${updatedEvent.EventName} to be conducted on ${updatedEvent.StartDate}`
+                "You have successfully registered for the following event\n\n" +
+                `${updatedEvent.EventName} to be conducted on ${updatedEvent.StartDate}`,
             };
             smtpTransport.sendMail(mailOptions, function (err) {
               console.log("mail sent", user.Email);
@@ -96,7 +111,7 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
         ],
         function (err) {
           if (err) return next(err);
-          res.send("Error in sending mail")
+          res.send("Error in sending mail");
         }
       );
 
