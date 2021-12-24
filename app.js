@@ -13,13 +13,13 @@ require('./src/database/setup.js') // change setup.js to samples.js to create du
 
 // require('./src/database/samples.js');
 const apiRouter = require('./src/api/api')
-
+const indexRouter = require('./src/api/routers/index');
 app.set('view engine', 'ejs')
 
 const path = require('path')
-app.use(express.static(path.join(__dirname, '/public')))
-app.use(express.static(path.join(__dirname, '/static')))
-
+app.use(express.static(path.join(__dirname, 'src/public')))
+// app.use(express.static(path.join(__dirname, 'src/static')))
+app.set('views', path.join(__dirname, 'src/views'));
 app.use(cors())
 
 app.use(function (req, res, next) {
@@ -40,5 +40,5 @@ app.use(bodyParser.json())
 // app.use(express.json())
 
 app.use('/api', apiRouter)
-
+app.use('/',indexRouter);
 app.listen(port, () => console.log('server started at port ' + port))

@@ -30,6 +30,7 @@
     "async": "^3.2.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
     "mongodb": "^4.1.4",
     "nodemailer": "^6.7.2"
   }

@@ -1,0 +1,139 @@
+<%-include("partials/header.ejs")%>
+<h1 class="main-title">Webinars</h1>
+
+<div class="loadinCoantiner" id="webinarLoader">
+    <div class="bouncer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="ui cont" style="background: #000000; padding: 5px" id="webinar">
+    <div class="ui link cards row" style="display: flex; justify-content: center; align-items: center">
+        <div class="card">
+            <div class="image">
+                <img src="/assets/Images/Webinars/Saiman Shetty.jpeg" style="height: 350px" />
+            </div>
+            <div class="content">
+                <div class="header">Interview with Saiman Shetty</div>
+                <div class="description">
+                    Webinar on Career & Product development with Saiman Shetty.<br />
+                    Saiman Shetty is an entrepreneur, engineer, and much more. Aside
+                    from founding several companies, he is currently a Powertrain
+                    Engineer at Tesla and Technical Manager at Lyft.
+                </div>
+            </div>
+            <!-- <a
+            class="header"
+            href="https://medium.com/sensors/interview-with-sai-sandeep-on-gate-7633ca4a3563"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="/assets/Images/Webinars/Sripad Krishnan.jpeg" style="height: 350px" />
+            </div>
+            <div class="content">
+                <div class="header">Interview with Sripad Krishna</div>
+                <div class="description">
+                    Webinar on Artificial Intelligence and Entrepreneurship.<br />
+                    Dr. Sripad Krishna Devalla, an alumni, who is the co-founder of
+                    Origin Health, focusing on prenatal care through the power of Deep
+                    Learning. He completed his Ph.D. from Biomedical Engineering, NUS.
+                    He will guide us through his life experiences and help us in
+                    developing a strong profile.
+                </div>
+            </div>
+            <!-- <a
+            class="header"
+            href="https://medium.com/sensors/ice-intern-talk-iusstf-viterbi-program-631aa6e99a1b"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="/assets/Images/Webinars/Karthikeyan.jpeg" style="height: 350px" />
+            </div>
+            <div class="content">
+                <div class="header">Interview with Karthikeyan P</div>
+                <div class="description">
+                    Webinar on latest trend in Automation Industries. Karthikeyan P is
+                    an alumnus, social entrepreneur, control engineer, marketing
+                    specialist, and much more. He joined ABB as a Control & Automation
+                    Engineer, and now he is a Bids and Proposal Cluster Lead, using
+                    his expertise of Process Automation to pitch and negotiate sales
+                    with various industries in the Asia and Africa region.
+                </div>
+            </div>
+            <!-- <a
+            class="header"
+            href="https://medium.com/sensors/ice-intern-talk-reliance-industries-limited-7246d90f420f"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="/assets/Images/Webinars/Sai Sandeep.jpeg" style="height: 350px" />
+            </div>
+            <div class="content">
+                <div class="header">Interview with Sai Sandeep</div>
+                <div class="description">
+                    Webinar on preparation strategy for succeeding at GATE and the
+                    career paths that are accessible after achieving a high rank in
+                    GATE. <br />Sai Sandeep secured AIR Rank 1 in Gate 2020 in
+                    Instrumentation. He belongs to ICE batch of 2016-2020.
+                </div>
+            </div>
+            <!-- <a
+            class="header"
+            href="https://medium.com/sensors/my-name-is-sanjay-chandrashekar-and-i-pursued-an-internship-at-rwth-aachen-university-this-summer-6da5a59d8036"
+            target=".blank"
+          >
+            <div class="ui bottom attached button">Read More</div>
+          </a> -->
+        </div>
+    </div>
+</div>
+
+<script>
+    const linkTag = document.createElement("link");
+    linkTag.rel = 'stylesheet';
+    linkTag.href = 'css/articles.css';
+    document.head.appendChild(linkTag);
+    window.onload = ()=>{
+        $('#webinar').hide()
+        $(window).on('load', function () {
+            $('#webinarLoader').hide()
+            $('#webinar').show()
+        })
+        function openModal(ola, j) {
+            var i
+            for (i = 1; i < 10; i++) {
+                if (i != j) {
+                    olaa = '.ui.fullscreen.modal.' + i
+                    $(olaa).modal('hide')
+                }
+            }
+            $(ola).modal('show')
+            $(ola).modal({
+                closable: true,
+            })
+            $('.cont').dimmer('show')
+        }
+
+        function closeModal(ola) {
+            $(ola).modal('hide')
+        }
+    }
+</script>
+<%-include("partials/footer.ejs")%>
