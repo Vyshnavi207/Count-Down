@@ -1,0 +1,50 @@
+<%-include("partials/header.ejs")%>
+<div class="container">
+    <br>
+    <div class="title">Sensors-Registration</div>
+    <div class="formContainer">
+        <form action="/api/user/register" method="post">
+            <div class="form-groupleft">
+                <br>
+                <label for="name"> Name</label>
+                <input id="name" type="text" name="Name" class="name" placeholder="Your name..*" required>
+                <br>
+                <label for="email">Email</label>
+                <input id="email" type="text" name="Email" class="email" placeholder="Your Email..*" required>
+                <br>
+                <label for="password">Password </label>
+                <input id="password" type="password" name="password" class="password" placeholder="Your Password..*"
+                    required>
+                <br>
+                <label for="phone">Phone No</label>
+                <input id="mobno" type="text" maxlength="14" pattern="[+][0-9]{2}[-][0-9]{10}" name="MobileNo"
+                    class="phoneno" placeholder="+91-1234567890*" required>
+
+            </div>
+            <br>
+            <div class="form-groupright">
+                <label for="department">Department</label>
+                <input id="dept" type="text" name="Department" class="department" placeholder="Your Department..*"
+                    required>
+                <br>
+                <label for="year">Year of Graduation</label>
+                <input id="year" type="text" name="Year" maxlength="4" pattern="[2][0-9]{3}" class="year"
+                    placeholder="Your Year of Graduation*" required>
+                <br>
+                <label for="clg">College</label>
+                <input id="clg" type="text" name="College" class="college" placeholder="Your College...*" required>
+                <p>Already have an account? Login <a href="/login">here</a></p>
+            </div>
+            <button type="submit" class="submit" id="submit-btn">Sign Up</button>
+        </form>
+    </div>
+    <!-- <br><br> -->
+</div>
+
+<script>
+    const linkTag = document.createElement("link");
+    linkTag.rel = 'stylesheet';
+    linkTag.href = 'css/register.css';
+    document.head.appendChild(linkTag);
+</script>
+<%-include("partials/footer.ejs")%>

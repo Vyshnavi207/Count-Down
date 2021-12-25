@@ -1,0 +1,14 @@
+<%-include("partials/header.ejs")%>
+<div class="container my-5">
+    <div class="alert alert-success" style="display: none;" id="flash-container" role="alert"></div>
+    <form action="/api/user/verify_email" method="post">
+        <h5>Enter Email Address for Verification</h5>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%-include("partials/footer.ejs")%>

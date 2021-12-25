@@ -1,0 +1,24 @@
+<%-include("partials/header.ejs")%>
+<div class="container">
+    <div class="title">Sensors-Login</div>
+    <br>
+    <form action="/api/user/login" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" class="username" placeholder="Email ID" required>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="password" placeholder="Password" required>
+        <br><br>
+        <button type="submit" class="submit" id="submit-btn">Submit</button>
+        <!-- <input type="submit" value="Sign In" class="submit" id="submit-btn"> -->
+        <p>Don't have an account? Register <a href="/register">here</a></p>
+    </form>
+</div>
+
+<script>
+    const linkTag = document.createElement("link");
+    linkTag.rel = 'stylesheet';
+    linkTag.href = 'css/login.css';
+    document.head.appendChild(linkTag);
+</script>
+<%-include("partials/footer.ejs")%>

@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
     })
     try {
       const savedUser = await user.save()
-      res.redirect(`${process.env.CLIENT_URL}/app/pages/login.html`);
+      res.redirect(`/login`);
     } catch (err) {
       res.status(400).send(err)
     }
@@ -72,14 +72,14 @@ router.post('/login', async (req, res) => {
     }
 
     if(!user.verified){
-      return res.redirect("verify_email");
+      return res.redirect("/verify_email");
     }
 
     // // JWT Verification
     const token = createJWTtoken(user)
     console.log("Logged in Successfully");
-    // localStorage.setItem("token",token);
-    res.header('auth-token', token).send(token).redirect(`${process.env.CLIENT_URL}/app/index.html`);
+    res.header('auth-token', token);
+    res.redirect("/");
   }
 })
 
@@ -141,6 +141,7 @@ router.post("/verify_email", (req, res) => {
           //   user.email +
           //   " with further instructions."
           // );
+          res.redirect("/login");
           done(err, "done");
         });
       },
@@ -163,7 +164,7 @@ router.get("/verify_email/:token", async function (req, res) {
   user.verifyTokenExpires = null;
   user.verified = true;
   const savedUser = await user.save();
-  return res.redirect(`${process.env.CLIENT_URL}/app/pages/login.html`);
+  return res.redirect("/login");
 });
 
 
