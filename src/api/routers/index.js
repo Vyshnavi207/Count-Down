@@ -40,4 +40,8 @@ router.get("/events",async (req, res) => {
     // console.log(req.user);
     res.render("events",{events});
 });
+
+router.get("/team",(req, res)=>{
+    res.render("team");
+})
 module.exports = router;
