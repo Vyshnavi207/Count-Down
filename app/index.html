@@ -3903,6 +3903,7 @@
 										event["Description"].length > 350
 											? event["Description"].slice(0, 350) + " ..."
 											: event["Description"],
+                      enddate:event['EndDate']
 								})
 							}
 						})
@@ -3925,7 +3926,9 @@
 								"default title loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm ",
 							description:
 								"default description loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
-						}
+						enddate:"2025-04-01T07:00:00.000Z"
+
+              }
 					})
 					datearray = arraydates(reqarray)
 					$(document).ready(startthetimer(datenumber, "backenddown"))
