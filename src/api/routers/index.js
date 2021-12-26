@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const {jwtVerify} = require("../../middlewares/jwt");
+const Events = require("../../database/models/Events");
 router.get("/",(req,res)=>{
+    console.log(req.user);
     res.render("index");
 });
 
@@ -32,4 +34,10 @@ router.get("/register",(req,res)=>{
 router.get("/verify_email",(req,res)=>{
     res.render("email_verification");
 })
+
+router.get("/events",async (req, res) => {
+    const events = await Events.find();
+    // console.log(req.user);
+    res.render("events",{events});
+});
 module.exports = router;

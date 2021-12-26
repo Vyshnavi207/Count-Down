@@ -111,17 +111,23 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
         ],
         function (err) {
           if (err) return next(err);
-          res.send("Error in sending mail");
+          res.json({
+            status:0,
+            msg:"Error in sending mail"
+          })
         }
       );
 
       res.json({
-        updatedUser,
-        updatedEvent,
+        status:1,
+        msg:"Success"
       });
-    } else res.status(400).json("user already registered");
+    } else res.status(200).json({
+      status:0,
+      msg: "user already registered"
+    });
   } catch (e) {
-    res.status(400).send(e);
+    res.status(200).send(e);
   }
 });
 

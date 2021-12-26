@@ -15,16 +15,15 @@ const createJWTtoken = (user) => {
 const jwtVerify = async (req, res, next) => {
   const token = req.header('auth-token')
   try {
-    if (!token) return res.status(401).json({ message: 'No token' })
+    if (!token) return res.status(200).json({ status:0 ,message: 'No token' })
     // console.log(process.env.TOKEN_SECRET)
-    // console.log(token)
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decoded) => {
       req.jwt_payload = decoded
       if (err) {
         console.log(err.message)
         return res
-          .status(403)
-          .json({ message: 'Invalid token or token expired' })
+          .status(200)
+          .json({ status:0, message: 'Invalid token or token expired' })
       }
       if (!mongoose.Types.ObjectId.isValid(decoded.id)) { return res.status(400).json({ message: 'Invalid userId' }) }
       const user = await User.findById(mongoose.Types.ObjectId(decoded.id));

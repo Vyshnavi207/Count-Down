@@ -1,0 +1,173 @@
+<%-include("partials/header.ejs")%>
+<div class="container">
+    <div class="row vc_row-has-fill">
+        <div class="col-sm-6">
+            <div class="title-subtile-holder" data-aos="flip-up">
+                <h1 class="section-title light_title no-margin">
+                    MATLAB Workshop from Mathworks
+                </h1>
+                <div class="spacer_10"></div>
+                <div class="clearfix"></div>
+                <div class="section-border green_border no-margin"></div>
+                <div class="spacer_10"></div>
+                <div style="padding-top: 1%" class="section-subtitle light_subtitle">
+                    Online simulations in engineering and science have become very popular. MATLAB is one of the great examples
+                    in recent times. To make your hands dirty with this software, NIT Trichy is organizing a workshop called
+                    ‘Accelerating the Pace of Engineering
+                    and Science with MATLAB.’ The workshop will be held on 5th January, 2022, spanning throughout the day in two
+                    sessions. There are a lot of takeaways from this workshop: Participants will be provided with a certificate
+                    from the
+                    Sensors team. It will be guaranteed that the participants will have a practical knowledge on the functioning
+                    and usages of MATLAB. The workshop does not have any entry fee.
+                    <hr />
+                    <h5 style="color: antiquewhite">
+                        <strong><em>Dates : Jan 5th , 2022.</em></strong>
+                    </h5>
+                    <h5 style="color: antiquewhite">
+                        <strong><em>Two sessions morning and one session afternoon .</em></strong>
+                    </h5>
+        
+                    <h5 style="color: antiquewhite">
+                        <strong><em>Fees : Completely free</em></strong>
+                    </h5>
+                    <hr />
+                    <h1 style="font-weight: Bold">Take away:</h1>
+                    i) Participants will be provided with a Certificate from Sensors.<br /> ii) Practical knowledge of MATLAB
+                    through hands on sessions. <br />iii) Start from scratch to build extensive knowledge on matlab and some its
+                    major toolboxes.
+                    <hr />
+                    <a class="btn btn-primary btn-lg" href="https://forms.gle/ZVwkM2uoJL2uePk28" target="_blank"
+                        role="button">Register</a>
+                </div>
+            </div>
+            <div class="spacer_80"></div>
+        </div>
+        <div class="col-sm-6">
+            <figure class="fadeInRight wow">
+                <div class="spacer_40"></div>
+                <img data-aos="fade-left" width="520" style="border-radius: 15px" src="assets/Images/Workshops/Matlabs.jpeg"
+                    class="fadeInRight wow" alt="Vector-Smart-Object10" />
+            </figure>
+        </div>
+    </div>
+    <%for(let i=0;i<events.length;i++){%>
+        <div class="row vc_row-has-fill">
+            <div class="col-sm-6">
+                <div class="title-subtile-holder" data-aos="flip-up">
+                    <h1 class="section-title light_title no-margin">
+                        <%=events[i].EventName%>
+                    </h1>
+                    <div class="spacer_10"></div>
+                    <div class="clearfix"></div>
+                    <div class="section-border green_border no-margin"></div>
+                    <div class="spacer_10"></div>
+                    <div style="padding-top: 1%" class="section-subtitle light_subtitle">
+                        <%=events[i].Description%>
+                        <hr />
+                        <h5 style="color: antiquewhite">
+                            <strong><em>Dates : <%=events[i].StartDate%></em></strong>
+                        </h5>
+                        <h5 style="color: antiquewhite">
+                            <strong><em>Two sessions morning and one session afternoon .</em></strong>
+                        </h5>
+        
+                        <h5 style="color: antiquewhite">
+                            <strong><em>Fees : Completely free</em></strong>
+                        </h5>
+                        <hr />
+                        <h1 style="font-weight: Bold">Take away:</h1>
+                        i) Participants will be provided with a Certificate from Sensors.<br /> ii) Practical knowledge of
+                        MATLAB
+                        through hands on sessions. <br />iii) Start from scratch to build extensive knowledge on matlab and some
+                        its
+                        major toolboxes.
+                        <hr />
+                        <a type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal" data-link="<%=events[i]._id%>">
+                            Register
+                        </a>
+                    </div>
+                </div>
+                <div class="spacer_80"></div>
+            </div>
+            <div class="col-sm-6">
+                <figure class="fadeInRight wow">
+                    <div class="spacer_40"></div>
+                    <img data-aos="fade-left" width="520" style="border-radius: 15px" src="<%=events[i].Picture%>"
+                        class="fadeInRight wow" alt="Vector-Smart-Object10" />
+                </figure>
+            </div>
+        </div>
+    <%}%>
+</div>
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 1.5rem;">Register for Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="color: black; font-size: 1.25rem;">
+                Are you sure you want to register?
+                <h6 id="err-box" style="color: black;display: none;margin: 0;margin-top: 10px;"></h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form id="register-form">
+                    <button id="submit-btn" class="btn btn-success" type="submit">
+                        Register
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    })
+    const registerModal = document.getElementById('registerModal')
+    window.onload = ()=>{
+        const token = sessionStorage.getItem("auth-token");
+        const errBox = document.getElementById("err-box");
+        const user = sessionStorage.length>0?JSON.parse(sessionStorage.getItem("sensors22User")).user:{};
+        const btn = document.getElementById("submit-btn");
+        if(!token || !user){
+            btn.style.display = "none";
+            errBox.innerText = "Please Login First to register";
+            errBox.style.display = "block";
+        }else{
+            btn.style.display = "block";
+            errBox.innerHTML = "";
+            errBox.style.display = "none";
+            $('#registerModal').on('show.bs.modal', function (event) {
+                const button = $(event.relatedTarget) // Button that triggered the modal
+                const recipient = button.data('link') // Extract info from data-* attributes
+                const link = `/api/events/${user._id}/register/${recipient}`
+                btn.addEventListener("click",async(e)=>{
+                    e.preventDefault();
+                    try{
+                        const res = await axios({
+                            method: 'post', //you can set what request you want to be
+                            url: link,
+                            headers: {
+                                "auth-token": token
+                            }
+                        });
+                        const data = res.data;
+                        if(data && data.status === 1){
+                            window.location.href = "/events";
+                        }
+                    }catch(e){
+                        console.log(e);
+                    }
+                });
+            })
+        }
+    }
+</script>
+<%-include("partials/footer.ejs")%>

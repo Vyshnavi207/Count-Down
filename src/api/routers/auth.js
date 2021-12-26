@@ -77,9 +77,8 @@ router.post('/login', async (req, res) => {
 
     // // JWT Verification
     const token = createJWTtoken(user)
-    console.log("Logged in Successfully");
-    res.header('auth-token', token);
-    res.redirect("/");
+    req.user = user;
+    res.status(200).json({"msg":"Success",token,user});
   }
 })
 
