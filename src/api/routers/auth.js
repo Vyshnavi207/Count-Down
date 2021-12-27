@@ -17,15 +17,18 @@ router.post('/register', async (req, res) => {
   const { error, value } = registerValidation(req.body)
   const errMsg = error ? error.details[0].message : ''
   if (error) {
-    return res.status(400).send(errMsg)
+    req.flash("error",errMsg);
+    return res.redirect("back");
   } else {
     // Checking if user already in Database
     const emailExists = await User.findOne({ Email })
     if (emailExists) {
-      return res.status(400).send('Email Already exists')
+      req.flash("error","Email Already exists")
+      return res.redirect("back");
     }
     if(!Email.includes("gmail")){
-      return res.status(400).send("Only Gmail ID is allowed");
+      req.flash("error","Only Gmail ID is allowed")
+      return res.redirect("back");
     }
     // Hashing the password
     const salt = await bcrypt.genSalt(Number(process.env.SALT_ROUND))
@@ -42,7 +45,8 @@ router.post('/register', async (req, res) => {
     })
     try {
       const savedUser = await user.save()
-      res.redirect(`/login`);
+      req.flash("success","User Registered, Please Verify your email address");
+      res.redirect(`/verify_email`);
     } catch (err) {
       res.status(400).send(err)
     }
@@ -58,32 +62,42 @@ router.post('/login', async (req, res) => {
   const { error, value } = LoginValidation(req.body)
   const errMsg = error ? error.details[0].message : ''
   if (error) {
-    return res.status(400).send(errMsg)
+    req.flash("error",errMsg)
+    return res.status(200).json({status:0,msg:errMsg});
   } else {
     // Checking if user already in Database
     const user = await User.findOne({ Email })
     if (!user) {
-      return res.status(400).send("User Doesn't exists")
+      req.flash("error","User doesn't exists");
+      return res.status(200).json({status:0,msg:"User doesn't exists"});
     }
     // Validate Password
     const validPass = await bcrypt.compare(password, user.password)
     if (!validPass) {
-      return res.status(400).send('Invalid Password')
+      req.flash("error","Invalid Password")
+      return res.status(200).json({status:0,msg:"Invalid Password"});
     }
 
     if(!user.verified){
-      return res.redirect("/verify_email");
+      req.flash("error","Email Not Verified");
+      return res.status(200).json({status:0,msg:"Email Not Verified"})
     }
 
     // // JWT Verification
     const token = createJWTtoken(user)
     req.user = user;
-    res.status(200).json({"msg":"Success",token,user});
+    const sendUser = {};
+    sendUser._id = user._id;
+    sendUser.email = user.Email;
+    sendUser.verified = user.verified;
+    sendUser.name = user.Name;
+    req.flash("success","Logged In Successfully");
+    res.status(200).json({"msg":"Success",token,user:sendUser,status:1});
   }
 })
 
 router.get("/verify_email",(req,res)=>{
-  res.redirect(`${process.env.CLIENT_URL}/app/pages/email_verification.html`)
+  res.redirect("/login");
 });
 
 router.post("/verify_email", (req, res) => {
@@ -140,6 +154,7 @@ router.post("/verify_email", (req, res) => {
           //   user.email +
           //   " with further instructions."
           // );
+          req.flash("success","Email Sent for Verification");
           res.redirect("/login");
           done(err, "done");
         });
@@ -163,6 +178,7 @@ router.get("/verify_email/:token", async function (req, res) {
   user.verifyTokenExpires = null;
   user.verified = true;
   const savedUser = await user.save();
+  req.flash("success", "Email Verified");
   return res.redirect("/login");
 });
 

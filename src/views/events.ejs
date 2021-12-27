@@ -115,7 +115,7 @@
                 <h6 id="err-box" style="color: black;display: none;margin: 0;margin-top: 10px;"></h6>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close-btn">Close</button>
                 <form id="register-form">
                     <button id="submit-btn" class="btn btn-success" type="submit">
                         Register
@@ -125,7 +125,6 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     AOS.init({
         duration: 1000,
@@ -136,14 +135,14 @@
         const errBox = document.getElementById("err-box");
         const user = sessionStorage.length>0?JSON.parse(sessionStorage.getItem("sensors22User")).user:{};
         const btn = document.getElementById("submit-btn");
+        const flash = document.querySelector(".flash-container");
+        // flash.innerHTML = '';
         if(!token || !user){
             btn.style.display = "none";
             errBox.innerText = "Please Login First to register";
             errBox.style.display = "block";
         }else{
             btn.style.display = "block";
-            errBox.innerHTML = "";
-            errBox.style.display = "none";
             $('#registerModal').on('show.bs.modal', function (event) {
                 const button = $(event.relatedTarget) // Button that triggered the modal
                 const recipient = button.data('link') // Extract info from data-* attributes
@@ -160,8 +159,23 @@
                         });
                         const data = res.data;
                         if(data && data.status === 1){
+                            const msg = `
+                            <div id="success-box" class="alert alert-success" role="alert">
+                                ${res.data.msg}
+                            </div>
+                            `;
+                            // flash.innerHTML = msg;
+                            window.location.href = "/events";
+                        }else{
+                            const msg = `
+                            <div id="err-box" class="alert alert-danger" role="alert">
+                                ${res.data.msg}
+                            </div>
+                            `;
+                            // flash.innerHTML = msg;
                             window.location.href = "/events";
                         }
+                        document.getElementById("modal-click-btn").click();
                     }catch(e){
                         console.log(e);
                     }

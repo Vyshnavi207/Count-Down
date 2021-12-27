@@ -27,6 +27,14 @@ router.get("/login",(req,res)=>{
     res.render("login");
 })
 
+router.get("/logout",(req,res)=>{
+    req.flash("success","Logged Out");
+    res.json({
+        status:1,
+        msg:"User Logged Out"
+    });
+});
+
 router.get("/register",(req,res)=>{
     res.render("register");
 })

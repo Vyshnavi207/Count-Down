@@ -35,6 +35,34 @@
     </div>
 </footer>
 
+<script>
+    const token = sessionStorage.getItem("auth-token");
+    const logOut = document.getElementById("logout-link")
+    if(token){
+        logOut.style.display = "block";
+        const link = `
+        <a class="nav-link" href="/logout">Logout</a>
+        `;
+        logOut.innerHTML = link;
+    }else{
+        logOut.style.display = "none";
+        logOut.innerHTML = "";
+    }
+    if(logOut.innerHTML && logOut.innerHTML.length>0){
+        logOut.addEventListener("click",async()=>{
+            try{
+                const res = await axios.get("/logout");
+                if(res.data.status){
+                    sessionStorage.removeItem("auth-token");
+                    sessionStorage.removeItem("sensors22User");
+                    window.location.href = "/";
+                }
+            }catch(e){
+                console.log(e);
+            }
+        })
+    }
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
     integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="

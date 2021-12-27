@@ -14,12 +14,13 @@
         <p>Don't have an account? Register <a href="/register">here</a></p>
     </form>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const linkTag = document.createElement("link");
     linkTag.rel = 'stylesheet';
     linkTag.href = 'css/login.css';
     document.head.appendChild(linkTag);
+    const flash = document.querySelector(".flash-container");
+    // flash.innerHTML = '';
 
     const submitBtn = document.getElementById("submit-btn");
     submitBtn.addEventListener("click",(e)=>{
@@ -30,13 +31,22 @@
             Email:email,
             password:password
         }).then((res)=>{
-            const token = {};
-            // console.log(res.data);
-            token.user = res.data.user;
-            sessionStorage.setItem("sensors22User",JSON.stringify(token));
-            sessionStorage.setItem("auth-token",res.data.token);
-            // console.log(token);
-            window.location.href = "/";
+            if(res.data.status){
+                const token = {};
+                // console.log(res.data);
+                token.user = res.data.user;
+                sessionStorage.setItem("sensors22User", JSON.stringify(token));
+                sessionStorage.setItem("auth-token", res.data.token);
+                // console.log(token);
+                window.location.href = "/";
+            }else{
+                const msg = `
+                <div id="err-box" class="alert alert-danger" role="alert">
+                    ${res.data.msg}
+                </div>
+                `;
+                flash.innerHTML = msg;
+            }
         }).catch((e)=>{
             console.log(e);
         })

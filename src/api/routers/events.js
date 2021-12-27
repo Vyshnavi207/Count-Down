@@ -78,7 +78,12 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
       const updatedEvent = await event.save();
       user.Events.push(event);
       const updatedUser = await user.save();
-
+      req.flash(
+        "success",
+        "Event Registered. An e-mail has been sent to " +
+        user.Email +
+        " with further instructions."
+      );
       async.waterfall(
         [
           function (done) {
@@ -101,7 +106,7 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
               console.log("mail sent", user.Email);
               // req.flash(
               //   "success",
-              //   "An e-mail has been sent to " +
+              //   "Event Registered. An e-mail has been sent to " +
               //   user.email +
               //   " with further instructions."
               // );
@@ -120,12 +125,17 @@ router.post("/:id/register/:eventID", jwtVerify, async (req, res) => {
 
       res.json({
         status:1,
-        msg:"Success"
+        msg: "Event Registered. An e-mail has been sent to " +
+          user.Email +
+          " with further instructions."
       });
-    } else res.status(200).json({
-      status:0,
-      msg: "user already registered"
-    });
+    } else{
+      req.flash("error","User Already Registered");
+      res.status(200).json({
+        status: 0,
+        msg: "User already registered"
+      });
+    }
   } catch (e) {
     res.status(200).send(e);
   }
