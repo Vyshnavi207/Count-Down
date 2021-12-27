@@ -29,7 +29,8 @@ let arraydates=(dates)=>
          return {
            date:item,
            title:eventinfoarray[index]['title'],
-           description:eventinfoarray[index]['description']
+           description:eventinfoarray[index]['description'],
+           enddate:eventinfoarray[index]['enddate']
          }
     })
 
@@ -38,9 +39,11 @@ let arraydates=(dates)=>
   
     eventinfoarray=sortedarray.map((item)=>
     {
+     
       return {
         title:item['title'],
-        description:item['description']
+        description:item['description'],
+        enddate:item['enddate']
       }
     })
     sortedarray=sortedarray.map((item)=>

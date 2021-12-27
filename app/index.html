@@ -3907,7 +3907,8 @@
 								})
 							}
 						})
-						datearray = arraydates(reqarray)
+					  datearray = arraydates(reqarray)
+            
 						$(document).ready(startthetimer(datenumber))
 					} else {
 						startthetimer(datenumber, "noevents")
@@ -3930,8 +3931,11 @@
 
               }
 					})
-					datearray = arraydates(reqarray)
-					$(document).ready(startthetimer(datenumber, "backenddown"))
+         	datearray = arraydates(reqarray)
+          
+          
+				
+           $(document).ready(startthetimer(datenumber, "backenddown"))
 				})
 			let lefttimer = () => {
 				if (datearray.length > 0) {
