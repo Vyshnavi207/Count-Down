@@ -5,7 +5,7 @@ const {getJSON,firstName,lastName} = require("../../helpers")
 const Events = require("../../database/models/Events");
 router.get("/",(req,res)=>{
     console.log(req.user);
-		const contactIndex = [3, 4, 5];
+		const contactIndex = [0, 1, 2];
 		const contactDetails = [];
 		const teamDetails = getJSON("team-data.json");
 
