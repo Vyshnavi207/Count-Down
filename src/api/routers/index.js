@@ -7,7 +7,7 @@ router.get("/",(req,res)=>{
     console.log(req.user);
 		const contactIndex = [3, 4, 5];
 		const contactDetails = [];
-		const teamDetails = getJSON("sensors22.json");
+		const teamDetails = getJSON("team-data.json");
 
 		contactIndex.forEach(value => {
 			contactDetails.push(teamDetails[value]);
