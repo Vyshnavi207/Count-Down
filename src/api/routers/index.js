@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {jwtVerify} = require("../../middlewares/jwt");
+const {getJSON,firstName,lastName} = require("../../helpers")
 const Events = require("../../database/models/Events");
 router.get("/",(req,res)=>{
     console.log(req.user);
@@ -50,6 +51,8 @@ router.get("/events",async (req, res) => {
 });
 
 router.get("/team",(req, res)=>{
-    res.render("team");
+		const teamData = getJSON("sensors22.json")
+		console.log(teamData);
+    res.render("team", {data:teamData, helper:{firstName,lastName}});
 })
 module.exports = router;
