@@ -60,13 +60,14 @@ router.get("/verify_email",(req,res)=>{
 })
 
 router.get("/events",async (req, res) => {
-    const events = await Events.find();
+    // const events = await Events.find();
+		const events = [];
     console.log(req.user);
     res.render("events",{events});
 });
 
 router.get("/team",(req, res)=>{
-		const teamData = getJSON("sensors22.json")
+		const teamData = getJSON("team-data.json")
     res.render("team", {data:teamData, helper:{firstName,lastName}});
 })
 module.exports = router;

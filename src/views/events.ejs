@@ -1,103 +1,14 @@
 <%-include("partials/header.ejs")%>
-<div class="container">
-    <div class="row vc_row-has-fill">
-        <div class="col-sm-6">
-            <div class="title-subtile-holder" data-aos="flip-up">
-                <h1 class="section-title light_title no-margin">
-                    MATLAB Workshop from Mathworks
-                </h1>
-                <div class="spacer_10"></div>
-                <div class="clearfix"></div>
-                <div class="section-border green_border no-margin"></div>
-                <div class="spacer_10"></div>
-                <div style="padding-top: 1%" class="section-subtitle light_subtitle">
-                    Online simulations in engineering and science have become very popular. MATLAB is one of the great examples
-                    in recent times. To make your hands dirty with this software, NIT Trichy is organizing a workshop called
-                    ‘Accelerating the Pace of Engineering
-                    and Science with MATLAB.’ The workshop will be held on 5th January, 2022, spanning throughout the day in two
-                    sessions. There are a lot of takeaways from this workshop: Participants will be provided with a certificate
-                    from the
-                    Sensors team. It will be guaranteed that the participants will have a practical knowledge on the functioning
-                    and usages of MATLAB. The workshop does not have any entry fee.
-                    <hr />
-                    <h5 style="color: antiquewhite">
-                        <strong><em>Dates : Jan 5th , 2022.</em></strong>
-                    </h5>
-                    <h5 style="color: antiquewhite">
-                        <strong><em>Two sessions morning and one session afternoon .</em></strong>
-                    </h5>
-        
-                    <h5 style="color: antiquewhite">
-                        <strong><em>Fees : Completely free</em></strong>
-                    </h5>
-                    <hr />
-                    <h1 style="font-weight: Bold">Take away:</h1>
-                    i) Participants will be provided with a Certificate from Sensors.<br /> ii) Practical knowledge of MATLAB
-                    through hands on sessions. <br />iii) Start from scratch to build extensive knowledge on matlab and some its
-                    major toolboxes.
-                    <hr />
-                    <a class="btn btn-primary btn-lg" href="https://forms.gle/ZVwkM2uoJL2uePk28" target="_blank"
-                        role="button">Register</a>
-                </div>
-            </div>
-            <div class="spacer_80"></div>
-        </div>
-        <div class="col-sm-6">
-            <figure class="fadeInRight wow">
-                <div class="spacer_40"></div>
-                <img data-aos="fade-left" width="520" style="border-radius: 15px" src="assets/Images/Workshops/Matlabs.jpeg"
-                    class="fadeInRight wow" alt="Vector-Smart-Object10" />
-            </figure>
-        </div>
-    </div>
-    <%for(let i=0;i<events.length;i++){%>
-        <div class="row vc_row-has-fill">
-            <div class="col-sm-6">
-                <div class="title-subtile-holder" data-aos="flip-up">
-                    <h1 class="section-title light_title no-margin">
-                        <%=events[i].EventName%>
-                    </h1>
-                    <div class="spacer_10"></div>
-                    <div class="clearfix"></div>
-                    <div class="section-border green_border no-margin"></div>
-                    <div class="spacer_10"></div>
-                    <div style="padding-top: 1%" class="section-subtitle light_subtitle">
-                        <%=events[i].Description%>
-                        <hr />
-                        <h5 style="color: antiquewhite">
-                            <strong><em>Dates : <%=events[i].StartDate%></em></strong>
-                        </h5>
-                        <h5 style="color: antiquewhite">
-                            <strong><em>Two sessions morning and one session afternoon .</em></strong>
-                        </h5>
-        
-                        <h5 style="color: antiquewhite">
-                            <strong><em>Fees : Completely free</em></strong>
-                        </h5>
-                        <hr />
-                        <h1 style="font-weight: Bold">Take away:</h1>
-                        i) Participants will be provided with a Certificate from Sensors.<br /> ii) Practical knowledge of
-                        MATLAB
-                        through hands on sessions. <br />iii) Start from scratch to build extensive knowledge on matlab and some
-                        its
-                        major toolboxes.
-                        <hr />
-                        <a type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal" data-link="<%=events[i]._id%>">
-                            Register
-                        </a>
-                    </div>
-                </div>
-                <div class="spacer_80"></div>
-            </div>
-            <div class="col-sm-6">
-                <figure class="fadeInRight wow">
-                    <div class="spacer_40"></div>
-                    <img data-aos="fade-left" width="520" style="border-radius: 15px" src="<%=events[i].Picture%>"
-                        class="fadeInRight wow" alt="Vector-Smart-Object10" />
-                </figure>
-            </div>
-        </div>
-    <%}%>
+<h1 class="main-title">Events</h1>
+<%-include("partials/loader.ejs")%>
+<div class="container" id="events">
+    <% if(events.length > 0) { %>
+			<%for (let i = 0; i < events.length; i++) {%>
+				<%-include("partials/events.ejs",{event:events[i]})%>
+			<%}%>
+		<% } else { %>
+			<%-include("partials/coming-soon.ejs")%>
+		<% } %>
 </div>
 
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -126,6 +37,12 @@
     </div>
 </div>
 <script>
+		$('#events').hide()
+		$(window).on('load', function () {
+				$('#loader').hide()
+				$('#events').show()
+		})
+
     AOS.init({
         duration: 1000,
     })

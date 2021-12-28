@@ -1,0 +1,46 @@
+<div class="row vc_row-has-fill">
+	<div class="col-sm-6">
+		<div class="title-subtile-holder" data-aos="flip-up">
+			<h1 class="section-title light_title no-margin">
+				<%=event.EventName%>
+			</h1>
+			<div class="spacer_10"></div>
+			<div class="clearfix"></div>
+			<div class="section-border green_border no-margin"></div>
+			<div class="spacer_10"></div>
+			<div style="padding-top: 1%" class="section-subtitle light_subtitle">
+				<%=event.Description%>
+				<hr />
+				<h5 style="color: antiquewhite">
+					<strong><em>Dates : <%=event.StartDate%></em></strong>
+				</h5>
+				<h5 style="color: antiquewhite">
+					<strong><em>Two sessions morning and one session afternoon .</em></strong>
+				</h5>
+
+				<h5 style="color: antiquewhite">
+					<strong><em>Fees : Completely free</em></strong>
+				</h5>
+				<hr />
+				<h1 style="font-weight: Bold">Take away:</h1>
+				i) Participants will be provided with a Certificate from Sensors.<br /> ii) Practical knowledge of
+				MATLAB
+				through hands on sessions. <br />iii) Start from scratch to build extensive knowledge on matlab and some
+				its
+				major toolboxes.
+				<hr />
+				<a type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal" data-link="<%=event._id%>">
+					Register
+				</a>
+			</div>
+		</div>
+		<div class="spacer_80"></div>
+	</div>
+	<div class="col-sm-6">
+		<figure class="fadeInRight wow">
+			<div class="spacer_40"></div>
+			<img data-aos="fade-left" width="520" style="border-radius: 15px" src="<%=event.Picture%>"
+				class="fadeInRight wow" alt="Vector-Smart-Object10" />
+		</figure>
+	</div>
+</div>
