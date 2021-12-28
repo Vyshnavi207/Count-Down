@@ -1,14 +1,7 @@
 <%-include("partials/header.ejs")%>
 
 <h1 class="main-title">Team</h1>
-<div class="loadinCoantiner" id="teamLoader">
-    <div class="bouncer">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
+<%-include("partials/loader.ejs")%>
 <div class="container" id="teams">
     <div class="row justify-content-center">
 				<% for(var i = 0; i < data.length; i++) { %>
@@ -36,10 +29,11 @@
     linkTag.rel = 'stylesheet';
     linkTag.href = 'css/articles.css';
     document.head.appendChild(linkTag);
-    window.onload = ()=>{
-        $('#teams').hide()
-        $('#teamLoader').hide()
-        $('#teams').show()
-    }
+
+		$('#teams').hide()
+		$(window).on('load', function () {
+				$('#loader').hide()
+				$('#teams').show()
+		})
 </script>
 <%-include("partials/footer.ejs")%>

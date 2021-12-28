@@ -6,7 +6,7 @@ const Events = require("../../database/models/Events");
 router.get("/",(req,res)=>{
     console.log(req.user);
 		const contactIndex = [3, 4, 5];
-		let contactDetails = [];
+		const contactDetails = [];
 		const teamDetails = getJSON("sensors22.json");
 
 		contactIndex.forEach(value => {
@@ -17,11 +17,18 @@ router.get("/",(req,res)=>{
 });
 
 router.get("/articles",(req,res)=>{
-    res.render("articles");
+		const articlesDetails = [];
+    res.render("articles", {data:{articlesDetails}});
 })
 
 router.get("/webinar",(req,res)=>{
-    res.render("webinar");
+		const webinarDetails = [];
+    res.render("webinar", {data:{webinarDetails}});
+})
+
+router.get("/workshops",(req,res)=>{
+	const workshopsDetails = [];
+	res.render("workshops", {data:{workshopsDetails}});
 })
 
 router.get("/covid-tech",(req,res)=>{
@@ -54,13 +61,12 @@ router.get("/verify_email",(req,res)=>{
 
 router.get("/events",async (req, res) => {
     const events = await Events.find();
-    // console.log(req.user);
+    console.log(req.user);
     res.render("events",{events});
 });
 
 router.get("/team",(req, res)=>{
 		const teamData = getJSON("sensors22.json")
-		console.log(teamData);
     res.render("team", {data:teamData, helper:{firstName,lastName}});
 })
 module.exports = router;

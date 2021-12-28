@@ -422,11 +422,30 @@ nav .nav-link:hover {
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.8);
+	/* position: fixed; */
+	width: 100%;
+	top: 0;
+	z-index: 10;
 }
 
 nav .nav-link:hover {
   color: #00ffff !important;
+}
+
+.workshop-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	max-width: 1200px;
+}
+
+.workshop-content-reverse {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: row-reverse;
+	max-width: 1200px;
 }
 
 @keyframes ulla-va {
@@ -938,4 +957,96 @@ h {
     align-items: center;
     justify-content: center;
   }
+}
+
+.sticky {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  
+  width: 100%;
+ z-index: 10;
+ 
+}
+.lsls {
+  background-color: #00ffff !important;
+  color: black !important;
+  font-weight: 700 !important;
+  margin-top: 15%;
+  margin-left: 10%;
+  opacity: 1 !important;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/* Dropdown Button */
+
+nav .dropbtn {
+	background-color: rgb(73 41 41 / 5%);
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 800;
+	color: #ffffff;
+	font-family: PT Sans;
+	padding: 5px 10px;
+	border: none;
+	/* border: 1px solid ; */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.dropbtn:hover {
+	color: #00ffff !important;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+nav .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+nav .dropdown-content a:hover {
+	background-color: rgba(221, 221, 221, 0.548);
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+	background-color: none;
 }

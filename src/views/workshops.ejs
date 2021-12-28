@@ -1,0 +1,59 @@
+<%-include("partials/header.ejs")%>
+<h1 class="main-title">Workshops</h1>
+<%-include("partials/loader.ejs")%>
+<div class="ui cont" style="background: #000000; padding: 5px">
+    <div class="ui link cards row" id="workshops" style="display: flex; justify-content: center; align-items: center">
+        <% if(data.workshopsDetails.length > 0) { %>
+					<% for(let i = 0; i < data.workshopsDetails.length; i++) { %>
+						<% if(i%2 == 0) { %>
+							<div class='workshop-content'>
+								<%-include("partials/workshop/image.ejs", {imageUrl:i})%>
+								<%-include("partials/workshop/details.ejs", {i:i})%>
+							</div>
+						<% } else { %>
+							<div class='workshop-content-reverse'>
+								<%-include("partials/workshop/image.ejs", {imageUrl:i})%>
+								<%-include("partials/workshop/details.ejs", {i:i})%>
+							</div>
+						<% } %>
+					<% } %>
+				<% } else { %>
+				<%-include("partials/coming-soon.ejs")%>
+				<% } %>
+    </div>
+</div>
+<script>
+    const linkTag = document.createElement("link");
+    linkTag.rel = 'stylesheet';
+    linkTag.href = 'css/articles.css';
+    document.head.appendChild(linkTag);
+
+		$('#workshops').hide()
+		$(window).on('load', function () {
+				$('#loader').hide()
+				$('#workshops').show()
+		})
+
+    window.onload = ()=>{
+        function openModal(ola, j) {
+            var i
+            for (i = 1; i < 10; i++) {
+                if (i != j) {
+                    olaa = '.ui.fullscreen.modal.' + i
+                    $(olaa).modal('hide')
+                }
+            }
+            $(ola).modal('show')
+            $(ola).modal({
+                closable: true,
+            })
+            $('.cont').dimmer('show')
+        }
+
+        function closeModal(ola) {
+            $(ola).modal('hide')
+        }
+    }
+</script>
+
+<%-include("partials/footer.ejs")%>

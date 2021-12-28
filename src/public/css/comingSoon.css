@@ -1,0 +1,35 @@
+.ComingSoonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    background: #000;
+}
+
+.ComingSoonContainer p {
+    font-weight: 1000;
+    text-align: center;
+    font-size: 45px;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: fadeAway 8s linear infinite;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@keyframes fadeAway {
+    0% {
+        background-position-x: -450%;
+    }
+    100% {
+        background-position-x: 450%;
+    }
+}

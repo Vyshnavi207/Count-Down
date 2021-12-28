@@ -7654,8 +7654,8 @@ header #navbar > div:first-child {
   width: auto;
 }
 .navbar-nav > li > a {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .navbar ul li:hover > ul.sub-menu {
   opacity: 1;
@@ -8873,7 +8873,7 @@ header#one-page-header {
 .navbar-nav > li > a {
   font-size: 14px;
   font-weight: 600;
-  padding: 30px 10px;
+  padding: 20px 10px;
   display: block;
   line-height: 20px;
 }

@@ -15,9 +15,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="https://fonts.google.com/selection?category=Sans+Serif&query=MOn&selection.family=Montserrat"
         rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/comingSoon.css">
+		<link rel="stylesheet" href="css/animate.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -25,53 +28,47 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/logos/Logo.png" width="120" height="120" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#about">About<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#workshops">Workshops</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/webinar">Webinars</a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/articles">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/covid-tech">Covid-Tech</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contacts">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
+		<nav class="navbar navbar-expand-lg">
+				<div class="container">
+						<a class="navbar-brand" href="/"><img src="./assets/logos/Logo.png" width="120" height="120" /></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav ml-auto">
 										<li class="nav-item">
-                        <a class="nav-link" href="/register">Register</a>
-                    </li>
-                    <li style="display: none;" id="logout-link" class="nav-item">
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+												<a class="nav-link" href="/">Home</a><span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/#about">About<span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/articles">Articles</a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/team">Team</a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/#contacts">Contact</a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/login">Login</a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="/register">Register</a>
+										</li>
+										<div class="dropdown">
+												<button class="dropbtn">Sweatshops ⬇</button>
+												<div class="dropdown-content">
+														<a href="/events">Events</a>
+														<a href="/workshops">Workshops</a>
+														<a href="/webinar">Webinars</a>
+												</div>
+										</div>
+								</ul>
+						</div>
+				</div>
+		</nav>
     <div class="flash-container text-center mt-2" style="z-index: 2000;">
         <%if(error && error.length>0){%>
             <div id="err-box" class="alert alert-danger" role="alert">
