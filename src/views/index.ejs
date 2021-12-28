@@ -1547,51 +1547,23 @@
             <h2>Contact Us</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="column">
-                <div class="team-10">
-                    <div class="team-img">
-                        <img src="/assets/Images/Team/Ajay Shankar S.jpeg.JPG" alt="Team Image" />
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-10-h2">Ajay Shankar</h2>
-                        <h3 class="team-10-h3">sajaax2000@gmail.com</h3>
+						<% for(let i = 0; i < data.contactDetails.length; i++) { %>
+						<div class="column">
+								<div class="team-10">
+										<div class="team-img">
+												<img src="/assets/Images/Team/Ajay Shankar S.jpeg.JPG" alt="Team Image" />
+										</div>
+										<div class="team-content">
+												<h2 class="team-10-h2"><%= data.contactDetails[i].Name %></h2>
+												<h3 class="team-10-h3"><%= data.contactDetails[i]['Email-id'] %></h3>
 
-                        <div class="team-overlay">
-                            <p><em>Feel free to contact us for any help</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="team-10">
-                    <div class="team-img">
-                        <img src="/assets/Images/Team/Aditya R.jpg" alt="Team Image" />
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-10-h2">Aditya R</h2>
-                        <h3 class="team-10-h3">rsaditya06@gmail.com</h3>
-
-                        <div class="team-overlay">
-                            <p><em>Feel free to contact us for any help</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="team-10">
-                    <div class="team-img">
-                        <img src="/assets/Images/Team/Deeraj.JPG" alt="Team Image" />
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-10-h2">Deeraj Eswar</h2>
-                        <h3 class="team-10-h3">deerajesvar@gmail.com</h3>
-
-                        <div class="team-overlay">
-                            <p><em>Feel free to contact us for any help</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+												<div class="team-overlay">
+														<p><em>Feel free to contact us for any help</em></p>
+												</div>
+										</div>
+								</div>
+						</div>
+						<% } %>
         </div>
     </div>
 </div>

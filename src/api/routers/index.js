@@ -5,7 +5,15 @@ const {getJSON,firstName,lastName} = require("../../helpers")
 const Events = require("../../database/models/Events");
 router.get("/",(req,res)=>{
     console.log(req.user);
-    res.render("index");
+		const contactIndex = [3, 4, 5];
+		let contactDetails = [];
+		const teamDetails = getJSON("sensors22.json");
+
+		contactIndex.forEach(value => {
+			contactDetails.push(teamDetails[value]);
+		})
+
+    res.render("index", {data:{contactDetails}});
 });
 
 router.get("/articles",(req,res)=>{
