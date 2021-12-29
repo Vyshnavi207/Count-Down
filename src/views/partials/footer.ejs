@@ -41,15 +41,10 @@
     const logOut = document.getElementById("logout-link")
     if(token){
         logOut.style.display = "block";
-        const link = `
-        <a class="nav-link" href="/logout">Logout</a>
-        `;
-        logOut.innerHTML = link;
     }else{
         logOut.style.display = "none";
-        logOut.innerHTML = "";
     }
-    if(logOut.innerHTML && logOut.innerHTML.length>0){
+    if(logOut.style.display === 'block' && logOut.innerHTML && logOut.innerHTML.length>0){
         logOut.addEventListener("click",async()=>{
             try{
                 const res = await axios.get("/logout");
