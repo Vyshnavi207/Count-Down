@@ -1,84 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensors 2022</title>
     <link rel="stylesheet" href="css/style-inline.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="https://fonts.google.com/selection?category=Sans+Serif&query=MOn&selection.family=Montserrat"
-        rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.google.com/selection?category=Sans+Serif&query=MOn&selection.family=Montserrat" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet" /> =======
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/comingSoon.css">
-		<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/comingSoon.css">
+    <link rel="stylesheet" href="css/animate.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
 
-		<nav class="navbar navbar-expand-lg">
-				<div class="container">
-						<a class="navbar-brand" href="/"><img src="./assets/logos/Logo.png" width="120" height="120" /></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="./assets/logos/Logo.png" width="120" height="120" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-						<div class="collapse navbar-collapse" id="navbarNav">
-								<ul class="navbar-nav ml-auto">
-										<li class="nav-item">
-												<a class="nav-link" href="/">Home</a><span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/#about">About<span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/articles">Articles</a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/team">Team</a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/#contacts">Contact</a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/login">Login</a>
-										</li>
-										<li class="nav-item">
-												<a class="nav-link" href="/register">Register</a>
-										</li>
-										<div class="dropdown">
-												<button class="dropbtn">Sweatshops ⬇</button>
-												<div class="dropdown-content">
-														<a href="/events">Events</a>
-														<a href="/workshops">Workshops</a>
-														<a href="/webinar">Webinars</a>
-                                                        <a style="cursor: pointer;" id="logout-link">Logout</a>
-												</div>
-										</div>
-								</ul>
-						</div>
-				</div>
-		</nav>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contacts">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Sweatshops ⬇</button>
+                        <div class="dropdown-content">
+                            <a href="/events">Events</a>
+                            <a href="/workshops">Workshops</a>
+                            <a href="/webinar">Webinars</a>
+                            <a style="cursor: pointer;" id="logout-link">Logout</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="flash-container text-center mt-2" style="z-index: 2000;">
         <%if(error && error.length>0){%>
             <div id="err-box" class="alert alert-danger" role="alert">
                 <%=error%>
             </div>
-        <%}%>
-        <%if(success && success.length>0){%>
-            <div id="success-box" class="alert alert-success" role="alert">
-                <%=success%>
-            </div>
-        <%}%>
+            <%}%>
+                <%if(success && success.length>0){%>
+                    <div id="success-box" class="alert alert-success" role="alert">
+                        <%=success%>
+                    </div>
+                    <%}%>
     </div>
