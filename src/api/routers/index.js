@@ -8,12 +8,22 @@ router.get("/",(req,res)=>{
 		const contactIndex = [0, 1, 2];
 		const contactDetails = [];
 		const teamDetails = getJSON("team-data.json");
+        const eventDetails=Events.find().then(result=>
+            {
+             
 
-		contactIndex.forEach(value => {
-			contactDetails.push(teamDetails[value]);
-		})
+                contactIndex.forEach(value => {
+                    contactDetails.push(teamDetails[value]);
+                })
+                console.log('server ',result) 
+                res.render("index", {data:{contactDetails,eventDetails:JSON.stringify(result)}});
+            }).catch(e=>
+                {
+                    res.render("index", {data:{contactDetails,eventDetails:[]}});
+                })
+        
 
-    res.render("index", {data:{contactDetails}});
+   
 });
 
 router.get("/articles",(req,res)=>{

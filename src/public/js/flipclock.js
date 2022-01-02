@@ -1,11 +1,12 @@
 
 var Base = function() {
 };
+console.log("flipclock.js")
 
 Base.extend = function(_instance, _static) { // subclass
 	
 	"use strict";
-	
+
 	var extend = Base.prototype.extend;
 	
 	// build the prototype
@@ -2763,3 +2764,4 @@ var FlipClock;
 	FlipClock.Lang['chinese'] = FlipClock.Lang.Chinese;
 
 }(jQuery));
+
