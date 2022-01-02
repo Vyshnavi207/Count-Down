@@ -24,7 +24,10 @@ function startthetimer(datenumber, status) {
   } else if (datearray.length != 0 && !status) {
     var currentDate = new Date();
     var futureDate = new Date(datearray[datenumber]);
-    var difference = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+    var difference =
+      futureDate.getTime() / 1000 - currentDate.getTime() / 1000 > 0
+        ? futureDate.getTime() / 1000 - currentDate.getTime() / 1000
+        : 0;
     titlediv.innerHTML = eventinfoarray[datenumber]["title"];
     descriptiondiv.innerHTML = eventinfoarray[datenumber]["description"];
 
