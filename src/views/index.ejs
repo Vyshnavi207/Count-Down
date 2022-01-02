@@ -1,28 +1,14 @@
 <%-include("partials/header.ejs")%>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-  integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-<!-- <link rel="stylesheet" href="css/index.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
 
-<link rel="stylesheet" href="css/flipclock.css" />
+    <link rel="stylesheet" href="css/flipclock.css" />
 
-<div id="content">
-  <!--Main Logo Anim-->
-  <section>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      version="1.1"
-      id="Layer_1"
-      x="0px"
-      y="0px"
-      viewBox="0 0 750 500"
-      style="enable-background: new 0 0 750 500"
-      xml:space="preserve"
-    >
+    <div id="content">
+        <!--Main Logo Anim-->
+        <!-- <section>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 750 500" style="enable-background: new 0 0 750 500" xml:space="preserve">
       <style type="text/css">
         .st0 {
           fill: none;
@@ -229,7 +215,108 @@
                     class="st2"
                     points="196.2,288.2 199.5,300.3 207,298.3 203.7,286.2       "
                   />
-                </g>
+                </g> -->
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+        <div id="content">
+            <div class="mainLogo" style="width: 100%; text-align: center;">
+                <img src="./assets/logos/SensorsDP.png" width="800px" alt="logo" style="padding:5%" />
+
+            </div>
+            <!--Main Logo Anim-->
+            <!-- <section>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 750 500" style="enable-background: new 0 0 750 500" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: none;
+                }
+    
+                .st1 {
+                    opacity: 0.43;
+                    fill: none;
+                    enable-background: new;
+                }
+    
+                .st2 {
+                    stroke: #00ffff;
+                    stroke-width: 1.5;
+                }
+    
+                .st3 {
+                    stroke: #00ffff;
+                    stroke-width: 1.5;
+                    stroke-miterlimit: 3.9999;
+                }
+    
+                .st4 {
+                    stroke: #00ffff;
+                    stroke-width: 1.5001;
+                    stroke-miterlimit: 4.0002;
+                }
+    
+                .st5 {
+                    stroke: #00ffff;
+                    stroke-width: 1.5;
+                    stroke-miterlimit: 4;
+                }
+    
+                .st6 {
+                    opacity: 0.45;
+                }
+    
+                .st7 {
+                    fill: black;
+                }
+    
+                .st8 {
+                    fill: url(#SVGID_1_);
+                }
+    
+                .st9 {
+                    opacity: 0.19;
+                    fill: url(#SVGID_2_);
+                    enable-background: new;
+                }
+    
+                .st10 {
+                    fill: #ffffff;
+                }
+    
+                .st11 {
+                    opacity: 0.16;
+                }
+    
+                .st12 {
+                    opacity: 0.62;
+                }
+    
+                .st13 {
+                    opacity: 0.44;
+                }
+    
+                .st14 {
+                    opacity: 0.66;
+                    fill: #a09797;
+                    enable-background: new;
+                }
+    
+                .st15 {
+                    opacity: 0.35;
+                }
+    
+                .st16 {
+                    opacity: 0.25;
+                }
+    
+                .st17 {
+                    fill: url(#SVGID_3_);
+                }
+    
+                .st18 {
+                    fill: url(#SVGID_4_);
+                }
+            </style>
+            <g id="BACKGROUND2">
+>>>>>>> Home page logo and design modifications
                 <g>
                   <polygon
                     class="st2"
@@ -2933,113 +3020,95 @@
         transform="matrix(0.1217 0 0 0.1348 296.2372 220.0729)"
       ></image>
     </svg>
-  </section>
-  <div class="timer-container">
-    <div class="timer">
-      <p1 id="eventTitle">Events Countdown</p1>
-      <h id="eventDescription"></h>
-      <div class="clock"></div>
-      <div id="arrowflex">
-        <img src="assets/icons/left-icon.png" id="lefttimer" />
-        <img src="assets/icons/right-icon.png" id="righttimer" />
-      </div>
-    </div>
-  </div>
-</div>
-
-<a name="about"></a>
-<div class="about" data-aos="fade">
-  <div class="container">
-    <h1>ABOUT</h1>
-    <!-- <h6 align="center">(REFER FAQS IN THE NAVBAR FOR MORE DETAILS)</h6>  -->
-    <hr />
-    <br /><br />
-    <div class="row">
-      <div class="para1 col-lg-6 col-md-12 col-sm-12" data-aos="zoom-out">
-        SENSORS, the national level technical symposium of the Instrumentation
-        and Control Engineering department of NIT Trichy, is undoubtedly the
-        jewel in the crown of the department. Sensors has a long and
-        distinguished history dating back to 1997 when the staff and the
-        students felt the need for a forum where the academicians and industry
-        can converge to discuss the latest trends in the field of
-        Instrumentation and Control. The essence of Sensors is to transcend
-        classrooms and facilitate learning through informative guest lectures
-        from eminent personalities, hands-on workshops to give students a feel
-        for the subjects and innovative and challenging events that pit some of
-        the brightest minds in the country against one another.
-      </div>
-      <div class="para2 col-lg-6 col-md-12 col-sm-12" data-aos="zoom-out">
-        Another aspect of this prestigious event is that all the students of the
-        department come forward enthusiastically to organize the event thus
-        fostering teamwork, creativity and management skills in the technocrats
-        of tomorrow. The previous edition held in October 2020 saw a multitude
-        of new events, a plethora of workshops being organized. As the previous
-        edition turned out to be a humongous success, the expectations among the
-        student and the teaching fraternity have exceeded to an unexpected high
-        for the next edition of SENSORS.
-      </div>
-    </div>
-  </div>
-</div>
-
-<a name="contacts"></a>
-<div
-  class="contact-us"
-  style="margin-top: 4%; overflow-x: hidden"
-  data-aos="fade"
->
-  <!-- <section class="speakers-section" style= "overflow: auto;"> -->
-  <div class="parallax-scene parallax-scene-2 anim-icons">
-    <span data-depth="0.40" class="parallax-layer icon icon-circle-5"></span>
-    <span data-depth="0.99" class="parallax-layer icon icon-circle-5"></span>
-  </div>
-
-  <div class="container">
-    <div class="sec-title light text-center">
-      <br />
-
-      <h2>Contact Us</h2>
-    </div>
-    <div class="row justify-content-center">
-      <% for(let i = 0; i < data.contactDetails.length; i++) { %>
-      <div class="column">
-        <div class="team-10">
-          <div class="team-img">
-            <img
-              style="object-fit: contain"
-              src="<%= data.contactDetails[i].Photo %>"
-              alt="Contact Image"
-            />
-          </div>
-          <div class="team-content">
-            <h2 class="team-10-h2"><%= data.contactDetails[i].Name %></h2>
-            <h3 class="team-10-h3">
-              <%= data.contactDetails[i]['Email-id'] %>
-            </h3>
-
-            <div class="team-overlay">
-              <p><em>Feel free to contact us for any help</em></p>
+            </section>-->
+            <div class="timer-container">
+                <div class="timer">
+                    <p1 id="eventTitle">Events Countdown</p1>
+                    <h id="eventDescription"></h>
+                    <div class="clock"></div>
+                    <div id="arrowflex">
+                        <img src="assets/icons/left-icon.png" id="lefttimer" />
+                        <img src="assets/icons/right-icon.png" id="righttimer" />
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <% } %>
-    </div>
-  </div>
-</div>
-<script async src="js/flipclock.js"></script>
-<script async src="js/starttimer.js"></script>
-<script async src="js/arraydatefunction.js"></script>
 
-<script>
-  let eventdata = `<%-data.eventDetails%>`;
-  eventdata = JSON.parse(eventdata);
-</script>
-<script async src="js/fetchevent.js"></script>
+        <a name="about"></a>
+        <div class="about" data-aos="fade">
+            <div class="container">
+                <h1>ABOUT</h1>
+                <!-- <h6 align="center">(REFER FAQS IN THE NAVBAR FOR MORE DETAILS)</h6> -->
+                <hr />
+                <br /><br />
+                <div class="row">
+                    <div class="para1 col-lg-6 col-md-12 col-sm-12" data-aos="zoom-out">
+                        SENSORS, the national level technical symposium of the Instrumentation and Control Engineering department of NIT Trichy, is undoubtedly the jewel in the crown of the department. Sensors has a long and distinguished history dating back to 1997 when the
+                        staff and the students felt the need for a forum where the academicians and industry can converge to discuss the latest trends in the field of Instrumentation and Control. The essence of Sensors is to transcend classrooms and facilitate
+                        learning through informative guest lectures from eminent personalities, hands-on workshops to give students a feel for the subjects and innovative and challenging events that pit some of the brightest minds in the country against
+                        one another.
+                    </div>
+                    <div class="para2 col-lg-6 col-md-12 col-sm-12" data-aos="zoom-out">
+                        Another aspect of this prestigious event is that all the students of the department come forward enthusiastically to organize the event thus fostering teamwork, creativity and management skills in the technocrats of tomorrow. The previous edition held
+                        in October 2020 saw a multitude of new events, a plethora of workshops being organized. As the previous edition turned out to be a humongous success, the expectations among the student and the teaching fraternity have exceeded
+                        to an unexpected high for the next edition of SENSORS.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<script>
-  AOS.init({
-    duration: 1000,
-  });
-</script>
-<%-include("partials/footer.ejs")%>
+        <a name="contacts"></a>
+        <div class="contact-us" style="margin-top: 4%; overflow-x: hidden" data-aos="fade">
+            <!-- <section class="speakers-section" style= "overflow: auto;"> -->
+            <div class="parallax-scene parallax-scene-2 anim-icons">
+                <span data-depth="0.40" class="parallax-layer icon icon-circle-5"></span>
+                <span data-depth="0.99" class="parallax-layer icon icon-circle-5"></span>
+            </div>
+
+            <div class="container">
+                <div class="sec-title light text-center">
+                    <br />
+
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <% for(let i = 0; i < data.contactDetails.length; i++) { %>
+                        <div class="column">
+                            <div class="team-10">
+                                <div class="team-img">
+                                    <img style="object-fit: contain" src="<%= data.contactDetails[i].Photo %>" alt="Contact Image" />
+                                </div>
+                                <div class="team-content">
+                                    <h2 class="team-10-h2">
+                                        <%= data.contactDetails[i].Name %>
+                                    </h2>
+                                    <h3 class="team-10-h3">
+                                        <%= data.contactDetails[i]['Email-id'] %>
+                                    </h3>
+
+                                    <div class="team-overlay">
+                                        <p><em>Feel free to contact us for any help</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+        <script async src="js/flipclock.js"></script>
+        <script async src="js/starttimer.js"></script>
+        <script async src="js/arraydatefunction.js"></script>
+
+        <script>
+            let eventdata = `<%-data.eventDetails%>`;
+            eventdata = JSON.parse(eventdata);
+        </script>
+        <script async src="js/fetchevent.js"></script>
+
+        <script>
+            AOS.init({
+                duration: 1000,
+            });
+        </script>
+        <%-include("partials/footer.ejs")%>
