@@ -1584,10 +1584,7 @@
     let eventdata=`<%-data.eventDetails%>`
     eventdata=JSON.parse(eventdata)
     
-    console.log('client ',eventdata)
-</script>
-<script >
-console.log("fwetch event working")
+    
 let titlediv = document.querySelector('#eventTitle')
         let descriptiondiv = document.querySelector('#eventDescription')
         var clock;
@@ -1684,14 +1681,14 @@ let titlediv = document.querySelector('#eventTitle')
             }
             else
             {  
-                console.log("not empty ")
+               
                 datenumber=datenumber-1
             }
             startthetimer(datenumber)
         }}
         let righttimer=()=>
         {
-            console.log("rught")
+           
             if(datearray.length>0)
             {
                 clock.stop()

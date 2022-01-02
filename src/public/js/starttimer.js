@@ -1,5 +1,5 @@
 function startthetimer(datenumber, status) {
-  console.log("timer started",datenumber,datearray)
+ 
     if (status == "noevents") {
       let div = document.createElement("div");
       div.innerText = "NO EVENTS FOR NOW";
@@ -31,12 +31,13 @@ function startthetimer(datenumber, status) {
     }
     
    if(datearray.length!=0 && !status) {
-     console.log("dates")
+   
     var currentDate = new Date();
     var futureDate = new Date(datearray[datenumber]);
     var difference = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
     titlediv.innerHTML = eventinfoarray[datenumber]["title"];
     descriptiondiv.innerHTML = eventinfoarray[datenumber]["description"];
+    
     clock = $(".clock").FlipClock(difference, {
       clockFace: "DailyCounter",
       countdown: true,

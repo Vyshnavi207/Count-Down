@@ -1,7 +1,7 @@
 
 var Base = function() {
 };
-console.log("flipclock.js")
+
 
 Base.extend = function(_instance, _static) { // subclass
 	

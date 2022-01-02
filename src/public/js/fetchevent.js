@@ -7,7 +7,7 @@ let titlediv = document.querySelector('#eventTitle')
         let reqarray=[]
         let datearray=[]
         let eventinfoarray=[]
-        console.log(eventdata)
+     
      
            if(eventdata.length>0)
            {
@@ -96,14 +96,14 @@ let titlediv = document.querySelector('#eventTitle')
             }
             else
             {  
-                console.log("not empty ")
+            
                 datenumber=datenumber-1
             }
             startthetimer(datenumber)
         }}
         let righttimer=()=>
         {
-            console.log("rught")
+          
             if(datearray.length>0)
             {
                 clock.stop()
