@@ -1,5 +1,5 @@
 
-console.log("fwetch event working")
+
 let titlediv = document.querySelector('#eventTitle')
         let descriptiondiv = document.querySelector('#eventDescription')
         var clock;

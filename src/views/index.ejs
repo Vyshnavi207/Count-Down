@@ -1573,54 +1573,58 @@
         </div>
     </div>
 </div>
-<script    src='js/flipclock.js' ></script>
+<script async   src='js/flipclock.js' ></script>
 
 
 
-<script   src='js/starttimer.js' ></script>
-<script  src='js/arraydatefunction.js' ></script>
+<script async  src='js/starttimer.js' ></script>
+<script async src='js/arraydatefunction.js' ></script>
 
 <script>
     let eventdata=`<%-data.eventDetails%>`
     eventdata=JSON.parse(eventdata)
     
-    
-let titlediv = document.querySelector('#eventTitle')
-        let descriptiondiv = document.querySelector('#eventDescription')
-        var clock;
-        let datenumber=0;
-        let reqarray=[]
-        let datearray=[]
-        let eventinfoarray=[]
+  
+</script>
+<script async src='js/fetchevent.js'></script>
+<script >
+// console.log("fwetch event working")
+// let titlediv = document.querySelector('#eventTitle')
+//         let descriptiondiv = document.querySelector('#eventDescription')
+//         var clock;
+//         let datenumber=0;
+//         let reqarray=[]
+//         let datearray=[]
+//         let eventinfoarray=[]
         
      
-           if(eventdata.length>0)
-           {
-                eventdata.forEach((event)=>
-                {
-                  if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
-                  {
-                      reqarray.push(event['StartDate'])
-                  }
-                })
-                eventdata.forEach((event)=>
-                {
-      			if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
-                  {//450
-      			eventinfoarray.push({
-                        title: event['EventName'].slice(0,40)+" ...",
-                        description: event['Description'].slice(0,350)+" ..."
-      			  })
-      			}
-                })
-                datearray= arraydates(reqarray)
-                $(document).ready(
-                startthetimer(datenumber)
-      		  )}
-           else
-           {
-            startthetimer(datenumber,'noevents')   
-           }
+//            if(eventdata.length>0)
+//            {
+//                 eventdata.forEach((event)=>
+//                 {
+//                   if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+//                   {
+//                       reqarray.push(event['StartDate'])
+//                   }
+//                 })
+//                 eventdata.forEach((event)=>
+//                 {
+//       			if(new Date(moment(event['StartDate'],`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+//                   {//450
+//       			eventinfoarray.push({
+//                         title: event['EventName'].slice(0,40)+" ...",
+//                         description: event['Description'].slice(0,350)+" ..."
+//       			  })
+//       			}
+//                 })
+//                 datearray= arraydates(reqarray)
+//                 $(document).ready(
+//                 startthetimer(datenumber)
+//       		  )}
+//            else
+//            {
+//             startthetimer(datenumber,'noevents')   
+//            }
       
      
      
@@ -1670,45 +1674,46 @@ let titlediv = document.querySelector('#eventTitle')
         //     startthetimer(datenumber,'backenddown')
         // )
         // })
-        let lefttimer=()=>
-        {
-            if(datearray.length>0)
-            {
-                clock.stop()
-            if(datenumber==0 )
-            {
-                datenumber=datearray.length-1
-            }
-            else
-            {  
+        // let lefttimer=()=>
+        // {
+        //     if(datearray.length>0)
+        //     {
+        //         console.log('clock stop  ',clock)
+        //         clock.stop()
+        //     if(datenumber==0 )
+        //     {
+        //         datenumber=datearray.length-1
+        //     }
+        //     else
+        //     {  
+        //         console.log("not empty ")
+        //         datenumber=datenumber-1
+        //     }
+        //     startthetimer(datenumber)
+        // }}
+        // let righttimer=()=>
+        // {
+        //     console.log("rught")
+        //     if(datearray.length>0)
+        //     {
+        //         clock.stop()
+        //     if(datenumber==datearray.length-1)
+        //     {
+        //   datenumber=0
+        //     }
+        //     else
+        //     {    
+        //       datenumber=datenumber+1
                
-                datenumber=datenumber-1
-            }
-            startthetimer(datenumber)
-        }}
-        let righttimer=()=>
-        {
-           
-            if(datearray.length>0)
-            {
-                clock.stop()
-            if(datenumber==datearray.length-1)
-            {
-          datenumber=0
-            }
-            else
-            {    
-              datenumber=datenumber+1
-               
-            }
-            startthetimer(datenumber)
-        }
-        }
-        let leftbutton = document.querySelector('#lefttimer')
-        let rightbutton = document.querySelector('#righttimer')
+        //     }
+        //     startthetimer(datenumber)
+        // }
+        // }
+        // let leftbutton = document.querySelector('#lefttimer')
+        // let rightbutton = document.querySelector('#righttimer')
 
-        leftbutton.addEventListener('click',lefttimer)
-        rightbutton.addEventListener('click',righttimer)</script>
+        // leftbutton.addEventListener('click',lefttimer)
+        // rightbutton.addEventListener('click',righttimer)</script>
 
 
 
