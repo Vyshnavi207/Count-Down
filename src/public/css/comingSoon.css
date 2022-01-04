@@ -11,7 +11,7 @@
     font-weight: 1000;
     text-align: center;
     font-size: 45px;
-    background: linear-gradient(90deg, #000, #fff, #000);
+    background: linear-gradient(90deg, #000, #ef3c4e, #000);
     letter-spacing: 5px;
     font-family: 'Josefin Sans', sans-serif;
     -webkit-background-clip: text;
@@ -21,6 +21,7 @@
     background-size: 80%;
     animation: fadeAway 8s linear infinite;
     position: relative;
+    color: #ef3c4e;
     padding-top: 20px;
     padding-bottom: 20px;
 }
