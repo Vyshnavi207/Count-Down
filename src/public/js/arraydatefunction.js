@@ -4,15 +4,15 @@ let arraydates=(dates)=>
     let sortedarray=[];
     
   
-    dates= dates.filter((item)=>
-    {
-        if(new Date(moment(item,`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
-            {
+    // dates= dates.filter((item)=>
+    // {
+    //     if(new Date(moment(item,`YYYY-MM-DDhh:mm:ss.sss`).format('MMM D, YYYY HH:mm:ss')).getTime() > new Date().getTime())
+    //         {
                
-                return item
+    //             return item
       
-            }
-    })
+    //         }
+    // })
    
     for(let i=0;i<dates.length;i++)
     {
@@ -29,7 +29,8 @@ let arraydates=(dates)=>
          return {
            date:item,
            title:eventinfoarray[index]['title'],
-           description:eventinfoarray[index]['description']
+           description:eventinfoarray[index]['description'],
+           enddate:eventinfoarray[index]['enddate']
          }
     })
 
@@ -40,7 +41,8 @@ let arraydates=(dates)=>
     {
       return {
         title:item['title'],
-        description:item['description']
+        description:item['description'],
+        enddate:item['enddate']
       }
     })
     sortedarray=sortedarray.map((item)=>

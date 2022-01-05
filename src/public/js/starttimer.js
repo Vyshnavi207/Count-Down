@@ -35,6 +35,22 @@ function startthetimer(datenumber, status) {
       clockFace: "DailyCounter",
       countdown: true,
     });
+    if(difference <= 0){
+			document.getElementById("flashlive").style.display = "block";
+			document.getElementById("clock").style.display = "none";
+			document.getElementById("live").style.color = "white";
+			document.getElementById("live").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 600px #fff";
+			document.getElementById("upcoming").style.color = "black";
+			document.getElementById("upcoming").style.textShadow = "none";
+			console.log(difference+"diff");
+		}else{
+			document.getElementById("clock").style.display = "block";
+			document.getElementById("flashlive").style.display = "none";
+			document.getElementById("live").style.color = "black";
+            document.getElementById("live").style.textShadow = "none";
+            document.getElementById("upcoming").style.color = "white";
+            document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
+		} 
   } else if (datearray.length === 0) {
     let div = document.createElement("div");
     div.innerText = "STAY TUNED FOR MORE EVENTS !!!";
