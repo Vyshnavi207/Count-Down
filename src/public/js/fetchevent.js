@@ -36,14 +36,36 @@ if (eventdata.length > 0) {
           event["Description"].length >= 350
             ? event["Description"].slice(0, 350) + " ..."
             : event["Description"],
+        enddate:
+            event["EndDate"].length > 350
+              ? event["EndDate"].slice(0, 350) + " ..."
+              : event["EndDate"],
       });
     }
-  });
+  })
   datearray = arraydates(reqarray);
   $(document).ready(startthetimer(datenumber));
 } else {
   startthetimer(datenumber, "noevents");
 }
+  reqarray = [
+    "2021-08-20T14:00:00.000Z",
+    "2022-03-30T14:00:00.000Z",
+    "2022-04-20T02:00:00.000Z",
+  ]
+  // reqarray=[]
+  eventinfoarray = reqarray.map((x, index) => {
+    return {
+      title:
+        "default title",
+      description:
+        "default description",
+      enddate:
+        "2022-04-01T07:00:00.000Z",
+    }
+  })
+  datearray = arraydates(reqarray);
+  $(document).ready(startthetimer(datenumber, "backenddown"))
 let lefttimer = () => {
   if (datearray.length > 0) {
     clock.stop();

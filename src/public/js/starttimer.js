@@ -47,9 +47,9 @@ function startthetimer(datenumber, status) {
 			document.getElementById("clock").style.display = "block";
 			document.getElementById("flashlive").style.display = "none";
 			document.getElementById("live").style.color = "black";
-            document.getElementById("live").style.textShadow = "none";
-            document.getElementById("upcoming").style.color = "white";
-            document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
+      document.getElementById("live").style.textShadow = "none";
+      document.getElementById("upcoming").style.color = "white";
+      document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
 		} 
   } else if (datearray.length === 0) {
     let div = document.createElement("div");
