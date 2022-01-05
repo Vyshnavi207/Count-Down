@@ -1,55 +1,63 @@
 <%-include("partials/header.ejs")%>
-<div class="container">
-    <div class="title">Sensors-Login</div>
-    <br>
-    <form>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" class="username" placeholder="Email ID" required>
-        <br><br>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" class="password" placeholder="Password" required>
-        <br><br>
-        <button class="submit" id="submit-btn">Submit</button>
-        <!-- <input type="submit" value="Sign In" class="submit" id="submit-btn"> -->
-        <p>Don't have an account? Register <a href="/register">here</a></p>
-    </form>
-</div>
-<script>
-    const linkTag = document.createElement("link");
-    linkTag.rel = 'stylesheet';
-    linkTag.href = 'css/login.css';
-    document.head.appendChild(linkTag);
-    const flash = document.querySelector(".flash-container");
-    // flash.innerHTML = '';
 
-    const submitBtn = document.getElementById("submit-btn");
-    submitBtn.addEventListener("click",(e)=>{
-        e.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        axios.post("/api/user/login",{
-            Email:email,
-            password:password
-        }).then((res)=>{
-            if(res.data.status){
-                const token = {};
-                // console.log(res.data);
-                token.user = res.data.user;
-                sessionStorage.setItem("sensors22User", JSON.stringify(token));
-                sessionStorage.setItem("auth-token", res.data.token);
-                // console.log(token);
-                window.location.href = "/";
-            }else{
-                const msg = `
+    <div class="ui raised stacked very padded text container segment" style="background-color:#3f3e43">
+        <h1 class="ui header" style="text-align: center; font-family: 'Roboto Mono', monospace;color: white;">Sensors-Login</h1>
+        <div class="ui divider" style="background: white;"></div>
+
+        <div class="ui fluid form">
+            <div class="field">
+                <label style="color: aliceblue;font-size: larger;">Enter Your EmailId</label>
+                <input type="email" placehoder="Enter your email" id="email">
+            </div>
+            <div class="field">
+                <label style="color: aliceblue; font-size: larger;">Enter Your Password</label>
+                <input type="password" placehoder="Enter your password" id="password">
+            </div>
+
+            <div style="width:100%;text-align: center;margin: auto;margin-top: 20px;"> <button class="large ui inverted gray button" id="submit-btn">Log In</button>
+            </div>
+        </div>
+        <div class="ui center aligned container">
+            <p style="color: white;">Don't have an account? Register <a href="/register" style="color: blue;">here</a></p>
+        </div>
+    </div>
+    <script>
+        // const linkTag = document.createElement("link");
+        // linkTag.rel = 'stylesheet';
+        // linkTag.href = 'css/login.css';
+        // document.head.appendChild(linkTag);
+
+        const flash = document.querySelector(".flash-container");
+        // flash.innerHTML = '';
+
+        const submitBtn = document.getElementById("submit-btn");
+        submitBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            axios.post("/api/user/login", {
+                Email: email,
+                password: password
+            }).then((res) => {
+                if (res.data.status) {
+                    const token = {};
+                    // console.log(res.data);
+                    token.user = res.data.user;
+                    sessionStorage.setItem("sensors22User", JSON.stringify(token));
+                    sessionStorage.setItem("auth-token", res.data.token);
+                    // console.log(token);
+                    window.location.href = "/";
+                } else {
+                    const msg = `
                 <div id="err-box" class="alert alert-danger" role="alert">
                     ${res.data.msg}
                 </div>
                 `;
-                flash.innerHTML = msg;
-            }
-        }).catch((e)=>{
-            console.log(e);
+                    flash.innerHTML = msg;
+                }
+            }).catch((e) => {
+                console.log(e);
+            })
         })
-    })
-</script>
-<%-include("partials/footer.ejs")%>
+    </script>
+    <%-include("partials/footer.ejs")%>
