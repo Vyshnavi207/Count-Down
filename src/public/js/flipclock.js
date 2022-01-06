@@ -484,7 +484,10 @@ var FlipClock;
 		 * Triggers when the time on the clock stops
 		 */
 		 
-		stop: function() {},
+		stop: function() {
+              
+
+		},
 		
 		/**
 		 * Auto increments/decrements the value of the clock face
