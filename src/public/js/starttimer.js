@@ -1,5 +1,13 @@
 function startthetimer(datenumber, status) {
-  if (status == "noevents") {
+  if (status == "live-event") {
+    titlediv.innerHTML = liveventinfoarray[livedatenumber]["title"];
+    descriptiondiv.innerHTML = liveventinfoarray[livedatenumber]["description"];
+
+    let clockdiv = document.querySelector('#clock')
+    clockdiv.innerHTML=''
+  }
+  else if (status == "noevents") {
+    console.log("no events")
     let div = document.createElement("div");
     div.innerText = "NO EVENTS FOR NOW";
     div.id = "no-events-id";
@@ -37,6 +45,9 @@ function startthetimer(datenumber, status) {
     });
     if(difference <= 0){
 			document.getElementById("flashlive").style.display = "block";
+      document.getElementById("flashlive").style.marginTop = "-40px";
+      document.getElementById("lefttimer").style.marginTop = "140px";
+      document.getElementById("righttimer").style.marginTop = "140px";
 			document.getElementById("clock").style.display = "none";
 			document.getElementById("live").style.color = "white";
 			document.getElementById("live").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 600px #fff";
