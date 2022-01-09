@@ -2,9 +2,9 @@ let titlediv = document.querySelector("#eventTitle");
 let liveventdiv=document.querySelector('#live')
 let upcomingeventsdiv=document.querySelector('#upcoming')
 upcomingeventsdiv.style.color='red'
-liveventdiv.style.color='red'
-upcomingeventsdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
-liveventdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
+liveventdiv.style.color='white'
+// upcomingeventsdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
+// liveventdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
 let descriptiondiv = document.querySelector("#eventDescription");
 var clock;
 let datenumber = 0;
@@ -17,8 +17,8 @@ let liveventinfoarray=[]
 let eventinfoarray = [];
 liveventdiv.addEventListener('click',()=>
 {
-  upcomingeventsdiv.style.color='white'
-liveventdiv.style.color='red'
+//   upcomingeventsdiv.style.color='white'
+// liveventdiv.style.color='red'
   liveventstatus=true
   upcomingeventstatus=false
   livedatenumber=0
@@ -27,8 +27,8 @@ liveventdiv.style.color='red'
 })
 upcomingeventsdiv.addEventListener('click',()=>
 {
-  upcomingeventsdiv.style.color='red'
-liveventdiv.style.color='white'
+//   upcomingeventsdiv.style.color='red'
+// liveventdiv.style.color='white'
 liveventstatus=false
 upcomingeventstatus=true
 datenumber=0
@@ -108,24 +108,24 @@ if (eventdata.length > 0) {
 }
 
 
-console.log(reqarray,eventinfoarray,liveventinfoarray)
-  reqarray = [
-    "2021-08-20T14:00:00.000Z",
-    "2022-03-30T14:00:00.000Z",
-    "2022-04-20T02:00:00.000Z",
-  ]
-  // reqarray=[]
-  eventinfoarray = reqarray.map((x, index) => {
-    return {
-      title:
-        "default title",
-      description:
-        "default description",
-      enddate:
-        "2022-04-01T07:00:00.000Z",
-    }
-  })
-  datearray = arraydates(reqarray);
+// console.log(reqarray,eventinfoarray,liveventinfoarray)
+//   reqarray = [
+//     "2021-08-20T14:00:00.000Z",
+//     "2022-03-30T14:00:00.000Z",
+//     "2022-04-20T02:00:00.000Z",
+//   ]
+//   // reqarray=[]
+//   eventinfoarray = reqarray.map((x, index) => {
+//     return {
+//       title:
+//         "default title",
+//       description:
+//         "default description",
+//       enddate:
+//         "2022-04-01T07:00:00.000Z",
+//     }
+//   })
+//   datearray = arraydates(reqarray);
   // $(document).ready(startthetimer(datenumber, "backenddown"))
 let lefttimer = () => {
   if(upcomingeventstatus)

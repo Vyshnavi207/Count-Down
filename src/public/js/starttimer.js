@@ -5,6 +5,15 @@ function startthetimer(datenumber, status) {
 
     let clockdiv = document.querySelector('#clock')
     clockdiv.innerHTML=''
+    document.getElementById("flashlive").style.display = "block";
+    document.getElementById("flashlive").style.marginTop = "-40px";
+    document.getElementById("lefttimer").style.marginTop = "140px";
+    document.getElementById("righttimer").style.marginTop = "140px";
+    document.getElementById("clock").style.display = "none";
+    document.getElementById("live").style.color = "white";
+    document.getElementById("live").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 600px #fff";
+    document.getElementById("upcoming").style.color = "black";
+    document.getElementById("upcoming").style.textShadow = "none";
   }
   else if (status == "noevents") {
     console.log("no events")
@@ -30,6 +39,12 @@ function startthetimer(datenumber, status) {
     let timerbox = document.querySelector(".timer");
     timerbox.appendChild(div);
   } else if (datearray.length != 0 && !status) {
+    document.getElementById("clock").style.display = "block";
+    document.getElementById("flashlive").style.display = "none";
+    document.getElementById("live").style.color = "black";
+    document.getElementById("live").style.textShadow = "none";
+    document.getElementById("upcoming").style.color = "white";
+    document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
     var currentDate = new Date();
     var futureDate = new Date(datearray[datenumber]);
     var difference =
@@ -43,28 +58,28 @@ function startthetimer(datenumber, status) {
       clockFace: "DailyCounter",
       countdown: true,
     });
-    if(difference <= 0){
-			document.getElementById("flashlive").style.display = "block";
-      document.getElementById("flashlive").style.marginTop = "-40px";
-      document.getElementById("lefttimer").style.marginTop = "140px";
-      document.getElementById("righttimer").style.marginTop = "140px";
-			document.getElementById("clock").style.display = "none";
-			document.getElementById("live").style.color = "white";
-			document.getElementById("live").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 600px #fff";
-			document.getElementById("upcoming").style.color = "black";
-			document.getElementById("upcoming").style.textShadow = "none";
-			console.log(difference+"diff");
-		}else{
-			document.getElementById("clock").style.display = "block";
-			document.getElementById("flashlive").style.display = "none";
-			document.getElementById("live").style.color = "black";
-      document.getElementById("live").style.textShadow = "none";
-      document.getElementById("upcoming").style.color = "white";
-      document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
-		} 
+    // if(difference <= 0){
+		// 	document.getElementById("flashlive").style.display = "block";
+    //   document.getElementById("flashlive").style.marginTop = "-40px";
+    //   document.getElementById("lefttimer").style.marginTop = "140px";
+    //   document.getElementById("righttimer").style.marginTop = "140px";
+		// 	document.getElementById("clock").style.display = "none";
+		// 	document.getElementById("live").style.color = "white";
+		// 	document.getElementById("live").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 600px #fff";
+		// 	document.getElementById("upcoming").style.color = "black";
+		// 	document.getElementById("upcoming").style.textShadow = "none";
+		// 	console.log(difference+"diff");
+		// }else{
+		// 	document.getElementById("clock").style.display = "block";
+		// 	document.getElementById("flashlive").style.display = "none";
+		// 	document.getElementById("live").style.color = "black";
+    //   document.getElementById("live").style.textShadow = "none";
+    //   document.getElementById("upcoming").style.color = "white";
+    //   document.getElementById("upcoming").style.textShadow = "0 0 40px #fff,0 0 80px #fff,0 0 160px #fff,0 0 400px #fff,0 0 500px #fff";
+		// } 
   } else if (datearray.length === 0) {
     let div = document.createElement("div");
-    div.innerText = "STAY TUNED FOR MORE EVENTS !!!";
+    div.innerHtml = "STAY TUNED FOR MORE EVENTS !!!";
     div.id = "no-events-id";
     div.style.color = "#fff";
     div.style.marginTop = "90px";
