@@ -1,10 +1,10 @@
 let titlediv = document.querySelector("#eventTitle");
 let liveventdiv=document.querySelector('#live')
 let upcomingeventsdiv=document.querySelector('#upcoming')
-upcomingeventsdiv.style.color='red'
-liveventdiv.style.color='white'
-// upcomingeventsdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
-// liveventdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
+upcomingeventsdiv.style.color='white'
+liveventdiv.style.color='black'
+ upcomingeventsdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
+ liveventdiv.style.textShadow='rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 80px, rgb(255, 255, 255) 0px 0px 160px, rgb(255, 255, 255) 0px 0px 400px, rgb(255, 255, 255) 0px 0px 500px'
 let descriptiondiv = document.querySelector("#eventDescription");
 var clock;
 let datenumber = 0;
@@ -17,21 +17,26 @@ let liveventinfoarray=[]
 let eventinfoarray = [];
 liveventdiv.addEventListener('click',()=>
 {
-//   upcomingeventsdiv.style.color='white'
-// liveventdiv.style.color='red'
+   upcomingeventsdiv.style.color='black'
+ liveventdiv.style.color='white'
   liveventstatus=true
   upcomingeventstatus=false
   livedatenumber=0
   console.log(livedatenumber,liveventinfoarray,'000000')
+ 
+  
   startthetimer(livedatenumber,'live-event')     
 })
 upcomingeventsdiv.addEventListener('click',()=>
 {
-//   upcomingeventsdiv.style.color='red'
-// liveventdiv.style.color='white'
+   upcomingeventsdiv.style.color='white'
+ liveventdiv.style.color='black'
+console.log("rught")
 liveventstatus=false
 upcomingeventstatus=true
 datenumber=0
+
+
  startthetimer(datenumber)
 })
 if (eventdata.length > 0) {
@@ -172,7 +177,7 @@ let righttimer = () => {
   {
     if(liveventinfoarray.length>0)
     {
-      if (livedatenumber == datearray.length - 1) {
+      if (livedatenumber == liveventinfoarray.length - 1) {
         livedatenumber = 0;
       } else {
         livedatenumber = livedatenumber + 1;
